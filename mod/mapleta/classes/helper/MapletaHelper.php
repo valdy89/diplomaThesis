@@ -13,15 +13,26 @@ defined('MOODLE_INTERNAL') || die();
  */
 class MapletaHelper {
 
-    public static function getTimestamp(){
+    public function getTimestamp(){
         return time()*1000;
     }
     
-    public static function getSignature($time) {
+    public function getSignature($time) {
         global $CFG;
-        $password = $CFG->name.'hvhebwtu'; //TODO vlozit do nastaveni moodlu
+        $password = 'hvhebwtu'; //TODO vlozit do nastaveni moodlu
         $signature = base64_encode(md5($time . $password, true));
         return $signature;
+    }
+    
+    public function getArray(){
+        $time = $this->getTimestamp();
+        $signature = $this->getSignature($time);
+        $array = array('signature'=>$signature,'timestamp'=>$time);
+        return $array;
+    }
+    
+    public function refresSession($sessionID,$userID){
+        //if()
     }
 
 }

@@ -22,9 +22,20 @@ class Connector extends Base {
         $this->model = new \mod_mapleta\model\Connector($db, $cfg);
     }
 
-    public function connectMaple($params) {
-        
-    }
+    /*
+      public function connectMaple($user, $role, $classID = -1) {
+      $params = $this->model->getConnectParams($user, $role, $classID);
+      if ($params !== false) {
+      $response = $this->model->sendRequest('ws/connect', $params);
+      $dataset = $this->model->getConnectResponse($response);
+      if ($dataset !== false) {
+
+      return $dataset;
+      }
+      }
+      return false;
+      }
+     */
 
     public function createClass($params) {
         
@@ -34,12 +45,15 @@ class Connector extends Base {
         
     }
 
-    public function getAssignments($params) {
-        
+    public function getAssignments($classID, $assigmentID, $user) {
+        $assigments = $this->model->getAssignments($classID, $assigmentID, $user);
+        return $assigments;
     }
 
-    public function getClasses($params) {
-        
+    public function getClasses($classID, $featured = false, $openForRegistration = false) {
+        $classes = $this->model->getClasses($classID, $featured, $openForRegistration);
+
+        return $classes;
     }
 
     public function getGrades($params) {
@@ -51,16 +65,15 @@ class Connector extends Base {
     }
 
     public function pingServer($echo) {
-        $params = $this->model->pingServerParams();
+        $params = $this->model->pingServerParams('Running');
         if ($params !== false) {
             $response = $this->model->sendRequest('ws/ping', $params);
-            $dataset = $this->model->validatePingResponse();
-            if ($datasets !== false) {
-
-                return $dataset;
+            $dataset = $this->model->validatePingResponse($response);
+            if ($dataset !== false) {
+                return 'running';
             }
         }
-        return false;
+        return 'down';
     }
 
 }

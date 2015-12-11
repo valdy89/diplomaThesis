@@ -18,6 +18,11 @@ class Base {
     protected $db;
     protected $cfg;
 
+    const MAPLE_ROLE_ADMIN = "ADMINISTRATOR";
+    const MAPLE_ROLE_STUDENT = "STUDENT";
+    const MAPLE_ROLE_PROCTOR = "PROCTOR";
+    const MAPLE_ROLE_INSTRUCTOR = "INSTRUCTOR";
+
     public function __construct(\moodle_database $db, \stdClass $cfg) {
         $this->db = $db;
         $this->cfg = $cfg;

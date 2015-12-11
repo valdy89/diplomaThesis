@@ -15,16 +15,20 @@ namespace mod_mapleta;
  */
 class MapleAPI {
 
-    public function call($url, $request) {
+    public function call($url, $request, $cookie = false) {
 
         $requestString = $this->arrayToXML($request);
 
-        $urlBase = 'https://muni.mapleta.com/muni/';
+        $urlBase = 'https://muni.mapleta.com/muni/'; //todo z konfigurace
         $ch = curl_init($urlBase . $url);
 
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $requestString->asXML());
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        if ($cookie) {
+            curl_setopt($ch, CURLOPT_COOKIE, 'JSESSIONID='.$cookie);
+            curl_setopt($ch, CURLOPT_COOKIESESSION, true);
+        }
 
         $response = curl_exec($ch);
 
@@ -39,7 +43,7 @@ class MapleAPI {
         foreach ($request as $key => $value) {
             if (is_array($value)) {
                 if (is_numeric($key)) {
-                    $key = 'item' . $key; //dealing with <0/>..<n/> issues
+                    $key = 'item' . $key;
                 }
                 $subnode = $xml_data->addChild($key);
                 array_to_xml($value, $subnode);
@@ -51,6 +55,7 @@ class MapleAPI {
     }
 
     public function XMLToArray($xmlstring) {
+        print($xmlstring);
         $xml = simplexml_load_string($xmlstring);
         $json = json_encode($xml);
         $array = json_decode($json, TRUE);

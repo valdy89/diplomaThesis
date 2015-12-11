@@ -24,5 +24,7 @@ class Base {
         $this->cfg = $cfg;
         $this->user = $user;
     }
+    
+    
 
 }
