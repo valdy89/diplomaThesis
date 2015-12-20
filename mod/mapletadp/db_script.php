@@ -25,7 +25,7 @@ $table_name_array=array(
 		'mapletadp',
 		
 );
-$file_path='mod/pdccertificate/db';
+$file_path='mod/mapletadp/db';
 $plugin_name='mod PDC Certificate';
 /* ************************************************************************** */
 

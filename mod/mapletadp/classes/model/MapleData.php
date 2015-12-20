@@ -83,11 +83,11 @@ class MapleData extends Base {
         }
     }
 
-    public function getAssignmets($classId, $id = false) {
+    public function getAssignments($classId = false, $id = false) {
         $conditions = array();
-
-        $conditions['classId'] = $classId;
-
+        if ($classId) {
+            $conditions['classId'] = $classId;
+        }
         if ($id) {
             $conditions['mapleId'] = $id;
         }
@@ -102,7 +102,7 @@ class MapleData extends Base {
         if (count($assignments) > 0 && count($assignments['element']) > 2) {
             $savedAssignments = $this->getAssignmets($classId);
             $array = $this->changeKey(json_decode(json_encode($savedAssignments), true), 'mapleid');
-          
+
 
             $insert = array();
             //debug

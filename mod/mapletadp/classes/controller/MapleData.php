@@ -34,9 +34,9 @@ class MapleData extends Base {
         }
     }
 
-    public function getAssignemnts($classId, $id = false) {
+    public function getAssignments($classId, $id = false) {
         if ($classId) {
-            return $this->model->getAssignmets($classId, $id);
+            return $this->model->getAssignments($classId, $id);
         }
         return false;
     }
@@ -59,7 +59,19 @@ class MapleData extends Base {
         return $return;
     }
     public function getAssignmentsForForm($classId){
-        $assignments = $this->getAssignemnts($classId);
+        $assignments = $this->getAssignments($classId);
+        $return  = array();
+        if(count($assignments) >0){
+            foreach ($assignments as $key => $value) {
+                $return[$key] = $value->name; 
+            }
+            
+        }
+        return $return;
+    }
+    
+    public function getAllAssignmentsForForm(){
+        $assignments = $this->model->getAssignments();
         $return  = array();
         if(count($assignments) >0){
             foreach ($assignments as $key => $value) {

@@ -27,4 +27,7 @@ class Mapleta extends Base {
         $this->model->refreshAllData();
     }
 
+    public function getAssignmentsJSON(){
+        $assignments = $this->model->getAssignmentsForForm();
+    }
 }

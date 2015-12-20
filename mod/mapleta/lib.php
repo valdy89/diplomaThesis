@@ -405,7 +405,7 @@ function mapleta_scale_used($mapletaid, $scaleid) {
 /// starts with mapleta_
 
 function mapleta_context($courseId) {
-   	return get_context_instance(CONTEXT_COURSE, $courseId);
+   	return context_course::instance($courseId);
 }
 
 function mapleta_is_administrator($courseId) {

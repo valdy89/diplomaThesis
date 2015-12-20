@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -24,10 +25,9 @@
  * @copyright  2015 Your Name
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 defined('MOODLE_INTERNAL') || die();
 
-require_once($CFG->dirroot.'/course/moodleform_mod.php');
+require_once($CFG->dirroot . '/course/moodleform_mod.php');
 
 /**
  * Module instance settings form
@@ -42,7 +42,9 @@ class mod_mapletadp_mod_form extends moodleform_mod {
      * Defines forms elements
      */
     public function definition() {
-        global $CFG,$DB,$USER;
+        global $CFG, $DB, $USER, $PAGE;
+        $PAGE->requires->js('/mod/mapletadp/js/jquery-2.1.4.js');
+        $PAGE->requires->js('/mod/mapletadp/js/dependency_assignments.js');
 
         $mform = $this->_form;
 
@@ -69,16 +71,18 @@ class mod_mapletadp_mod_form extends moodleform_mod {
 
         // Adding the rest of mapletadp settings, spreading all them into this fieldset
         // ... or adding more fieldsets ('header' elements) if needed for better logic.
-        $controllerData = new \mod_mapletadp\controller\MapleData($DB,$CFG,$USER);
-        $classes = $controllerData->getClassesForForm();
-        $select = $mform->addElement('select', 'classId', get_string('className', 'mapletadp'), $classes);     
+        $controllerData = new \mod_mapletadp\controller\MapleData($DB, $CFG, $USER);
+        $classesListDB = $controllerData->getClassesForForm();
+        $classesListZero = array(0 => get_string('choose', 'mapletadp'));
+        $classes = array_merge($classesListZero, $classesListDB);
+        $select = $mform->addElement('select', 'classId', get_string('className', 'mapletadp'), $classes);
+
+        $assignments = $controllerData->getAllAssignmentsForForm();
+
+        $select = $mform->addElement('select', 'assignmentId', get_string('assignmentName', 'mapletadp'), $assignments);
 
 
-        $assignments = $controllerData->getAssignmentsForForm(array_keys($classes)[0]);
-        $select = $mform->addElement('select', 'assignmentId', get_string('assignmentName', 'mapletadp'), $assignments);     
-
-        
-                // Add standard grading elements.
+        // Add standard grading elements.
         $this->standard_grading_coursemodule_elements();
 
         // Add standard elements, common to all modules.
@@ -87,4 +91,5 @@ class mod_mapletadp_mod_form extends moodleform_mod {
         // Add standard buttons, common to all modules.
         $this->add_action_buttons();
     }
+
 }

@@ -80,7 +80,7 @@ function mapletadp_add_instance(stdClass $mapletadp, mod_mapletadp_mod_form $mfo
     $mapletadp->timecreated = time();
 
     // You may have to add extra stuff in here.
-
+   echo '<pre>'; var_dump($mform->get_data());echo'</pre>';
     $mapletadp->id = $DB->insert_record('mapletadp', $mapletadp);
 
     mapletadp_grade_item_update($mapletadp);
