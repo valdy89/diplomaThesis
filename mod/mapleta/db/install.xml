@@ -1,25 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<XMLDB PATH="mod/mapleta/db" VERSION="20101203" COMMENT="XMLDB file for Moodle mod/mapleta"
+<XMLDB PATH="mod/mapleta/db" VERSION="20100204" COMMENT="XMLDB file for Moodle mod/mapleta"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
 >
   <TABLES>
-    <TABLE NAME="mapleta" COMMENT="Default comment for mapleta, please edit me">
+    <TABLE NAME="mapleta" COMMENT="Maple T.A. assignment reference" NEXT="mapleta_course_map">
       <FIELDS>
-        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true"/>
-        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" COMMENT="Course mapleta activity belongs to"/>
-        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="name field for moodle instances"/>
-        <FIELD NAME="intro" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="General introduction of the mapleta activity"/>
-        <FIELD NAME="introformat" TYPE="int" LENGTH="4" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" COMMENT="Format of the intro field (MOODLE, HTML, MARKDOWN...)"/>
-        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
-        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false"/>
-        <FIELD NAME="grade" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="100" SEQUENCE="false" COMMENT="The maximum grade. Can be negative to indicate the use of a scale."/>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="false" SEQUENCE="true" NEXT="course"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="id" NEXT="name"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" PREVIOUS="course" NEXT="assignmentid"/>
+        <FIELD NAME="assignmentid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="name" NEXT="assignmentmode"/>
+        <FIELD NAME="assignmentmode" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="assignmentid" NEXT="modedescription"/>
+        <FIELD NAME="modedescription" TYPE="char" LENGTH="50" NOTNULL="true" SEQUENCE="false" PREVIOUS="assignmentmode" NEXT="passingscore"/>
+        <FIELD NAME="passingscore" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="modedescription" NEXT="totalpoints"/>
+        <FIELD NAME="totalpoints" TYPE="number" LENGTH="10" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" DECIMALS="2" PREVIOUS="passingscore" NEXT="timelimit"/>
+        <FIELD NAME="timelimit" TYPE="int" LENGTH="10" NOTNULL="false" UNSIGNED="false" SEQUENCE="false" PREVIOUS="totalpoints" NEXT="starttime"/>
+        <FIELD NAME="starttime" TYPE="int" LENGTH="15" NOTNULL="false" UNSIGNED="false" SEQUENCE="false" PREVIOUS="timelimit" NEXT="endtime"/>
+        <FIELD NAME="endtime" TYPE="int" LENGTH="15" NOTNULL="false" UNSIGNED="false" SEQUENCE="false" PREVIOUS="starttime" NEXT="policy"/>
+        <FIELD NAME="policy" TYPE="text" LENGTH="medium" NOTNULL="true" SEQUENCE="false" PREVIOUS="endtime"/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
       </KEYS>
       <INDEXES>
-        <INDEX NAME="course" UNIQUE="false" FIELDS="course"/>
+        <INDEX NAME="courseidx" UNIQUE="false" FIELDS="course"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="mapleta_course_map" COMMENT="Course/Class mapping for mapleta module." PREVIOUS="mapleta">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="false" SEQUENCE="true" NEXT="courseid"/>
+        <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="id" NEXT="classid"/>
+        <FIELD NAME="classid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="false" SEQUENCE="false" PREVIOUS="courseid" NEXT="classname"/>
+        <FIELD NAME="classname" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" PREVIOUS="classid"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="courseidx" UNIQUE="true" FIELDS="courseid"/>
       </INDEXES>
     </TABLE>
   </TABLES>

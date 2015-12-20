@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     27-Nov-08 12:28:55 PM                                                        
+
+     MoodleTA 2.0    
+     Moodle / Maple TA integration
+                   
+     dkozlov                                                                
+     ====================================================================== -->
+<project name="MoodleTA 2.0" default="export">
+    <description>
+            Moodle / Maple TA integration
+    </description>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: init                      
+         - - - - - - - - - - - - - - - - - -->
+    <target name="init">
+        <property name="fromPath" value="."/>
+        <property name="toPath" value="C:/work/Moodle-24/server/moodle/mod/mapleta"/>
+    </target>
+	
+    <!-- ================================= 
+          target: export              
+         ================================= -->
+    <target name="export" depends="clean" description="--> Moodle / Maple TA integration">
+    	<copy failonerror="true" todir="${toPath}" verbose="true">
+    		<fileset dir="${fromPath}">
+    			<exclude name=".project"/>
+    			<exclude name="build.xml"/>
+    		</fileset>
+    	</copy>
+    </target>
+
+    <!-- - - - - - - - - - - - - - - - - - 
+          target: clean                      
+         - - - - - - - - - - - - - - - - - -->
+    <target name="clean" depends="init">
+		<delete  dir="${toPath}" failonerror="true" verbose="true">
+		</delete>
+
+    </target>
+
+</project>

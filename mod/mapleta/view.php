@@ -1,83 +1,205 @@
-<?php
-// This file is part of Moodle - http://moodle.org/
-//
-// Moodle is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// Moodle is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-
+<?php  // $Id: view.php,v 1.4 2006/08/28 16:41:20 mark-nielsen Exp $
 /**
- * Prints a particular instance of mapleta
+ * This page prints a particular instance of mapleta
  *
- * You can have a rather longer description of the file as well,
- * if you like, and it can span multiple lines.
- *
- * @package    mod_mapleta
- * @copyright  2015 Your Name
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
+ * @author
+ * @version $Id: view.php,v 1.4 2006/08/28 16:41:20 mark-nielsen Exp $
+ * @package mapleta
+ **/
 
-// Replace mapleta with the name of your module and remove this line.
+/// (Replace mapleta with the name of your module)
+//	require_once('../../course/lib.php');
+//
+    require_once("../../config.php");
+    require_once("lib.php");
 
-require_once(dirname(dirname(dirname(__FILE__))).'/config.php');
-require_once(dirname(__FILE__).'/lib.php');
+    $id = optional_param('id', 0, PARAM_INT); // Course Module ID, or
+    $a  = optional_param('a', 0, PARAM_INT);  // mapleta ID
+    $mapleta = null;
 
-$id = optional_param('id', 0, PARAM_INT); // Course_module ID, or
-$n  = optional_param('n', 0, PARAM_INT);  // ... mapleta instance ID - it should be named as the first character of the module.
+    $url = new moodle_url('/mapleta/view.php', array('id'=>$id, 'a'=>$a));
+    $PAGE->set_url($url);
+    
+    
+    if ($id) {
+        if (! $cm = mapleta_get_record("course_modules", "id", $id)) {
+            print_error('course_module_id_incorrect', 'mapleta');
+        }
 
-if ($id) {
-    $cm         = get_coursemodule_from_id('mapleta', $id, 0, false, MUST_EXIST);
-    $course     = $DB->get_record('course', array('id' => $cm->course), '*', MUST_EXIST);
-    $mapleta  = $DB->get_record('mapleta', array('id' => $cm->instance), '*', MUST_EXIST);
-} else if ($n) {
-    $mapleta  = $DB->get_record('mapleta', array('id' => $n), '*', MUST_EXIST);
-    $course     = $DB->get_record('course', array('id' => $mapleta->course), '*', MUST_EXIST);
-    $cm         = get_coursemodule_from_instance('mapleta', $mapleta->id, $course->id, false, MUST_EXIST);
-} else {
-    error('You must specify a course_module ID or an instance ID');
-}
+        if (! $course = mapleta_get_record("course", "id", $cm->course)) {
+            print_error('course_misconfigured', 'mapleta');
+        }
 
-require_login($course, true, $cm);
+        if (! $mapleta = mapleta_get_record("mapleta", "id", $cm->instance)) {
+            print_error('course_module_incorrect', 'mapleta');
+        }
 
-$event = \mod_mapleta\event\course_module_viewed::create(array(
-    'objectid' => $PAGE->cm->instance,
-    'context' => $PAGE->context,
-));
-$event->add_record_snapshot('course', $PAGE->course);
-$event->add_record_snapshot($PAGE->cm->modname, $mapleta);
-$event->trigger();
+    } else {
+        if (! $mapleta = mapleta_get_record("mapleta", "id", $a)) {
+            print_error('course_module_incorrect', 'mapleta');
+        }
+        if (! $course = mapleta_get_record("course", "id", $mapleta->course)) {
+            print_error('course_misconfigured', 'mapleta');
+        }
+        if (! $cm = get_coursemodule_from_instance("mapleta", $mapleta->id, $course->id)) {
+            print_error('course_module_id_incorrect', 'mapleta');
+        }
+    }
+    
+    $errorURL="$CFG->wwwroot/course/view.php?id=$course->id";
+    
+    require_login($course->id);
 
-// Print the page header.
+    add_to_log($course->id, "mapleta", "view", "view.php?id=$cm->id", "$mapleta->id");
 
-$PAGE->set_url('/mod/mapleta/view.php', array('id' => $cm->id));
-$PAGE->set_title(format_string($mapleta->name));
-$PAGE->set_heading(format_string($course->fullname));
+/// Print the page header
+    
+    if ($course->category) {
+        $navigation = "<a href=\"../../course/view.php?id=$course->id\">$course->shortname</a> ->";
+    } else {
+        $navigation = '';
+    }
 
-/*
- * Other things you may want to set - remove if not needed.
- * $PAGE->set_cacheable(false);
- * $PAGE->set_focuscontrol('some-html-id');
- * $PAGE->add_body_class('mapleta-'.$somevar);
- */
+    $strmapletas = get_string("modulenameplural", "mapleta");
+    $strmapleta  = get_string("modulename", "mapleta");
 
-// Output starts here.
-echo $OUTPUT->header();
+    print_header("$course->shortname: $mapleta->name", "$course->fullname",
+                 "$navigation <a href=index.php?id=$course->id>$strmapletas</a> -> $mapleta->name",
+                  "", "", true, update_module_button($cm->id, $course->id, $strmapleta),
+                  navmenu($course, $cm));
 
-// Conditions to show the intro can change to look for own settings or whatever.
-if ($mapleta->intro) {
-    echo $OUTPUT->box(format_module_intro('mapleta', $mapleta, $cm->id), 'generalbox mod_introbox', 'mapletaintro');
-}
+/// Print the main part of the page
 
-// Replace the following lines with you own code.
-echo $OUTPUT->heading('Yay! It works!');
 
-// Finish the page.
+    add_to_log($course->id, "mapleta_content", "view", "BEFORE", "$mapleta->id");
+    if(!$course_mapping= mapleta_get_record('mapleta_course_map', 'courseid', $course->id)) {
+		print_error('course_not_mapped', 'mapleta', $errorURL);
+    }
+    
+	if (!mapleta_is_student($course->id)) {
+		print_error('not_authorized_for_action', 'mapleta', $errorURL);
+	}
+
+
+	$connect= mapleta_ws_connect_to_class($course->id, $course_mapping->classid);
+
+	if($connect == null) {
+		print_error('error_connecting_to_ta', 'mapleta', $errorURL);
+	} else if($connect->code == 1) {
+		print_error($connect->message, 'mapleta', $errorURL);
+	}
+
+	$status= new mapleta_status_response();
+	$mta_assignments= mapleta_ws_get_assignment($course_mapping->classid, $mapleta->assignmentid, $connect->session, $status);
+
+	mapleta_ws_disconnect($connect->session, $connect);
+
+	if($status->code == 1) {
+		print_error($status->message, 'mapleta', $errorURL);
+	} else if($status->code == 100) {
+		print_error('no_assignments_in_class', 'mapleta', $errorURL);
+	}
+	
+	$the_assignment = $mta_assignments[0]; 
+	
+	if ($mapleta->name != $the_assignment->name) {
+		$name_changed = true;
+		$old_name = $mapleta->name;
+	} else {
+		$name_changed = false;
+	}
+	
+	$mapleta->instance=$mapleta->id; 
+	$mapleta->name=$the_assignment->name;
+	$mapleta->assignmentmode=$the_assignment->mode;
+	$mapleta->modedescription=$the_assignment->modeDescription;
+	$mapleta->passingscore=$the_assignment->passingScore;
+	$mapleta->totalpoints=$the_assignment->totalPoints;
+	$mapleta->timelimit=$the_assignment->timeLimit;
+	$mapleta->starttime=$the_assignment->start;
+	$mapleta->endtime=$the_assignment->end;
+	$mapleta->policy=$the_assignment->policy;
+
+	mapleta_update_instance($mapleta);
+	 
+//	if ($name_changed) {
+		rebuild_course_cache($course->id);
+//	} 
+	
+	echo "<br/><h2 class='main help'><img src='$CFG->wwwroot/mod/mapleta/icon.gif' alt=''/>$mapleta->name</h2>";
+
+	$params = 	"wsExternalData=" . $mapleta->id .
+				"&wsActionID=assignment" .
+				"&wsClassId=" . $course_mapping->classid .
+				"&wsCourseId=" . $course_mapping->courseid .
+				"&className=" . mapleta_urlencode($course_mapping->classname) .
+				"&testName=" . mapleta_urlencode($mapleta->name) .
+				"&testId=" . $mapleta->assignmentid;
+				
+	$command = "window.open('$CFG->wwwroot/mod/mapleta/launcher_form.php?$params', 'Assignment', 'menubar=0,location=0,scrollbars,status,resizable,width=1024,height=800');";
+	$button = "<input type='submit' value='Start the Assignment' onclick=\"$command\"/>"; 
+	
+	print ("<div style='text-align: center'>");
+	if ($name_changed) {
+		print ("<span class='mapleta-config'><strong>Note: The assignment has been recently renamed from '".$old_name."' to '".$the_assignment->name."'.</strong></span><br/><br/>");
+	}
+	print ("<table class='mapleta-config generaltable boxaligncenter' cellpadding='5'>");	
+	print ("<tr>");	
+	print ("<td align='left' class='cell c0'><strong>Type</strong></td><td align='center' class='cell c0'>$mapleta->modedescription</td>");
+	print ("</tr>");	
+	if ($mapleta->passingscore > 0) {
+		print ("<tr>");	
+		print ("<td align='left' class='cell c0'><strong>Passing Score</strong></td><td align='center' class='cell c0'>$mapleta->passingscore</td>");
+		print ("</tr>");
+	} else {
+		print ("<tr>");	
+		print ("<td align='left' class='cell c0'><strong>Passing Score</strong></td><td align='center' class='cell c0'>Not pass/fail</td>");
+		print ("</tr>");
+	}	
+	print ("<tr>");	
+	print ("<td align='left' class='cell c0'><strong>Total Points</strong></td><td align='center' class='cell c0'>$mapleta->totalpoints</td>");
+	print ("</tr>");	
+	if ($mapleta->timelimit <= 0) {
+		print ("<tr>");	
+		print ("<td align='left' class='cell c0'><strong>Time permitted</strong></td><td align='center' class='cell c0'>No time limit</td>");
+		print ("</tr>");	
+	} else {
+		print ("<tr>");	
+		print ("<td align='left' class='cell c0'><strong>Time permitted</strong></td><td align='center' class='cell c0'>Time limit is $mapleta->timelimit minutes</td>");
+		print ("</tr>");	
+	}
+	if ($mapleta->starttime == 0 && $mapleta->endtime == 0) {
+		print ("<tr>");	
+		print ("<td align='left' class='cell c0'><strong>Availability</strong></td><td align='center' class='cell c0'>Unlimited</td>");
+		print ("</tr>");	
+	}
+	if ($mapleta->starttime > 0) {
+		print ("<tr>");	
+		print ("<td align='left' class='cell c0'><strong>Available After</strong></td><td align='center' class='cell c0'>".date("d/m/y h:i A",$mapleta->starttime/1000)."</td>");
+		print ("</tr>");	
+	}
+	if ($mapleta->endtime > 0) {
+		print ("<tr>");	
+		print ("<td align='left' class='cell c0'><strong>Available Before</strong></td><td align='center' class='cell c0'>".date("d/m/y h:i A",$mapleta->endtime/1000)."</td>");
+		print ("</tr>");	
+	}
+	if ($mapleta->policy != "") {
+		print ("<tr>");	
+		print ("<td align='left' class='cell c0'><strong>Restrictions</strong></td><td align='center' class='cell c0'><a href=\"javascript:{alert('"."A student may only take this test if he/she:\\n\\n".mapleta_urlencode($mapleta->policy)."')}\">Click here to see the restrictions</a></td>");
+		print ("</tr>");	
+	}
+	print ("</table></div>");
+		
+	print ("<div style='text-align: center'>");
+	print ("<table cellpadding='2' class='mapleta-config' width='100%'>");	
+	print ("<tr>");	
+	print ("<td colspan='2' align='center'>&nbsp;</td>");
+	print ("</tr>");	
+	print ("<tr>");	
+	print ("<td colspan='2' align='center'>$button</td>");
+	print ("</tr>");	
+	print ("</table></div>");	
+
 echo $OUTPUT->footer();
+		
+?>

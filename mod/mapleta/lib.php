@@ -1,449 +1,900 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
-//
-// Moodle is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// Moodle is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+
+// 
 /**
- * Library of interface functions and constants for module mapleta
+ * Library of functions and constants for module mapleta
  *
- * All the core Moodle functions, neeeded to allow the module to work
- * integrated in Moodle should be placed here.
- *
- * All the mapleta specific functions, needed to implement all the module
- * logic, should go to locallib.php. This will help to save some memory when
- * Moodle is performing actions across all modules.
- *
- * @package    mod_mapleta
- * @copyright  2015 Your Name
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
+ * @author
+ * @version $Id: lib.php,v 1.4 2006/08/28 16:41:20 mark-nielsen Exp $
+ * @package mapleta
+ **/
 
-defined('MOODLE_INTERNAL') || die();
+define('RES_WS_PING', '/ws/ping');
+define('RES_WS_CONNECT', '/ws/connect');
+define('RES_WS_DISCONNECT', '/ws/disconnect');
+define('RES_WS_GET_CLASSES', '/ws/class');
+define('RES_WS_CREATE_CLASS', '/ws/createclass');
+define('RES_WS_GET_ASSIGNMENTS', '/ws/assignment');
+define('RES_WS_LAUNCH', '/ws/launcher');
+define('STR_WS_PING', 'PING YOU');
 
-/**
- * Example constant, you probably want to remove this :-)
- */
-define('mapleta_ULTIMATE_ANSWER', 42);
+class mapleta_status_response {
+	public $session, $code, $message;
+}
 
-/* Moodle core API */
+class mapleta_assignment_response {
+	public $classId,
+	$id,
+	$name,
+	$mode,
+	$modeDescription,
+	$passingScore,
+	$totalPoints,
+	$weight,
+	$start,
+	$end,
+	$timeLimit,
+	$policy;
+}
 
-/**
- * Returns the information on whether the module supports a feature
- *
- * See {@link plugin_supports()} for more info.
- *
- * @param string $feature FEATURE_xx constant for requested feature
- * @return mixed true if the feature is supported, null if unknown
- */
-function mapleta_supports($feature) {
+class mapleta_grade_request {
+	public $userLogin,
+    $score,
+    $dateGraded,
+    $externalData;
+}
 
-    switch($feature) {
-        case FEATURE_MOD_INTRO:
-            return true;
-        case FEATURE_SHOW_DESCRIPTION:
-            return true;
-        case FEATURE_GRADE_HAS_GRADE:
-            return true;
-        case FEATURE_BACKUP_MOODLE2:
-            return true;
-        default:
-            return null;
-    }
+class mapleta_gradebook_request extends mapleta_assignment_response {
+	public $list;
+}
+
+class mapleta_ping_response {
+	public $value;
+}
+
+class mapleta_class_response {
+	public $id, $name, $instructor;
+}
+
+class mapleta_create_class_response {
+	public $id, $name;
+}
+
+class mapleta_course_map {
+	public $courseid, $classid, $classname;
+}
+
+function mapleta_count_records($table, $field1='', $value1='', $field2='', $value2='', $field3='', $value3='') {
+	global $DB;
+	
+	$conditions = array();
+	
+	if ($field1 != '') {
+		$conditions[$field1] = $value1;		
+	}
+	
+	if ($field2 != '') {
+		$conditions[$field2] = $value2;		
+	}
+	
+	if ($field3 != '') {
+		$conditions[$field3] = $value3;		
+	}
+	
+	return $DB->count_records($table, $conditions);
+}
+
+function mapleta_get_record($table, $field1, $value1, $field2='', $value2='', $field3='', $value3='', $fields='*') {
+	
+	global $DB;
+	
+	$conditions = array();
+	
+	if ($field1 != '') {
+		$conditions[$field1] = $value1;		
+	}
+	
+	if ($field2 != '') {
+		$conditions[$field2] = $value2;		
+	}
+	
+	if ($field3 != '') {
+		$conditions[$field3] = $value3;		
+	}
+	
+	return $DB->get_record($table, $conditions, $fields, IGNORE_MISSING);
+}
+
+function mapleta_delete_records($table, $field1, $value1, $field2='', $value2='', $field3='', $value3='') {
+	
+	global $DB;
+	
+	$conditions = array();
+	
+	if ($field1 != '') {
+		$conditions[$field1] = $value1;		
+	}
+	
+	if ($field2 != '') {
+		$conditions[$field2] = $value2;		
+	}
+	
+	if ($field3 != '') {
+		$conditions[$field3] = $value3;		
+	}
+	
+	return $DB->delete_records($table, $conditions);
+}
+
+function mapleta_insert_record($table, $dataobject, $returnid=true, $primarykey='id') {
+	
+	global $DB;
+	
+	return $DB->insert_record($table, $dataobject, $returnid, false);
+}
+
+function mapleta_update_record($table, $dataobject) {
+	
+	global $DB;
+	
+	return $DB->update_record($table, $dataobject, false);
 }
 
 /**
- * Saves a new instance of the mapleta into the database
- *
+ * @param string $feature FEATURE_xx constant for requested feature
+ * @return mixed True if module supports feature, null if doesn't know
+ */
+function mapleta_supports($feature) {
+    switch($feature) {
+//        case FEATURE_GROUPS:                  return true;
+//        case FEATURE_GROUPINGS:               return true;
+//        case FEATURE_GROUPMEMBERSONLY:        return true;
+        case FEATURE_MOD_INTRO:               return false;
+//        case FEATURE_COMPLETION_TRACKS_VIEWS: return true;
+//        case FEATURE_GRADE_HAS_GRADE:         return true;
+//        case FEATURE_GRADE_OUTCOMES:          return true;
+//        case FEATURE_GRADE_HAS_GRADE:         return true;
+//        case FEATURE_BACKUP_MOODLE2:          return true;
+
+        default: return null;
+    }    
+}
+
+
+/**
  * Given an object containing all the necessary data,
- * (defined by the form in mod_form.php) this function
+ * (defined by the form in mod.html) this function
  * will create a new instance and return the id number
  * of the new instance.
  *
- * @param stdClass $mapleta Submitted data from the form in mod_form.php
- * @param mod_mapleta_mod_form $mform The form instance itself (if needed)
+ * @param object $instance An object from the form in mod.html
  * @return int The id of the newly inserted mapleta record
- */
-function mapleta_add_instance(stdClass $mapleta, mod_mapleta_mod_form $mform = null) {
-    global $DB;
+ **/
+function mapleta_add_instance($mapleta) {
 
-    $mapleta->timecreated = time();
+	# May have to add extra stuff in here #
 
-    // You may have to add extra stuff in here.
+	$mapleta->timemodified = time();
 
-    $mapleta->id = $DB->insert_record('mapleta', $mapleta);
+	$id = mapleta_insert_record("mapleta", $mapleta);
+	$mapleta->id = $id;
+	
+	mapleta_grade_item_update($mapleta);
 
-    mapleta_grade_item_update($mapleta);
-
-    return $mapleta->id;
+	return $id;
 }
 
 /**
- * Updates an instance of the mapleta in the database
- *
  * Given an object containing all the necessary data,
- * (defined by the form in mod_form.php) this function
+ * (defined by the form in mod.html) this function
  * will update an existing instance with new data.
  *
- * @param stdClass $mapleta An object from the form in mod_form.php
- * @param mod_mapleta_mod_form $mform The form instance itself (if needed)
+ * @param object $instance An object from the form in mod.html
  * @return boolean Success/Fail
- */
-function mapleta_update_instance(stdClass $mapleta, mod_mapleta_mod_form $mform = null) {
-    global $DB;
+ **/
+function mapleta_update_instance($mapleta) {
 
-    $mapleta->timemodified = time();
-    $mapleta->id = $mapleta->instance;
+	$mapleta->timemodified = time();
+	
+	$mapleta->id= $mapleta->instance;
 
-    // You may have to add extra stuff in here.
+	# May have to add extra stuff in here #
 
-    $result = $DB->update_record('mapleta', $mapleta);
+	$id = mapleta_update_record("mapleta", $mapleta);
 
-    mapleta_grade_item_update($mapleta);
-
-    return $result;
+	mapleta_grade_item_update($mapleta);
+	
+	return $id;
 }
 
 /**
- * Removes an instance of the mapleta from the database
- *
  * Given an ID of an instance of this module,
  * this function will permanently delete the instance
  * and any data that depends on it.
  *
  * @param int $id Id of the module instance
  * @return boolean Success/Failure
- */
+ **/
 function mapleta_delete_instance($id) {
-    global $DB;
 
-    if (! $mapleta = $DB->get_record('mapleta', array('id' => $id))) {
-        return false;
-    }
+	
+	if(!$mapleta= mapleta_get_record("mapleta", "id", "$id")) {
+		return false;
+	}
 
-    // Delete any dependent records here.
+	$result= true;
 
-    $DB->delete_records('mapleta', array('id' => $mapleta->id));
+	# Delete any dependent records here #
 
-    mapleta_grade_item_delete($mapleta);
+	if(!mapleta_delete_records("mapleta", "id", "$mapleta->id")) {
+		$result= false;
+	} 
+	
+	mapleta_grade_item_delete($mapleta);
 
-    return true;
+	return $result;
 }
 
 /**
- * Returns a small object with summary information about what a
+ * Return a small object with summary information about what a
  * user has done with a given particular instance of this module
  * Used for user activity reports.
- *
  * $return->time = the time they did it
  * $return->info = a short text description
  *
- * @param stdClass $course The course record
- * @param stdClass $user The user record
- * @param cm_info|stdClass $mod The course module info object or record
- * @param stdClass $mapleta The mapleta instance record
- * @return stdClass|null
- */
+ * @return null
+ * @todo Finish documenting this function
+ **/
 function mapleta_user_outline($course, $user, $mod, $mapleta) {
-
-    $return = new stdClass();
-    $return->time = 0;
-    $return->info = '';
-    return $return;
+	return null;
 }
 
 /**
- * Prints a detailed representation of what a user has done with
+ * Print a detailed representation of what a user has done with
  * a given particular instance of this module, for user activity reports.
  *
- * It is supposed to echo directly without returning a value.
- *
- * @param stdClass $course the current course record
- * @param stdClass $user the record of the user we are generating report for
- * @param cm_info $mod course module info
- * @param stdClass $mapleta the module instance record
- */
+ * @return boolean
+ * @todo Finish documenting this function
+ **/
 function mapleta_user_complete($course, $user, $mod, $mapleta) {
+	return true;
 }
 
 /**
  * Given a course and a time, this module should find recent activity
  * that has occurred in mapleta activities and print it out.
+ * Return true if there was output, or false is there was none.
  *
- * @param stdClass $course The course record
- * @param bool $viewfullnames Should we display full names
- * @param int $timestart Print activity since this timestamp
- * @return boolean True if anything was printed, otherwise false
- */
-function mapleta_print_recent_activity($course, $viewfullnames, $timestart) {
-    return false;
-}
+ * @uses $CFG
+ * @return boolean
+ * @todo Finish documenting this function
+ **/
+function mapleta_print_recent_activity($course, $isteacher, $timestart) {
+	global $CFG;
 
-/**
- * Prepares the recent activity data
- *
- * This callback function is supposed to populate the passed array with
- * custom activity records. These records are then rendered into HTML via
- * {@link mapleta_print_recent_mod_activity()}.
- *
- * Returns void, it adds items into $activities and increases $index.
- *
- * @param array $activities sequentially indexed array of objects with added 'cmid' property
- * @param int $index the index in the $activities to use for the next record
- * @param int $timestart append activity since this time
- * @param int $courseid the id of the course we produce the report for
- * @param int $cmid course module id
- * @param int $userid check for a particular user's activity only, defaults to 0 (all users)
- * @param int $groupid check for a particular group's activity only, defaults to 0 (all groups)
- */
-function mapleta_get_recent_mod_activity(&$activities, &$index, $timestart, $courseid, $cmid, $userid=0, $groupid=0) {
-}
-
-/**
- * Prints single activity item prepared by {@link mapleta_get_recent_mod_activity()}
- *
- * @param stdClass $activity activity record with added 'cmid' property
- * @param int $courseid the id of the course we produce the report for
- * @param bool $detail print detailed report
- * @param array $modnames as returned by {@link get_module_types_names()}
- * @param bool $viewfullnames display users' full names
- */
-function mapleta_print_recent_mod_activity($activity, $courseid, $detail, $modnames, $viewfullnames) {
+	return false; //  True if anything was printed, otherwise false
 }
 
 /**
  * Function to be run periodically according to the moodle cron
- *
  * This function searches for things that need to be done, such
  * as sending out mail, toggling flags etc ...
  *
- * Note that this has been deprecated in favour of scheduled task API.
- *
+ * @uses $CFG
  * @return boolean
- */
-function mapleta_cron () {
-    return true;
+ * @todo Finish documenting this function
+ **/
+function mapleta_cron() {
+	global $CFG;
+
+	return true;
 }
 
 /**
- * Returns all other caps used in the module
+ * Must return an array of grades for a given instance of this module,
+ * indexed by user.  It also returns a maximum allowed grade.
  *
- * For example, this could be array('moodle/site:accessallgroups') if the
- * module uses that capability.
+ * Example:
+ *    $return->grades = array of grades;
+ *    $return->maxgrade = maximum allowed grade;
  *
- * @return array
- */
-function mapleta_get_extra_capabilities() {
-    return array();
-}
-
-/* Gradebook API */
-
-/**
- * Is a given scale used by the instance of mapleta?
- *
- * This function returns if a scale is being used by one mapleta
- * if it has support for grading and scales.
+ *    return $return;
  *
  * @param int $mapletaid ID of an instance of this module
- * @param int $scaleid ID of the scale
- * @return bool true if the scale is used by the given mapleta instance
- */
-function mapleta_scale_used($mapletaid, $scaleid) {
-    global $DB;
-
-    if ($scaleid and $DB->record_exists('mapleta', array('id' => $mapletaid, 'grade' => -$scaleid))) {
-        return true;
-    } else {
-        return false;
-    }
+ * @return mixed Null or object with an array of grades and with the maximum grade
+ **/
+function mapleta_grades($mapletaid) {
+	return NULL;
 }
 
 /**
- * Checks if scale is being used by any instance of mapleta.
+ * Create grade item for given assignment
  *
- * This is used to find out if scale used anywhere.
- *
- * @param int $scaleid ID of the scale
- * @return boolean true if the scale is used by any mapleta instance
+ * @param object $assignment object with extra cmidnumber
+ * @param mixed optional array/object of grade(s); 'reset' means reset grades in gradebook
+ * @return int 0 if ok, error code otherwise
  */
-function mapleta_scale_used_anywhere($scaleid) {
-    global $DB;
-
-    if ($scaleid and $DB->record_exists('mapleta', array('grade' => -$scaleid))) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-/**
- * Creates or updates grade item for the given mapleta instance
- *
- * Needed by {@link grade_update_mod_grades()}.
- *
- * @param stdClass $mapleta instance object with extra cmidnumber and modname property
- * @param bool $reset reset grades in the gradebook
- * @return void
- */
-function mapleta_grade_item_update(stdClass $mapleta, $reset=false) {
+function mapleta_grade_item_update($mapleta, $grades=NULL) {
     global $CFG;
-    require_once($CFG->libdir.'/gradelib.php');
-
-    $item = array();
-    $item['itemname'] = clean_param($mapleta->name, PARAM_NOTAGS);
-    $item['gradetype'] = GRADE_TYPE_VALUE;
-
-    if ($mapleta->grade > 0) {
-        $item['gradetype'] = GRADE_TYPE_VALUE;
-        $item['grademax']  = $mapleta->grade;
-        $item['grademin']  = 0;
-    } else if ($mapleta->grade < 0) {
-        $item['gradetype'] = GRADE_TYPE_SCALE;
-        $item['scaleid']   = -$mapleta->grade;
-    } else {
-        $item['gradetype'] = GRADE_TYPE_NONE;
+    
+    if ($mapleta->assignmentmode == -1 || $mapleta->assignmentmode == 2 || $mapleta->assignmentmode == 4) {
+    	return true;
     }
+    
+    if (!function_exists('grade_update')) { //workaround for buggy PHP versions
+        require_once($CFG->libdir.'/gradelib.php');
+    }    
 
-    if ($reset) {
-        $item['reset'] = true;
-    }
+    $itemdetails = array(	'itemname'	=>	$mapleta->name, 
+							'idnumber'	=>	$mapleta->assignmentid, 
+							'gradetype'	=>	GRADE_TYPE_VALUE, 
+							'grademin'	=>	0, 
+							'grademax'	=>	$mapleta->totalpoints, 
+							'gradepass'	=>	$mapleta->passingscore);
 
-    grade_update('mod/mapleta', $mapleta->course, 'mod', 'mapleta',
-            $mapleta->id, 0, null, $item);
+	$source			=	'mod/mapleta'; 
+	$courseid		=	$mapleta->course; 
+	$itemtype		=	'mod'; 
+	$itemmodule		=	'mapleta'; 
+	
+	$iteminstance	=	null; 
+	
+	$itemnumber		=	$mapleta->assignmentid;
+	
+    return grade_update($source, $courseid, $itemtype, $itemmodule, $iteminstance, $itemnumber, $grades, $itemdetails);
 }
 
-/**
- * Delete grade item for given mapleta instance
- *
- * @param stdClass $mapleta instance object
- * @return grade_item
- */
 function mapleta_grade_item_delete($mapleta) {
     global $CFG;
-    require_once($CFG->libdir.'/gradelib.php');
 
-    return grade_update('mod/mapleta', $mapleta->course, 'mod', 'mapleta',
-            $mapleta->id, 0, null, array('deleted' => 1));
-}
-
-/**
- * Update mapleta grades in the gradebook
- *
- * Needed by {@link grade_update_mod_grades()}.
- *
- * @param stdClass $mapleta instance object with extra cmidnumber and modname property
- * @param int $userid update grade of specific user only, 0 means all participants
- */
-function mapleta_update_grades(stdClass $mapleta, $userid = 0) {
-    global $CFG, $DB;
-    require_once($CFG->libdir.'/gradelib.php');
-
-    // Populate array of grade objects indexed by userid.
-    $grades = array();
-
-    grade_update('mod/mapleta', $mapleta->course, 'mod', 'mapleta', $mapleta->id, 0, $grades);
-}
-
-/* File API */
-
-/**
- * Returns the lists of all browsable file areas within the given module context
- *
- * The file area 'intro' for the activity introduction field is added automatically
- * by {@link file_browser::get_file_info_context_module()}
- *
- * @param stdClass $course
- * @param stdClass $cm
- * @param stdClass $context
- * @return array of [(string)filearea] => (string)description
- */
-function mapleta_get_file_areas($course, $cm, $context) {
-    return array();
-}
-
-/**
- * File browsing support for mapleta file areas
- *
- * @package mod_mapleta
- * @category files
- *
- * @param file_browser $browser
- * @param array $areas
- * @param stdClass $course
- * @param stdClass $cm
- * @param stdClass $context
- * @param string $filearea
- * @param int $itemid
- * @param string $filepath
- * @param string $filename
- * @return file_info instance or null if not found
- */
-function mapleta_get_file_info($browser, $areas, $course, $cm, $context, $filearea, $itemid, $filepath, $filename) {
-    return null;
-}
-
-/**
- * Serves the files from the mapleta file areas
- *
- * @package mod_mapleta
- * @category files
- *
- * @param stdClass $course the course object
- * @param stdClass $cm the course module object
- * @param stdClass $context the mapleta's context
- * @param string $filearea the name of the file area
- * @param array $args extra arguments (itemid, path)
- * @param bool $forcedownload whether or not force download
- * @param array $options additional options affecting the file serving
- */
-function mapleta_pluginfile($course, $cm, $context, $filearea, array $args, $forcedownload, array $options=array()) {
-    global $DB, $CFG;
-
-    if ($context->contextlevel != CONTEXT_MODULE) {
-        send_file_not_found();
+	$mapleta_count = mapleta_count_records('mapleta', 'assignmentid', $mapleta->assignmentid, 'course', $mapleta->course);
+	if ($mapleta_count > 0) { 
+    	return true;
     }
+    
+    if (!function_exists('grade_update')) { //workaround for buggy PHP versions
+        require_once($CFG->libdir.'/gradelib.php');
+    }    
 
-    require_login($course, true, $cm);
+    $itemdetails = array('deleted'=>1);
 
-    send_file_not_found();
+	$source			=	'mod/mapleta'; 
+	$courseid		=	$mapleta->course; 
+	$itemtype		=	'mod'; 
+	$itemmodule		=	'mapleta'; 
+	
+	$iteminstance	=	null; 
+	
+	$itemnumber		=	$mapleta->assignmentid;
+	
+    return grade_update($source, $courseid, $itemtype, $itemmodule, $iteminstance, $itemnumber, NULL, $itemdetails);
 }
 
-/* Navigation API */
 
 /**
- * Extends the global navigation tree by adding mapleta nodes if there is a relevant content
+ * Must return an array of user records (all data) who are participants
+ * for a given instance of mapleta. Must include every user involved
+ * in the instance, independient of his role (student, teacher, admin...)
+ * See other modules as example.
  *
- * This can be called by an AJAX request so do not rely on $PAGE as it might not be set up properly.
- *
- * @param navigation_node $navref An object representing the navigation tree node of the mapleta module instance
- * @param stdClass $course current course record
- * @param stdClass $module current mapleta instance record
- * @param cm_info $cm course module information
- */
-function mapleta_extend_navigation(navigation_node $navref, stdClass $course, stdClass $module, cm_info $cm) {
-    // TODO Delete this function and its docblock, or implement it.
+ * @param int $mapletaid ID of an instance of this module
+ * @return mixed boolean/array of students
+ **/
+function mapleta_get_participants($mapletaid) {
+	return false;
 }
 
 /**
- * Extends the settings navigation with the mapleta settings
+ * This function returns if a scale is being used by one mapleta
+ * it it has support for grading and scales. Commented code should be
+ * modified if necessary. See forum, glossary or journal modules
+ * as reference.
  *
- * This function is called when the context for the page is a mapleta module. This is not called by AJAX
- * so it is safe to rely on the $PAGE.
- *
- * @param settings_navigation $settingsnav complete settings navigation tree
- * @param navigation_node $mapletanode mapleta administration node
- */
-function mapleta_extend_settings_navigation(settings_navigation $settingsnav, navigation_node $mapletanode=null) {
-    // TODO Delete this function and its docblock, or implement it.
+ * @param int $mapletaid ID of an instance of this module
+ * @return mixed
+ * @todo Finish documenting this function
+ **/
+function mapleta_scale_used($mapletaid, $scaleid) {
+	$return= false;
+	return $return;
 }
+
+//////////////////////////////////////////////////////////////////////////////////////
+/// Any other mapleta functions go here.  Each of them must have a name that
+/// starts with mapleta_
+
+function mapleta_context($courseId) {
+   	return get_context_instance(CONTEXT_COURSE, $courseId);
+}
+
+function mapleta_is_administrator($courseId) {
+	global $USER;
+	return has_capability('block/mapleta_course_tools:managesystem', mapleta_context($courseId), $USER->id);
+}
+
+function mapleta_is_teacher($courseId) {
+	global $USER;
+	return has_capability('block/mapleta_course_tools:manageclass', mapleta_context($courseId), $USER->id);
+}
+
+function mapleta_is_proctor($courseId) {
+	global $USER;
+	return has_capability('block/mapleta_course_tools:proctorassignment', mapleta_context($courseId), $USER->id);
+}
+
+function mapleta_is_student($courseId) {
+	global $USER;
+	return has_capability('block/mapleta_course_tools:participate', mapleta_context($courseId), $USER->id);
+}
+
+function mapleta_get_role($courseId) {
+	if(mapleta_is_administrator($courseId)) {
+		return 'ADMINISTRATOR';
+	}
+	if(mapleta_is_teacher($courseId)) {
+		return 'INSTRUCTOR';
+	}
+	if(mapleta_is_proctor($courseId)) {
+		return 'PROCTOR';
+	}
+	if(mapleta_is_student($courseId)) {
+		return 'STUDENT';
+	}
+	return 'UNSET';
+}
+
+function mapleta_do_ping_request($url, $data, $optional_headers= null) {
+		$response='';
+	try {
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 1);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $optional_headers);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+		
+		$response = $response . curl_exec($ch);
+		
+		curl_close($ch);
+		return $response;
+	} catch(Exception $ex) {
+		return $response;
+	}
+	}
+
+function mapleta_do_post_request($url, $data, $optional_headers= null) {
+	$response='';
+	try {
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $optional_headers);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+		
+		$response = $response . curl_exec($ch);
+		
+		curl_close($ch);
+		return $response;
+	} catch(Exception $ex) {
+		return $response;
+	}
+}
+
+function mapleta_do_xml_post_request($url, $data, $optional_headers= null) {
+	$the_headers = array();
+	$the_headers[] = "Content-Type: text/xml";
+	if ($optional_headers != null) {
+		$the_headers[] = $optional_headers;
+	}
+	return mapleta_do_post_request($url, $data, $the_headers);
+}
+
+function mapleta_do_xml_ping_request($url, $data, $optional_headers= null) {
+	$the_headers = array();
+	$the_headers[] = "Content-Type: text/xml";
+	if ($optional_headers != null) {
+		$the_headers[] = $optional_headers;
+	}
+	return mapleta_do_ping_request($url, $data, $the_headers);
+}
+
+function mapleta_get_response_from_xml($response, $elementClass, $status, $subelementClass = null) {
+
+	$xml= new XMLReader();
+	$xml->XML($response);
+
+	$level= 0;
+	$elementLevel= false;
+	$subelementLevel= false;
+	$statusLevel= false;
+	$out = new object();
+	$out->list= array();
+	$theElement= null;
+	$theSubelement= null;
+	$name= null;
+	$value= null;
+
+	while($xml->read()) {
+		switch($xml->nodeType) {
+			case XMLReader :: END_ELEMENT :
+				if($xml->name == 'status' && $statusLevel) {
+					$statusLevel= false;
+				} else if($xml->name == 'element') {
+					$out->list[]= $theElement;
+					$elementLevel = false;
+				} else if($xml->name == 'subelement') {
+					$theElement->list[]= $theSubelement;
+					$subelementLevel = false;
+				}
+				$level -= 1;
+				break;
+			case XMLReader :: ELEMENT :
+				$level += 1;
+				if($xml->name == 'Request' || $xml->name == 'Response' || $xml->name == 'list') {
+					break;
+				} else
+					if($xml->name == 'status' && $level == 2) {
+						$statusLevel= true;
+						break;
+					} else
+						if($xml->name == 'element' && !$xml->isEmptyElement) {
+							eval("\$theElement = new \$elementClass();");
+							$theElement->list = array();
+							$elementLevel = true;
+						} else if($xml->name == 'subelement' && !$xml->isEmptyElement) {
+							eval("\$theSubelement = new \$subelementClass();");
+							$subelementLevel = true;
+						} else
+							if(!$xml->isEmptyElement) {
+								$name= $xml->name;
+								$xml->read();
+								$value= $xml->value;
+								if($statusLevel) {
+									$status-> {
+										$name }
+									= $value;
+								} else if ($subelementLevel) {
+									$theSubelement-> {
+										$name }
+									= $value;
+								} else if ($elementLevel) {
+									$theElement-> {
+										$name }
+									= $value;
+								} else {
+									$out-> {
+										$name }
+									= $value;
+								} 
+							}
+				break;
+		}
+	}
+	$error= 'OK';
+	return $out;
+}
+
+
+function mapleta_xmlencode($string){
+	return htmlspecialchars($string, ENT_QUOTES, "UTF-8");
+}
+
+function mapleta_urlencode($string){
+	return rawurlencode($string);
+}
+
+function mapleta_urldecode($string){
+	return rawurldecode($string);
+}
+
+function mapleta_ws_get_signature($timestamp) {
+	global $CFG;
+	$signature=base64_encode(md5($timestamp.$CFG->mapleta_secret, true));
+	return $signature;
+}
+
+function mapleta_ws_signature() {
+	global $CFG;
+	$timestamp = time()*1000;
+	return '<timestamp>'.$timestamp.'</timestamp><signature>'.mapleta_xmlencode(mapleta_ws_get_signature($timestamp)).'</signature>';
+}
+
+function mapleta_ws_signature_fields() {
+	global $CFG;
+	$timestamp = time()*1000;
+	return 	'<input type="hidden" name="timestamp" value="'.$timestamp.'">'.
+			'<input type="hidden" name="signature" value="'.mapleta_xmlencode(mapleta_ws_get_signature($timestamp)).'">';
+}
+
+function mapleta_ws_check_signature($timestamp, $signature) {
+	global $CFG;
+	
+	$current_timestamp = time()*1000;
+	
+	if ((abs($current_timestamp - $timestamp)/1000) > 120) {
+		return false;
+	}
+	$correct_signature=mapleta_ws_get_signature($timestamp);
+	if ($correct_signature == $signature) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function mapleta_ws_connect($courseId) {
+	global $USER, $CFG;
+
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_CONNECT;
+
+	$firstname = mapleta_xmlencode($USER->firstname);
+	$lastname = mapleta_xmlencode($USER->lastname);
+	$username = mapleta_xmlencode($USER->username);
+	$email = mapleta_xmlencode($USER->email);
+	$idnumber = mapleta_xmlencode($USER->idnumber);
+	$role = mapleta_xmlencode(mapleta_get_role($courseId));
+	$signature = mapleta_ws_signature();
+	$request =	"<Request>
+					<firstName>$firstname</firstName>
+					<middleName></middleName>
+					<lastName>$lastname</lastName>
+					<userLogin>$username</userLogin>
+					<userEmail>$email</userEmail>
+					<studentId>$idnumber</studentId>
+					<userRole>$role</userRole>
+					<classId>-1</classId>
+					<courseId></courseId>
+					$signature
+				</Request>";
+	
+	$xml_response= mapleta_do_xml_post_request($url, $request);
+
+	$status= new mapleta_status_response();
+	
+	$out = mapleta_get_response_from_xml($xml_response, 'mapleta_status_response', $status);
+	$array_response= $out->list;
+
+	return $status;
+}
+
+function mapleta_ws_ping() {
+	global $USER, $CFG;
+	$result = false;
+
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_PING;
+
+	$value = mapleta_xmlencode(STR_WS_PING);
+	$signature = mapleta_ws_signature();
+	
+	$request =	"<Request>
+					<value>$value</value>
+					$signature
+				</Request>";
+	
+	$xml_response= mapleta_do_xml_ping_request($url, $request);
+	
+	if ($xml_response) {
+		$status= new mapleta_status_response();
+		$out = mapleta_get_response_from_xml($xml_response, 'mapleta_ping_response', $status);
+		$array_response= $out->list;
+		if (count($array_response) > 0) {
+			$result = ($array_response[0]->value == STR_WS_PING);	
+		}
+	}
+	
+	return $result;
+}
+
+function mapleta_ws_connect_to_class($courseId, $classId) {
+	global $USER, $CFG;
+
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_CONNECT;
+
+	$firstname = mapleta_xmlencode($USER->firstname);
+	$lastname = mapleta_xmlencode($USER->lastname);
+	$username = mapleta_xmlencode($USER->username);
+	$email = mapleta_xmlencode($USER->email);
+	$idnumber = mapleta_xmlencode($USER->idnumber);
+	$role = mapleta_xmlencode(mapleta_get_role($courseId));
+	$classId = mapleta_xmlencode($classId);
+	$courseId = mapleta_xmlencode($courseId);
+	$signature = mapleta_ws_signature();
+	
+	$request =	"<Request>
+					<firstName>$firstname</firstName>
+					<middleName></middleName>
+					<lastName>$lastname</lastName>
+					<userLogin>$username</userLogin>
+					<userEmail>$email</userEmail>
+					<studentId>$idnumber</studentId>
+					<userRole>$role</userRole>
+					<classId>$classId</classId>
+					<courseId>$courseId</courseId>
+					$signature
+				</Request>";
+				
+	$xml_response= mapleta_do_xml_post_request($url, $request);
+
+	$status= new mapleta_status_response();
+
+	$out = mapleta_get_response_from_xml($xml_response, 'mapleta_status_response', $status);
+	$array_response= $out->list;
+
+	return $status;
+}
+
+function mapleta_ws_disconnect($mapleta_session, $status) {
+	global $CFG;
+
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_DISCONNECT;
+	$signature = mapleta_ws_signature();
+
+	$request= "<Request>$signature</Request>";
+
+	$xml_response= mapleta_do_xml_post_request($url, $request, "Cookie: JSESSIONID=$mapleta_session");
+
+	$out = mapleta_get_response_from_xml($xml_response, 'mapleta_status_response', $status);
+	$array_response= $out->list;
+
+	return $array_response;
+}
+
+function mapleta_ws_get_featured_classes($mapleta_session, $status) {
+	global $CFG;
+
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_GET_CLASSES;
+	$signature = mapleta_ws_signature();
+	
+	$request= "<Request><classId>0</classId><featured>true</featured>$signature</Request>";
+
+	$xml_response= mapleta_do_xml_post_request($url, $request, "Cookie: JSESSIONID=$mapleta_session");
+	
+	$out = mapleta_get_response_from_xml($xml_response, 'mapleta_class_response', $status);
+	$array_response= $out->list;
+
+	return $array_response;
+}
+
+function mapleta_ws_get_all_classes($mapleta_session, $status) {
+	global $CFG;
+
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_GET_CLASSES;
+	$signature = mapleta_ws_signature();
+	
+	$request= "<Request><classId>0</classId><featured>false</featured>$signature</Request>";
+	
+	$xml_response= mapleta_do_xml_post_request($url, $request, "Cookie: JSESSIONID=$mapleta_session");
+
+	$out = mapleta_get_response_from_xml($xml_response, 'mapleta_class_response', $status);
+	$array_response= $out->list;
+
+	return $array_response;
+}
+
+function mapleta_ws_create_class($mapleta_session, $parentClassId, $classId, $courseName, $courseId, $status) {
+	global $CFG;
+
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_CREATE_CLASS;
+
+	$parentClassId= mapleta_xmlencode($parentClassId);
+	$classId = mapleta_xmlencode($classId);
+	$courseName = mapleta_xmlencode($courseName);
+	$courseId = mapleta_xmlencode($courseId);
+	$signature = mapleta_ws_signature();
+	
+	$request= 	"<Request> 
+					<parentClassId>$parentClassId</parentClassId>
+					<classId>$classId</classId>
+					<courseName>$courseName</courseName>
+					<courseId>$courseId</courseId>
+					$signature
+				</Request>";
+
+	$xml_response= mapleta_do_xml_post_request($url, $request, "Cookie: JSESSIONID=$mapleta_session");
+
+	$out = mapleta_get_response_from_xml($xml_response, 'mapleta_create_class_response', $status);
+	$array_response= $out->list;
+
+	return $array_response;
+}
+
+function mapleta_ws_get_assignments($classId, $mapleta_session, $status) {
+	global $CFG;
+
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_GET_ASSIGNMENTS;
+
+	$classId = mapleta_xmlencode($classId);
+	$signature = mapleta_ws_signature();
+	
+	$request= "<Request><classId>$classId</classId><assignmentId>0</assignmentId>$signature</Request>";
+
+	$xml_response= mapleta_do_xml_post_request($url, $request, "Cookie: JSESSIONID=$mapleta_session");
+
+	$out = mapleta_get_response_from_xml($xml_response, 'mapleta_assignment_response', $status);
+	$array_response= $out->list;
+
+	return $array_response;
+}
+
+function mapleta_ws_get_assignment($classId, $assignmentId, $mapleta_session, $status) {
+	global $CFG;
+
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_GET_ASSIGNMENTS;
+
+	$classId = mapleta_xmlencode($classId);
+	$signature = mapleta_ws_signature();
+	
+	$request= "<Request><classId>$classId</classId><assignmentId>$assignmentId</assignmentId>$signature</Request>";
+
+	$xml_response= mapleta_do_xml_post_request($url, $request, "Cookie: JSESSIONID=$mapleta_session");
+
+	$out = mapleta_get_response_from_xml($xml_response, 'mapleta_assignment_response', $status);
+	$array_response= $out->list;
+
+	return $array_response;
+}
+
+function mapleta_ws_launch($params) {
+	global $CFG;
+	$server=$CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context;
+	$signature = mapleta_ws_signature_fields();
+	
+	echo "<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>";
+	echo "<html>";
+		echo "<head>";
+		echo "<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />";
+		echo "<meta http-equiv='Content-Language' content='en' />";
+		echo "<title>title</title>";
+		echo "</head>";
+		echo "<body onload='document.forms[0].submit();'>";
+			echo "<form method='post' action='$server/ws/launcher'>";
+				echo $signature;
+				foreach ( $params as $name => $value ) {
+	       			echo "<input type='hidden' name='$name' value='$value'>";
+				}
+			echo "</form>";
+		echo "</body>";
+	echo "</html>";
+}
+
+function mapleta_ws_send_success($message=null) {
+	if ($message == null) {
+		$message='OK';
+	}
+	echo "<Response><status><code>0</code><message>$message</message></status></Response>";
+}
+
+function mapleta_ws_send_empty($message) {
+	echo "<Response><status><code>100</code><message>$message</message></status></Response>";
+}
+
+function mapleta_ws_send_error($message) {
+	echo "<Response><status><code>1</code><message>$message</message></status></Response>";
+}
+
+function mapleta_ws_get_grades($classId, $mapleta_session, $status) {
+	global $CFG;
+
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.'/ws/grade';
+
+	$classId = mapleta_xmlencode($classId);
+	$signature = mapleta_ws_signature();
+	
+	$request= "<Request>" .
+			"<classId>$classId</classId>" .
+			"<userFilter></userFilter>" .
+//			"<assignmentList>" .
+//			"<id>4</id>" .
+//			"</assignmentList>" .
+			"<scoreType>1</scoreType>" .
+			"$signature" .
+			"</Request>";
+
+	$xml_response= mapleta_do_xml_post_request($url, $request, "Cookie: JSESSIONID=$mapleta_session");
+
+}
+
+
+?>

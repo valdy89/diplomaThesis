@@ -8,7 +8,5 @@
  * @package mapleta
  **/
 
-$module->version  = 2013081300;  // The current module version (Date: YYYYMMDDXX)
-$module->cron     = 0;           // Period for cron to check this module (secs)
-
+$plugin->version = 2013081300;
 ?>
