@@ -6,8 +6,13 @@
 require(['jquery'], function ($) {
 
     $(document).ready(function () {
-        $('#fitem_id_assignmentId').hide();
+
+        if ($('#id_classId').val() == 0) {
+            $('#fitem_id_assignmentId').hide();
+            // getAssignments();
+        }
         $('#id_classId').change(function () {
+            alert(1);
             $('#fitem_id_assignmentId').show();
             getAssignments();
 
@@ -15,13 +20,12 @@ require(['jquery'], function ($) {
     });
 
     function getAssignments() {
+
         $.ajax({
             method: "POST",
             url: "/mod/mapletadp/assignment_list.php?classID=" + $('#id_classId').val()
         }).success(function (data) {
-            //console.log(data);    
             result_obj = $.parseJSON(data);
-            //  console.log(result_obj);
             var list = "";
             $('#id_assignmentId').empty();
             $.each(result_obj, function (i, val) {

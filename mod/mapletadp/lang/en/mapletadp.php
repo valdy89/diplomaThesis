@@ -30,7 +30,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['modulename'] = 'Maple T.A.';
 $string['modulenameplural'] = 'Maple T.A.s';
-$string['modulename_help'] = 'Use the mapletadp module for... | The mapletadp module allows...';
+$string['modulename_help'] = 'Proprietary Maple T.A. connector based on the webservices, designed for Diploma thesis.';
 $string['mapletadpfieldset'] = 'Custom example fieldset';
 $string['mapletadpname'] = 'mapletadp name';
 $string['mapletadpname_help'] = 'This is the content of the help tooltip associated with the mapletadpname field. Markdown syntax is supported.';
@@ -40,3 +40,22 @@ $string['pluginname'] = 'Maple T.A.';
 
 $string['assignmentName'] = 'Assignment name';
 $string['className'] = 'Class name';
+$string['choose'] = ' -- Select class --';
+$string['selectAssignment'] = 'You have to select assignment';
+$string['selectClass'] = 'You have to select class';
+
+
+//configuration
+
+$string['protocol'] = 'Protocol';
+$string['protocoldescription'] = 'The network protocol (http or https) you type in the address bar of the browser to access your Maple T.A. server.';
+$string['server'] = 'Server Name';
+$string['serverdescription'] = 'The server name you type in the address bar of the browser to access your Maple T.A. server.';
+$string['port'] = 'Port Number';
+$string['portdescription'] = 'The port number you type in the address bar of the browser to access your Maple T.A. server.';
+$string['context'] = 'Context';
+$string['contextdescription'] = 'The application name you type in the address bar of the browser after the server and port number to access your Maple T.A. server.';
+$string['secret'] = 'Shared Password';
+$string['secretdescription'] = 'A password shared by Moodle and Maple T.A. that will be used to encrypt Moodle <--> Maple T.A. communications.';
+$string['availableassignments'] = 'Available Maple T.A.';
+

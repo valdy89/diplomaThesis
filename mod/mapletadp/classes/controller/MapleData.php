@@ -49,10 +49,11 @@ class MapleData extends Base {
     
     public function getClassesForForm(){
         $classes = $this->getClasses();
+
         $return  = array();
         if(count($classes) >0){
             foreach ($classes as $key => $value) {
-                $return[$key] = $value->name . ' ('. $value->instructor. ')'; 
+                $return[$value->mapleid] = $value->name . ' ('. $value->instructor. ')'; 
             }
             
         }
@@ -63,7 +64,7 @@ class MapleData extends Base {
         $return  = array();
         if(count($assignments) >0){
             foreach ($assignments as $key => $value) {
-                $return[$key] = $value->name; 
+                $return[$value->mapleid] = $value->name; 
             }
             
         }
@@ -73,9 +74,10 @@ class MapleData extends Base {
     public function getAllAssignmentsForForm(){
         $assignments = $this->model->getAssignments();
         $return  = array();
+        
         if(count($assignments) >0){
             foreach ($assignments as $key => $value) {
-                $return[$key] = $value->name; 
+                $return[$value->mapleid] = $value->name; 
             }
             
         }

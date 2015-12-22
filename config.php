@@ -22,7 +22,7 @@ $CFG->dataroot  = '/data/web/virtuals/10288/virtual/moodledata';
 $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;
-
+$CFG->cachejs = false;
 require_once(dirname(__FILE__) . '/lib/setup.php');
 
 // There is no php closing tag in this file,

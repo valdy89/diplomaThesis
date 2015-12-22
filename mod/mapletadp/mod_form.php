@@ -48,6 +48,7 @@ class mod_mapletadp_mod_form extends moodleform_mod {
 
         $mform = $this->_form;
 
+
         // Adding the "general" fieldset, where all the common settings are showed.
         $mform->addElement('header', 'general', get_string('general', 'form'));
 
@@ -76,12 +77,18 @@ class mod_mapletadp_mod_form extends moodleform_mod {
         $classesListZero = array(0 => get_string('choose', 'mapletadp'));
         $classes = array_merge($classesListZero, $classesListDB);
         $select = $mform->addElement('select', 'classId', get_string('className', 'mapletadp'), $classes);
-
+        $mform->addRule('classId', null, 'required', null, 'client');
+        $mform->addRule('classId', get_string('selectClass', 'mapletadp'), 'nonzero', null, 'client');
+        if (isset($this->current->classid)) {
+            $select->setSelected($this->current->classid);
+        }
         $assignments = $controllerData->getAllAssignmentsForForm();
-
-        $select = $mform->addElement('select', 'assignmentId', get_string('assignmentName', 'mapletadp'), $assignments);
-
-
+        $select2 = $mform->addElement('select', 'assignmentId', get_string('assignmentName', 'mapletadp'), $assignments);
+        $mform->addRule('assignmentId', null, 'required', null, 'client');
+        $mform->addRule('assignmentId', get_string('selectAssignment', 'mapletadp'), 'nonzero', null, 'client');
+        if (isset($this->current->assignmentid)) {
+            $select2->setSelected($this->current->assignmentid);
+        }
         // Add standard grading elements.
         $this->standard_grading_coursemodule_elements();
 

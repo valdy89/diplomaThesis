@@ -28,8 +28,10 @@ class MapleData extends Base {
         $conditions = array();
         if ($id && is_int($id)) {
             $conditions['mapleId'] = $id;
+            $return = $this->db->get_record($this->mapletadp_classes, $conditions);
+        } else {
+            $return = $this->db->get_records($this->mapletadp_classes, $conditions);
         }
-        $return = $this->db->get_records($this->mapletadp_classes, $conditions);
         return $return;
     }
 
@@ -90,9 +92,13 @@ class MapleData extends Base {
         }
         if ($id) {
             $conditions['mapleId'] = $id;
+
+            $return = $this->db->get_record($this->mapletadp_assignments, $conditions);
+        } else {
+            $return = $this->db->get_records($this->mapletadp_assignments, $conditions);
         }
 
-        $return = $this->db->get_records($this->mapletadp_assignments, $conditions);
+
         return $return;
     }
 

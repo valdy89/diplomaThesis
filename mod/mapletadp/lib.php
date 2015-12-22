@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -28,7 +29,6 @@
  * @copyright  2015 Your Name
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 defined('MOODLE_INTERNAL') || die();
 
 /**
@@ -48,15 +48,15 @@ define('mapletadp_ULTIMATE_ANSWER', 42);
  */
 function mapletadp_supports($feature) {
 
-    switch($feature) {
+    switch ($feature) {
         case FEATURE_MOD_INTRO:
             return true;
         case FEATURE_SHOW_DESCRIPTION:
             return true;
         case FEATURE_GRADE_HAS_GRADE:
             return true;
-        case FEATURE_BACKUP_MOODLE2:
-            return true;
+        // case FEATURE_BACKUP_MOODLE2:
+        //     return true;
         default:
             return null;
     }
@@ -80,7 +80,7 @@ function mapletadp_add_instance(stdClass $mapletadp, mod_mapletadp_mod_form $mfo
     $mapletadp->timecreated = time();
 
     // You may have to add extra stuff in here.
-   echo '<pre>'; var_dump($mform->get_data());echo'</pre>';
+
     $mapletadp->id = $DB->insert_record('mapletadp', $mapletadp);
 
     mapletadp_grade_item_update($mapletadp);
@@ -127,7 +127,7 @@ function mapletadp_update_instance(stdClass $mapletadp, mod_mapletadp_mod_form $
 function mapletadp_delete_instance($id) {
     global $DB;
 
-    if (! $mapletadp = $DB->get_record('mapletadp', array('id' => $id))) {
+    if (!$mapletadp = $DB->get_record('mapletadp', array('id' => $id))) {
         return false;
     }
 
@@ -174,6 +174,7 @@ function mapletadp_user_outline($course, $user, $mod, $mapletadp) {
  * @param stdClass $mapletadp the module instance record
  */
 function mapletadp_user_complete($course, $user, $mod, $mapletadp) {
+    
 }
 
 /**
@@ -206,7 +207,8 @@ function mapletadp_print_recent_activity($course, $viewfullnames, $timestart) {
  * @param int $userid check for a particular user's activity only, defaults to 0 (all users)
  * @param int $groupid check for a particular group's activity only, defaults to 0 (all groups)
  */
-function mapletadp_get_recent_mod_activity(&$activities, &$index, $timestart, $courseid, $cmid, $userid=0, $groupid=0) {
+function mapletadp_get_recent_mod_activity(&$activities, &$index, $timestart, $courseid, $cmid, $userid = 0, $groupid = 0) {
+    
 }
 
 /**
@@ -219,6 +221,7 @@ function mapletadp_get_recent_mod_activity(&$activities, &$index, $timestart, $c
  * @param bool $viewfullnames display users' full names
  */
 function mapletadp_print_recent_mod_activity($activity, $courseid, $detail, $modnames, $viewfullnames) {
+    
 }
 
 /**
@@ -231,7 +234,7 @@ function mapletadp_print_recent_mod_activity($activity, $courseid, $detail, $mod
  *
  * @return boolean
  */
-function mapletadp_cron () {
+function mapletadp_cron() {
     return true;
 }
 
@@ -296,9 +299,9 @@ function mapletadp_scale_used_anywhere($scaleid) {
  * @param bool $reset reset grades in the gradebook
  * @return void
  */
-function mapletadp_grade_item_update(stdClass $mapletadp, $reset=false) {
+function mapletadp_grade_item_update(stdClass $mapletadp, $reset = false) {
     global $CFG;
-    require_once($CFG->libdir.'/gradelib.php');
+    require_once($CFG->libdir . '/gradelib.php');
 
     $item = array();
     $item['itemname'] = clean_param($mapletadp->name, PARAM_NOTAGS);
@@ -306,11 +309,11 @@ function mapletadp_grade_item_update(stdClass $mapletadp, $reset=false) {
 
     if ($mapletadp->grade > 0) {
         $item['gradetype'] = GRADE_TYPE_VALUE;
-        $item['grademax']  = $mapletadp->grade;
-        $item['grademin']  = 0;
+        $item['grademax'] = $mapletadp->grade;
+        $item['grademin'] = 0;
     } else if ($mapletadp->grade < 0) {
         $item['gradetype'] = GRADE_TYPE_SCALE;
-        $item['scaleid']   = -$mapletadp->grade;
+        $item['scaleid'] = -$mapletadp->grade;
     } else {
         $item['gradetype'] = GRADE_TYPE_NONE;
     }
@@ -319,8 +322,7 @@ function mapletadp_grade_item_update(stdClass $mapletadp, $reset=false) {
         $item['reset'] = true;
     }
 
-    grade_update('mod/mapletadp', $mapletadp->course, 'mod', 'mapletadp',
-            $mapletadp->id, 0, null, $item);
+    grade_update('mod/mapletadp', $mapletadp->course, 'mod', 'mapletadp', $mapletadp->id, 0, null, $item);
 }
 
 /**
@@ -331,10 +333,9 @@ function mapletadp_grade_item_update(stdClass $mapletadp, $reset=false) {
  */
 function mapletadp_grade_item_delete($mapletadp) {
     global $CFG;
-    require_once($CFG->libdir.'/gradelib.php');
+    require_once($CFG->libdir . '/gradelib.php');
 
-    return grade_update('mod/mapletadp', $mapletadp->course, 'mod', 'mapletadp',
-            $mapletadp->id, 0, null, array('deleted' => 1));
+    return grade_update('mod/mapletadp', $mapletadp->course, 'mod', 'mapletadp', $mapletadp->id, 0, null, array('deleted' => 1));
 }
 
 /**
@@ -347,7 +348,7 @@ function mapletadp_grade_item_delete($mapletadp) {
  */
 function mapletadp_update_grades(stdClass $mapletadp, $userid = 0) {
     global $CFG, $DB;
-    require_once($CFG->libdir.'/gradelib.php');
+    require_once($CFG->libdir . '/gradelib.php');
 
     // Populate array of grade objects indexed by userid.
     $grades = array();
@@ -407,7 +408,7 @@ function mapletadp_get_file_info($browser, $areas, $course, $cm, $context, $file
  * @param bool $forcedownload whether or not force download
  * @param array $options additional options affecting the file serving
  */
-function mapletadp_pluginfile($course, $cm, $context, $filearea, array $args, $forcedownload, array $options=array()) {
+function mapletadp_pluginfile($course, $cm, $context, $filearea, array $args, $forcedownload, array $options = array()) {
     global $DB, $CFG;
 
     if ($context->contextlevel != CONTEXT_MODULE) {
@@ -444,6 +445,6 @@ function mapletadp_extend_navigation(navigation_node $navref, stdClass $course, 
  * @param settings_navigation $settingsnav complete settings navigation tree
  * @param navigation_node $mapletadpnode mapletadp administration node
  */
-function mapletadp_extend_settings_navigation(settings_navigation $settingsnav, navigation_node $mapletadpnode=null) {
+function mapletadp_extend_settings_navigation(settings_navigation $settingsnav, navigation_node $mapletadpnode = null) {
     // TODO Delete this function and its docblock, or implement it.
 }

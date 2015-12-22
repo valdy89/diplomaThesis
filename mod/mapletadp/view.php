@@ -39,11 +39,15 @@ if ($id) {
     $mapletadp  = $DB->get_record('mapletadp', array('id' => $cm->instance), '*', MUST_EXIST);
 } else if ($n) {
     $mapletadp  = $DB->get_record('mapletadp', array('id' => $n), '*', MUST_EXIST);
+    
     $course     = $DB->get_record('course', array('id' => $mapletadp->course), '*', MUST_EXIST);
+    
     $cm         = get_coursemodule_from_instance('mapletadp', $mapletadp->id, $course->id, false, MUST_EXIST);
 } else {
     error('You must specify a course_module ID or an instance ID');
 }
+    
+
 
 require_login($course, true, $cm);
 
@@ -76,8 +80,19 @@ if ($mapletadp->intro) {
     echo $OUTPUT->box(format_module_intro('mapletadp', $mapletadp, $cm->id), 'generalbox mod_introbox', 'mapletadpintro');
 }
 
+if(isset($mapletadp)){
+    $controller = new mod_mapletadp\controller\Mapleta($DB, $CFG, $USER);
+    $controllerData = new mod_mapletadp\controller\MapleData($DB, $CFG, $USER);
+    $assignment = $controllerData->getAssignments($mapletadp->classid, $mapletadp->assignmentid);
+    var_dump($assignment);
+    
+    
+    
+
 // Replace the following lines with you own code.
-echo $OUTPUT->heading('Yay! It works!');
+echo $OUTPUT->heading($assignment->name);
+
+}
 
 // Finish the page.
 echo $OUTPUT->footer();

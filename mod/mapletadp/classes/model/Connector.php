@@ -94,16 +94,16 @@ class Connector extends Base {
         $expirationLimit = 30 * 60;
         if ($this->debug) {
             //    var_dump($session);
-            //   var_dump($session && $session->expirationtime > time() - $expirationLimit && $session->class == $classID && $session->role == $role && strlen($session->session)>0);
+            //   var_dump($session && $session->timestamp > time() - $expirationLimit && $session->class == $classID && $session->role == $role && strlen($session->session)>0);
         }
-        if ($session && $session->expirationtime > time() - $expirationLimit && $session->class == $classID && $session->role == $role && strlen($session->session) > 0) {
-            $session->expirationtime = time();
+        if ($session && $session->timestamp > time() - $expirationLimit && $session->class == $classID && $session->role == $role && strlen($session->session) > 0) {
+            $session->timestamp = time();
             $this->db->update_record($this->mapletadp_session, $session);
         } else {
             $ret = $this->db->execute("DELETE FROM {" . $this->mapletadp_session . "} WHERE userid = ? AND role = ? AND class = ?", array($user->id, $role, $classID));
 
             $session = new \stdClass();
-            $session->expirationtime = time();
+            $session->timestamp = time();
             $session->userid = $user->id;
             $session->class = $classID;
             $session->role = $role;
