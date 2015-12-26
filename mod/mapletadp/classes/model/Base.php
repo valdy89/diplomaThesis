@@ -17,13 +17,16 @@ class Base {
 
     protected $db;
     protected $cfg;
-
+    protected $connectionBase;
+    protected $helper;
   
     public $debug = true;
 
     public function __construct(\moodle_database $db, \stdClass $cfg) {
         $this->db = $db;
         $this->cfg = $cfg;
+        $this->connectionBase = \mod_mapletadp\helper\MapletaHelper::getConnectionBase();
+        $this->helper = new \mod_mapletadp\helper\MapletaHelper();
     }
 
 }

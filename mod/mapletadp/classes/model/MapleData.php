@@ -26,9 +26,10 @@ class MapleData extends Base {
 
     public function getClasses($id = false) {
         $conditions = array();
-        if ($id && is_int($id)) {
+        if ($id) {
             $conditions['mapleId'] = $id;
             $return = $this->db->get_record($this->mapletadp_classes, $conditions);
+           
         } else {
             $return = $this->db->get_records($this->mapletadp_classes, $conditions);
         }

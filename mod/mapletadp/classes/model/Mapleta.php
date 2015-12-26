@@ -21,7 +21,7 @@ class Mapleta extends Base {
 
     public function __construct(\moodle_database $db, \stdClass $cfg) {
         GLOBAL $USER;
-        
+
         parent::__construct($db, $cfg);
         $this->user = $USER;
         $this->model_connector = new Connector($db, $cfg);
@@ -35,9 +35,44 @@ class Mapleta extends Base {
         if (count($classes) > 0 && count($classes['element']) > 0) {
             foreach ($classes['element'] as $class) {
                 $assignments = $this->model_connector->getAssignments($class['id'], 0, $this->user);
-               
+
                 $this->model_mapledata->setAssignments($assignments, $class['id']);
             }
         }
     }
+
+    public function startAssignmentForm($assignmentId, $courseId) {
+
+        $param = $this->getAssignmentLauncherParams($assignmentId, $courseId);
+        var_dump($param);
+        $action = $this->connectionBase . 'ws/launcher';
+        $form = new \mod_mapletadp\view\StartAssignmentForm($param, $action);
+        return $form->render();
+    }
+
+    private function getAssignmentLauncherParams($assignment, $courseId) {
+
+        $array = $this->helper->getArray();
+        $class = $this->model_mapledata->getClasses($assignment->classid);
+        $array['signature'] = $this->helper->stringEncode($array['signature']);
+        $array['wsFirstName'] = $this->helper->stringEncode($this->user->firstname);
+        $array['wsMiddleName'] = '';
+        $array['wsLastName'] = $this->helper->stringEncode($this->user->lastname);
+        $array['wsUserLogin'] = $this->helper->stringEncode($this->user->username);
+        $array['wsUserEmail'] = $this->helper->stringEncode($this->user->email);
+        $array['wsStudentId'] = $this->helper->stringEncode($this->user->idnumber);
+        $array['wsActionID'] = 'assignment';
+        $array['wsUserRole'] = $this->helper->getRole($courseId, $this->user);
+        $array['wsCourseId'] = $courseId;
+        $array['wsClassId'] = $assignment->classid;
+        $array['className'] = $class->name;
+        $array['testName'] = $assignment->name;
+        $array['testId'] = $assignment->mapleid;
+
+
+
+
+        return $array;
+    }
+
 }

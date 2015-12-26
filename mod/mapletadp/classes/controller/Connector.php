@@ -17,10 +17,6 @@ class Connector extends Base {
 
     private $model;
 
-    const MAPLE_ROLE_ADMIN = "ADMINISTRATOR";
-    const MAPLE_ROLE_STUDENT = "STUDENT";
-    const MAPLE_ROLE_PROCTOR = "PROCTOR";
-    const MAPLE_ROLE_INSTRUCTOR = "INSTRUCTOR";
 
     public function __construct(\moodle_database $db, \stdClass $cfg, \stdClass $user) {
         parent::__construct($db, $cfg, $user);

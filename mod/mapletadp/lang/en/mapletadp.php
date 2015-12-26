@@ -59,3 +59,6 @@ $string['secret'] = 'Shared Password';
 $string['secretdescription'] = 'A password shared by Moodle and Maple T.A. that will be used to encrypt Moodle <--> Maple T.A. communications.';
 $string['availableassignments'] = 'Available Maple T.A.';
 
+$string['synchronization'] = 'List synchronization';
+
+

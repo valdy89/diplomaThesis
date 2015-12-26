@@ -12,7 +12,6 @@ require(['jquery'], function ($) {
             // getAssignments();
         }
         $('#id_classId').change(function () {
-            alert(1);
             $('#fitem_id_assignmentId').show();
             getAssignments();
 

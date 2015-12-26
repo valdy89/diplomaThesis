@@ -9,7 +9,7 @@ namespace mod_mapletadp\model;
  */
 class Connector extends Base {
 
-    private $helper;
+    
     private $mapleApi;
     private $mapletadp_session = 'mapletadp_session';
 
@@ -20,7 +20,7 @@ class Connector extends Base {
 
     public function __construct(\moodle_database $db, \stdClass $cfg) {
         parent::__construct($db, $cfg);
-        $this->helper = new \mod_mapletadp\helper\MapletaHelper();
+        
         $this->mapleApi = new \mod_mapletadp\MapleAPI();
     }
 

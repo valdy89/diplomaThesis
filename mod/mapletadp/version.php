@@ -28,8 +28,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'mod_mapletadp';
-$plugin->version = 2015121206;
+$plugin->version = 2015121211;
 $plugin->release = 'v0.1';
 $plugin->maturity = MATURITY_ALPHA;     
-$plugin->cron = 0;
+$plugin->cron = 1;
 $plugin->dependencies = array();

@@ -19,7 +19,7 @@ class MapleAPI {
 
         $requestString = $this->arrayToXML($request);
 
-        $urlBase = 'https://muni.mapletadp.com/muni/'; //todo z konfigurace
+        $urlBase = \mod_mapletadp\helper\MapletaHelper::getConnectionBase(); //todo z konfigurace
         $ch = curl_init($urlBase . $url);
 
         curl_setopt($ch, CURLOPT_POST, 1);
@@ -56,7 +56,7 @@ class MapleAPI {
     }
 
     public function XMLToArray($xmlstring) {
-        print($xmlstring);
+       
         $xml = simplexml_load_string($xmlstring);
         $json = json_encode($xml);
         $array = json_decode($json, TRUE);
