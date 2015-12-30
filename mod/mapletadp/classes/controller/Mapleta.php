@@ -24,7 +24,7 @@ class Mapleta extends Base {
     }
 
     public function refreshAllData() {
-        $this->model->refreshAllData();
+        return $this->model->refreshAllData();
     }
 
   

@@ -1,7 +1,6 @@
 <?php
 
-$tasks = array(                                                                                                                     
-    
+$tasks = array(                                                                                                                    
     array(                                                                                                                          
         'classname' => 'mod_mapletadp\task\synchronize',                                                                            
         'blocking' => 0,                                                                                                            

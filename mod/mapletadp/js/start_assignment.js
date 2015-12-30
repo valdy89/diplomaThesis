@@ -7,7 +7,6 @@ require(['jquery'], function ($) {
 
     $(document).ready(function () {
        $('#mform1').submit();
-       alert(1);
 
     });
 });

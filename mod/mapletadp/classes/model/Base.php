@@ -20,7 +20,7 @@ class Base {
     protected $connectionBase;
     protected $helper;
   
-    public $debug = true;
+    public $debug = false;
 
     public function __construct(\moodle_database $db, \stdClass $cfg) {
         $this->db = $db;

@@ -8,5 +8,5 @@
  * @package mapleta
  **/
 
-$plugin->version = 2013081300;
+$plugin->version = 2013081301;
 ?>

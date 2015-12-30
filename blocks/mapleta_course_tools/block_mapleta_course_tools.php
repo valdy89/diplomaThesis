@@ -37,7 +37,7 @@ class block_mapleta_course_tools extends block_base {
 			$this->content->footer= '';
 			return $this->content;
 		}
-
+       
 		if(!mapleta_ws_ping()) {
 			
 			$this->content->text= 	'<div class="info"><font color="red">' . 

@@ -107,7 +107,7 @@ class MapleData extends Base {
     public function setAssignments($assignments, $classId) {
 
         if (count($assignments) > 0 && count($assignments['element']) > 2) {
-            $savedAssignments = $this->getAssignmets($classId);
+            $savedAssignments = $this->getAssignments($classId);
             $array = $this->changeKey(json_decode(json_encode($savedAssignments), true), 'mapleid');
 
 

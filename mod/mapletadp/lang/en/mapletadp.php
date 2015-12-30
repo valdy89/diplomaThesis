@@ -60,5 +60,7 @@ $string['secretdescription'] = 'A password shared by Moodle and Maple T.A. that 
 $string['availableassignments'] = 'Available Maple T.A.';
 
 $string['synchronization'] = 'List synchronization';
+$string['startassignment'] = 'Start assignment';
+$string['waitplease'] = 'Wait please - assignment will be loaded in a second.';
 
 

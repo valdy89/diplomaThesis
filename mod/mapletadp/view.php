@@ -58,16 +58,6 @@ $PAGE->set_title(format_string($mapletadp->name));
 $PAGE->set_heading(format_string($course->fullname));
 $PAGE->requires->js('/mod/mapletadp/js/jquery-2.1.4.js');
 
-$showform = false;
-if ($run) {
-    $PAGE->requires->js('/mod/mapletadp/js/start_assignment.js');
-}
-/*
- * Other things you may want to set - remove if not needed.
- * $PAGE->set_cacheable(false);
- * $PAGE->set_focuscontrol('some-html-id');
- * $PAGE->add_body_class('mapletadp-'.$somevar);
- */
 
 // Output starts here.
 echo $OUTPUT->header();
@@ -81,14 +71,19 @@ if (isset($mapletadp)) {
     $controller = new mod_mapletadp\controller\Mapleta($DB, $CFG, $USER);
     $controllerData = new mod_mapletadp\controller\MapleData($DB, $CFG, $USER);
     $assignment = $controllerData->getAssignments($mapletadp->classid, $mapletadp->assignmentid);
-    //var_dump($assignment);
-// Replace the following lines with you own code.
-    echo $OUTPUT->heading($assignment->name);
-
     $mapletaModel = new mod_mapletadp\model\Mapleta($DB, $CFG);
-    echo '<a href="#" id="startLink">aaaa</a>';
-    $PAGE->requires->js('/mod/mapletadp/js/create_assignment_popup.js');
+    //var_dump($assignment);
+
+
+    echo $OUTPUT->heading($assignment->name);
     echo $mapletaModel->startAssignmentForm($assignment, $course->id);
+    if ($run) {
+        echo "<b>" . get_string('waitplease', 'mapletadp') . "</b>";
+        $PAGE->requires->js('/mod/mapletadp/js/start_assignment.js');
+    } else {
+        $PAGE->requires->js('/mod/mapletadp/js/create_assignment_popup.js');
+        echo '<a href="#" id="startLink">' . get_string('startassignment', 'mapletadp') . '</a>';
+    }
 }
 
 // Finish the page.

@@ -38,13 +38,14 @@ class Mapleta extends Base {
 
                 $this->model_mapledata->setAssignments($assignments, $class['id']);
             }
+            return true;
         }
+        return false;
     }
 
     public function startAssignmentForm($assignmentId, $courseId) {
 
         $param = $this->getAssignmentLauncherParams($assignmentId, $courseId);
-        var_dump($param);
         $action = $this->connectionBase . 'ws/launcher';
         $form = new \mod_mapletadp\view\StartAssignmentForm($param, $action);
         return $form->render();
@@ -68,9 +69,6 @@ class Mapleta extends Base {
         $array['className'] = $class->name;
         $array['testName'] = $assignment->name;
         $array['testId'] = $assignment->mapleid;
-
-
-
 
         return $array;
     }

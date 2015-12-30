@@ -627,7 +627,7 @@ function mapleta_ws_check_signature($timestamp, $signature) {
 function mapleta_ws_connect($courseId) {
 	global $USER, $CFG;
 
-	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_CONNECT;
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.'/'.$CFG->mapleta_context.RES_WS_CONNECT;
 
 	$firstname = mapleta_xmlencode($USER->firstname);
 	$lastname = mapleta_xmlencode($USER->lastname);
@@ -662,8 +662,8 @@ function mapleta_ws_connect($courseId) {
 function mapleta_ws_ping() {
 	global $USER, $CFG;
 	$result = false;
-
-	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_PING;
+ 
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.'/'.$CFG->mapleta_context.RES_WS_PING;
 
 	$value = mapleta_xmlencode(STR_WS_PING);
 	$signature = mapleta_ws_signature();
@@ -674,10 +674,11 @@ function mapleta_ws_ping() {
 				</Request>";
 	
 	$xml_response= mapleta_do_xml_ping_request($url, $request);
-	
+	var_dump($xml_response);
 	if ($xml_response) {
 		$status= new mapleta_status_response();
 		$out = mapleta_get_response_from_xml($xml_response, 'mapleta_ping_response', $status);
+        
 		$array_response= $out->list;
 		if (count($array_response) > 0) {
 			$result = ($array_response[0]->value == STR_WS_PING);	
@@ -690,7 +691,7 @@ function mapleta_ws_ping() {
 function mapleta_ws_connect_to_class($courseId, $classId) {
 	global $USER, $CFG;
 
-	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_CONNECT;
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.'/'.$CFG->mapleta_context.RES_WS_CONNECT;
 
 	$firstname = mapleta_xmlencode($USER->firstname);
 	$lastname = mapleta_xmlencode($USER->lastname);
@@ -728,7 +729,7 @@ function mapleta_ws_connect_to_class($courseId, $classId) {
 function mapleta_ws_disconnect($mapleta_session, $status) {
 	global $CFG;
 
-	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_DISCONNECT;
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.'/'.$CFG->mapleta_context.RES_WS_DISCONNECT;
 	$signature = mapleta_ws_signature();
 
 	$request= "<Request>$signature</Request>";
@@ -744,7 +745,7 @@ function mapleta_ws_disconnect($mapleta_session, $status) {
 function mapleta_ws_get_featured_classes($mapleta_session, $status) {
 	global $CFG;
 
-	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_GET_CLASSES;
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.'/'.$CFG->mapleta_context.RES_WS_GET_CLASSES;
 	$signature = mapleta_ws_signature();
 	
 	$request= "<Request><classId>0</classId><featured>true</featured>$signature</Request>";
@@ -760,7 +761,7 @@ function mapleta_ws_get_featured_classes($mapleta_session, $status) {
 function mapleta_ws_get_all_classes($mapleta_session, $status) {
 	global $CFG;
 
-	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_GET_CLASSES;
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.'/'.$CFG->mapleta_context.RES_WS_GET_CLASSES;
 	$signature = mapleta_ws_signature();
 	
 	$request= "<Request><classId>0</classId><featured>false</featured>$signature</Request>";
@@ -776,7 +777,7 @@ function mapleta_ws_get_all_classes($mapleta_session, $status) {
 function mapleta_ws_create_class($mapleta_session, $parentClassId, $classId, $courseName, $courseId, $status) {
 	global $CFG;
 
-	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_CREATE_CLASS;
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.'/'.$CFG->mapleta_context.RES_WS_CREATE_CLASS;
 
 	$parentClassId= mapleta_xmlencode($parentClassId);
 	$classId = mapleta_xmlencode($classId);
@@ -803,7 +804,7 @@ function mapleta_ws_create_class($mapleta_session, $parentClassId, $classId, $co
 function mapleta_ws_get_assignments($classId, $mapleta_session, $status) {
 	global $CFG;
 
-	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_GET_ASSIGNMENTS;
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.'/'.$CFG->mapleta_context.RES_WS_GET_ASSIGNMENTS;
 
 	$classId = mapleta_xmlencode($classId);
 	$signature = mapleta_ws_signature();
@@ -821,7 +822,7 @@ function mapleta_ws_get_assignments($classId, $mapleta_session, $status) {
 function mapleta_ws_get_assignment($classId, $assignmentId, $mapleta_session, $status) {
 	global $CFG;
 
-	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.RES_WS_GET_ASSIGNMENTS;
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.'/'.$CFG->mapleta_context.RES_WS_GET_ASSIGNMENTS;
 
 	$classId = mapleta_xmlencode($classId);
 	$signature = mapleta_ws_signature();
@@ -838,7 +839,7 @@ function mapleta_ws_get_assignment($classId, $assignmentId, $mapleta_session, $s
 
 function mapleta_ws_launch($params) {
 	global $CFG;
-	$server=$CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context;
+	$server=$CFG->mapleta_protocol.'://'.$CFG->mapleta_server.'/'.$CFG->mapleta_context;
 	$signature = mapleta_ws_signature_fields();
 	
 	echo "<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>";
@@ -877,7 +878,7 @@ function mapleta_ws_send_error($message) {
 function mapleta_ws_get_grades($classId, $mapleta_session, $status) {
 	global $CFG;
 
-	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.':'.$CFG->mapleta_port.'/'.$CFG->mapleta_context.'/ws/grade';
+	$url= $CFG->mapleta_protocol.'://'.$CFG->mapleta_server.'/'.$CFG->mapleta_context.'/ws/grade';
 
 	$classId = mapleta_xmlencode($classId);
 	$signature = mapleta_ws_signature();

@@ -28,7 +28,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_mapleta';
-$plugin->version = 2015121201;
+$plugin->version = 2015121209;
 $plugin->release = 'v0.1';
 
 $plugin->cron = 0;

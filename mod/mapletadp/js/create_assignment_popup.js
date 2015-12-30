@@ -7,7 +7,7 @@ require(['jquery'], function ($) {
 
     $(document).ready(function () {
         $('#startLink').click(function () {
-            window.open("http://fryval.cz/mod/mapletadp/view.php?id="+$('input:hidden[name=id]').val()+"&run=true", "popupWindow", "width=600,height=600,scrollbars=yes");
+            window.open("http://fryval.cz/mod/mapletadp/view.php?id="+$('input:hidden[name=id]').val()+"&run=true", "popupWindow", "width=1024,height=650,scrollbars=yes");
         });
 
     });

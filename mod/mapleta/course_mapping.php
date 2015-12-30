@@ -41,13 +41,7 @@ if($course->category) {
 	$navigation= '';
 }
 
-print_header("$course->shortname : ".get_string('mapleta_course_mapping','mapleta'), 
-			$course->fullname, "$navigation <a href=index.php?id=$course->id>MapleTAs</a> -> ".get_string('mapleta_course_mapping','mapleta'), 
-			'', 
-			'', 
-			true, 
-			"", 
-			navmenu($course, null));
+
 
 			
 if(!$course_mapping= mapleta_get_record('mapleta_course_map', 'courseid', $id)) {
@@ -55,7 +49,7 @@ if(!$course_mapping= mapleta_get_record('mapleta_course_map', 'courseid', $id)) 
 		if(!$mapping_type) {
 
 			$connect= mapleta_ws_connect($id);
-
+            
 			if($connect == null) {
 				print_error('connection_error','mapleta', $errorURL);
 			} else
@@ -242,5 +236,4 @@ if(!$course_mapping= mapleta_get_record('mapleta_course_map', 'courseid', $id)) 
 		echo "<br/><center><strong>Course $course->fullname has been mapped to Maple TA class '".$course_mapping->classname."'.</strong></center><br/>";
 	}
 
-echo $OUTPUT->footer();
 ?>
