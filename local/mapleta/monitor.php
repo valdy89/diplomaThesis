@@ -14,7 +14,14 @@ $controller = new \mod_mapletadp\controller\Connector($DB, $CFG, $USER);
 
 echo $OUTPUT->header();
 
-echo $OUTPUT->heading(get_string('monitor','local_mapleta'));
+echo $OUTPUT->heading(get_string('monitorheader', 'local_mapleta'));
+$mapletadp = new \mod_mapletadp\controller\Mapleta($DB, $CFG, $USER);
 
+$monitors = $mapletadp->getMonitors();
+if(count($monitors) && $monitors){
+    foreach($monitors as $key => $value){
+        echo "<div>".  get_string($key,'local_mapleta').": <b>".$value."</b></div>";
+    }
+}
 echo $OUTPUT->footer();
 exit();
