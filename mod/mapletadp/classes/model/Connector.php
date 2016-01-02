@@ -12,6 +12,9 @@ class Connector extends Base {
     
     private $mapleApi;
     private $mapletadp_session = 'mapletadp_session';
+    
+    public $monitors = array('monitor' =>'ws/monitor','maple' =>'ws/mapleMonitor','database' =>'ws/databaseMonitor','tomcat' =>'ws/tomcatMonitor','xcfb' =>'ws/xvfbMonitor');
+        
 
     const MAPLE_ROLE_ADMIN = "ADMINISTRATOR";
     const MAPLE_ROLE_STUDENT = "STUDENT";
@@ -62,7 +65,6 @@ class Connector extends Base {
 
     protected function sendRequest($url, $request, $cookie = false) {
         $response = $this->mapleApi->call($url, $request, $cookie);
-
         return $response;
     }
 
@@ -197,6 +199,15 @@ class Connector extends Base {
     public function validatePingResponse($response) {
         if (strlen($response['element']['value'])) {
             return true;
+        }
+        return false;
+    }
+    
+    public function monitor($monitor){
+        if(in_array($monitor, $this->monitors)){
+             $response = $this->mapleApi->simpleCall($monitor, array());
+             return $response;
+             
         }
         return false;
     }

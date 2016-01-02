@@ -16,14 +16,16 @@ namespace mod_mapletadp;
 class MapleAPI {
 
     public function call($url, $request, $cookie = false) {
-
         $requestString = $this->arrayToXML($request);
-
+        $response = $this->simpleCall($url, $request, $cookie);
+        return $this->XMLToArray($response);
+    }
+    public function simpleCall($url, $request, $cookie = false){
         $urlBase = \mod_mapletadp\helper\MapletaHelper::getConnectionBase(); //todo z konfigurace
         $ch = curl_init($urlBase . $url);
 
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $requestString->asXML());
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $request);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         if ($cookie) {
           
@@ -34,8 +36,7 @@ class MapleAPI {
         $response = curl_exec($ch);
 
         curl_close($ch);
-
-        return $this->XMLToArray($response);
+        return $response;
     }
 
     public function arrayToXML($request) {

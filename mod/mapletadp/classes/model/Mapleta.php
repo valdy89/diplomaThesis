@@ -72,5 +72,19 @@ class Mapleta extends Base {
 
         return $array;
     }
-
+    
+    public function getMonitors(){
+        if(count($this->model_connector->monitors)){
+            $return = array();
+            foreach ($this->model_connector->monitors as $key => $value) {
+                if($ret = $this->model_connector->monitor($value)){
+                $return[$key] = $ret;
+                }else{
+                    $return[$key] = get_string('notmonitored','mod_mapleta');
+                }
+            }
+            return $return;
+        }
+        return false;
+    }
 }

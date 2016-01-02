@@ -63,4 +63,6 @@ $string['synchronization'] = 'List synchronization';
 $string['startassignment'] = 'Start assignment';
 $string['waitplease'] = 'Wait please - assignment will be loaded in a second.';
 
+$string['notmonitored'] = 'WS was not called.';
+
 
