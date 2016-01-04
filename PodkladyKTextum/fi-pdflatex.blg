@@ -1,0 +1,14 @@
+[1] Config.pm:327> INFO - This is Biber 2.2
+[1] Config.pm:330> INFO - Logfile is 'fi-pdflatex.blg'
+[92] biber-MSWIN:283> INFO - === 
+[93] Biber.pm:334> INFO - Reading 'fi-pdflatex.bcf'
+[363] Biber.pm:677> INFO - Found 16 citekeys in bib section 0
+[425] Biber.pm:3054> INFO - Processing section 0
+[469] Biber.pm:3193> INFO - Looking for bibtex format file 'my_bib.bib' for section 0
+[478] bibtex.pm:1072> INFO - Decoding LaTeX character macros into UTF-8
+[484] bibtex.pm:935> INFO - Found BibTeX data source 'my_bib.bib'
+[1178] UCollate.pm:66> INFO - Overriding locale 'cs-CZ' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1179] UCollate.pm:66> INFO - Overriding locale 'cs-CZ' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1180] Biber.pm:2931> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'cs-CZ'
+[1238] bbl.pm:505> INFO - Writing 'fi-pdflatex.bbl' with encoding 'UTF-8'
+[1243] bbl.pm:596> INFO - Output to fi-pdflatex.bbl

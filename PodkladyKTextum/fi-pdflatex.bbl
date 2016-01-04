@@ -1,0 +1,354 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\preamble{%
+\newcommand{\noopsort}[1]{} \newcommand{\printfirst}[2]{#1} \newcommand{\singleletter}[1]{#1} \newcommand{\switchargs}[2]{#2#1}%
+}
+
+
+\refsection{0}
+  \sortlist{none}{none}
+    \entry{itustats}{manual}{}
+      \name{author}{2}{}{%
+        {{hash=c281bdd844f2143e6b56f3ae167bb9d1}{Data}{D\bibinitperiod}{ICT}{I\bibinitperiod}{}{}{}{}}%
+        {{hash=a7262fb4ae2e827d61ceb68addbec48e}{Division}{D\bibinitperiod}{Statistics}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Telecommunication Union}%
+      }
+      \strng{namehash}{ab61a3a98113bd9a8668dc8296e73cde}
+      \strng{fullhash}{ab61a3a98113bd9a8668dc8296e73cde}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{05}
+      \field{title}{ICTFacts and Figures}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://www.itu.int/en/ITU-D/Statistics/Documents/facts/ICTFactsFigures2015.pdf
+      \endverb
+    \endentry
+    \entry{techvsteach}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3575578f579ff585b6ca053676b5a91c}{Trucano}{T\bibinitperiod}{Michael}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{3575578f579ff585b6ca053676b5a91c}
+      \strng{fullhash}{3575578f579ff585b6ca053676b5a91c}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Edutech}
+      \field{month}{02}
+      \field{title}{Will technology replace teachers? No, but ...}
+      \field{urlday}{07}
+      \field{urlmonth}{12}
+      \field{urlyear}{2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://blogs.worldbank.org/edutech/tech-and-teachers
+      \endverb
+    \endentry
+    \entry{ockajova}{book}{}
+      \name{author}{1}{}{%
+        {{hash=55362754feec5e63b0cc9456a2ff9f58}{OČKAJOVÁ}{O\bibinitperiod}{Alena}{A\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Olomouc}%
+      }
+      \list{publisher}{1}{%
+        {Votobia}%
+      }
+      \strng{namehash}{55362754feec5e63b0cc9456a2ff9f58}
+      \strng{fullhash}{55362754feec5e63b0cc9456a2ff9f58}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9788072203161}
+      \field{note}{mezinárodní vědecko-odborná konference 2009 na Pedagogické fakultě Univerzity Palackého v Olomouci}
+      \field{title}{Využitie e-learningu v predmete bezpečnosť a hygiena práce. In Trendy ve vzdělávání 2009: informační technologie a technické vzdělávání}
+      \field{year}{2009}
+    \endentry
+    \entry{korviny}{online}{}
+      \name{author}{1}{}{%
+        {{hash=a1a058a2b5883f0127d4587a5e1825e3}{KORVINY}{K\bibinitperiod}{Petr}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{a1a058a2b5883f0127d4587a5e1825e3}
+      \strng{fullhash}{a1a058a2b5883f0127d4587a5e1825e3}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{04}
+      \field{title}{Moodle (nejen) na OPF}
+      \field{urlday}{10}
+      \field{urlmonth}{09}
+      \field{urlyear}{2015}
+      \field{year}{2005}
+      \verb{url}
+      \verb http://elearning.slu.cz/file.php/7/napovedy_soubory/Moodle_OPF/ar01s01.html
+      \endverb
+    \endentry
+    \entry{zounek}{book}{}
+      \name{author}{1}{}{%
+        {{hash=21b0257524be13d837262d11af94665f}{ZOUNEK}{Z\bibinitperiod}{Jiří}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Brno}%
+      }
+      \list{publisher}{1}{%
+        {Masarykova univerzita}%
+      }
+      \strng{namehash}{21b0257524be13d837262d11af94665f}
+      \strng{fullhash}{21b0257524be13d837262d11af94665f}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9788021051232}
+      \field{pagetotal}{161}
+      \field{title}{E-learning - jedna z podob učení v moderní společnost}
+      \field{year}{2009}
+    \endentry
+    \entry{zlamalova}{book}{}
+      \name{author}{1}{}{%
+        {{hash=04d88e2f665a045684537fc54de83740}{ZLÁMALOVÁ}{Z\bibinitperiod}{Helena}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Praha}%
+      }
+      \list{publisher}{1}{%
+        {Centrum pro studium vysokého školství}%
+      }
+      \strng{namehash}{04d88e2f665a045684537fc54de83740}
+      \strng{fullhash}{04d88e2f665a045684537fc54de83740}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2. upr. vyd}
+      \field{isbn}{8086302105}
+      \field{pagetotal}{79}
+      \field{series}{Řízení vysokých škol}
+      \field{title}{Úvod do distančního vzdělávání}
+      \field{year}{2000}
+    \endentry
+    \entry{prucha}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c951bd765df9966635238fd331266d65}{Jiří\bibnamedelima MÍKA}{J\bibinitperiod\bibinitdelim M\bibinitperiod}{Jiří\bibnamedelima PRŮCHA}{J\bibinitperiod\bibinitdelim P\bibinitperiod}{a}{a\bibinitperiod}{}{}}%
+      }
+      \list{location}{1}{%
+        {Praha}%
+      }
+      \list{publisher}{1}{%
+        {Centrum pro studium vysokého školství}%
+      }
+      \strng{namehash}{c951bd765df9966635238fd331266d65}
+      \strng{fullhash}{c951bd765df9966635238fd331266d65}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1. vyd.}
+      \field{isbn}{8086302164}
+      \field{month}{10~01}
+      \field{series}{The Art of Computer Programming}
+      \field{title}{Distanční studium v otázkách: (průvodce studujících a zájemců o studium)}
+      \field{volume}{39}
+      \field{year}{2000}
+    \endentry
+    \entry{lms}{online}{}
+      \name{author}{1}{}{%
+        {{hash=3d105d3c1c247fc488124a762daca919}{encyklopedie}{e\bibinitperiod}{Wikipedie\bibnamedelima Otevřená}{W\bibinitperiod\bibinitdelim O\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{3d105d3c1c247fc488124a762daca919}
+      \strng{fullhash}{3d105d3c1c247fc488124a762daca919}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Learning Management System}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://cs.wikipedia.org/wiki/Learning_Management_System
+      \endverb
+    \endentry
+    \entry{imslti}{online}{}
+      \name{author}{1}{}{%
+        {{hash=5e07f34566ce2fcd92d0042c5c411887}{Consortium}{C\bibinitperiod}{IMS\bibnamedelimb Global\bibnamedelima Learning}{I\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{5e07f34566ce2fcd92d0042c5c411887}
+      \strng{fullhash}{5e07f34566ce2fcd92d0042c5c411887}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Learning Tools Interoperability Background}
+      \field{urlday}{14}
+      \field{urlmonth}{10}
+      \field{urlyear}{2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://www.imsglobal.org/activity/learning-tools-interoperability
+      \endverb
+    \endentry
+    \entry{imsltiinvest}{report}{}
+      \name{author}{1}{}{%
+        {{hash=41e1441e022dd008616eabcad5792e49}{Ońeill}{O\bibinitperiod}{Owen}{O\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {E-portfolios for Learner Pathways}%
+      }
+      \list{location}{1}{%
+        {Melbourne, Victoria}%
+      }
+      \strng{namehash}{41e1441e022dd008616eabcad5792e49}
+      \strng{fullhash}{41e1441e022dd008616eabcad5792e49}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{06}
+      \field{number}{9}
+      \field{title}{IMS Learning Tools Interoperability (IMS LTI) Investigation}
+      \field{type}{Research Report}
+      \field{year}{2013}
+    \endentry
+    \entry{imslti20}{online}{}
+      \name{author}{1}{}{%
+        {{hash=5e07f34566ce2fcd92d0042c5c411887}{Consortium}{C\bibinitperiod}{IMS\bibnamedelimb Global\bibnamedelima Learning}{I\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{5e07f34566ce2fcd92d0042c5c411887}
+      \strng{fullhash}{5e07f34566ce2fcd92d0042c5c411887}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Learning Tools Interoperability 2.0}
+      \field{urlday}{15}
+      \field{urlmonth}{10}
+      \field{urlyear}{2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://www.imsglobal.org/specs/ltiv2p0
+      \endverb
+    \endentry
+    \entry{moodle-what-is}{online}{}
+      \name{author}{1}{}{%
+        {{hash=4398ea1bd99ae706967bd57cee5306c7}{Moodle.org}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{4398ea1bd99ae706967bd57cee5306c7}
+      \strng{fullhash}{4398ea1bd99ae706967bd57cee5306c7}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Co je Moodle}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2015}
+      \field{year}{2006}
+      \verb{url}
+      \verb https://docs.moodle.org/archive/cs/Co_je_Moodle
+      \endverb
+    \endentry
+    \entry{moodle-logo}{online}{}
+      \name{author}{1}{}{%
+        {{hash=4398ea1bd99ae706967bd57cee5306c7}{Moodle.org}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{4398ea1bd99ae706967bd57cee5306c7}
+      \strng{fullhash}{4398ea1bd99ae706967bd57cee5306c7}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Moodle logo}
+      \field{urlday}{10}
+      \field{urlmonth}{10}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb https://moodle.org/logo/
+      \endverb
+    \endentry
+    \entry{moodle-stats}{online}{}
+      \name{author}{2}{}{%
+        {{hash=d7c5e14f3720c7c9adf9e63ad74a46fc}{Courses}{C\bibinitperiod}{Moodle.net}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=f15c1cae7882448b3fb0404682e17e61}{Content}{C\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{bcafc98bd0f101f21f06dcadd3b6993b}
+      \strng{fullhash}{bcafc98bd0f101f21f06dcadd3b6993b}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Moodle Statistics}
+      \field{urlday}{19}
+      \field{urlmonth}{12}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb https://moodle.net/stats/
+      \endverb
+    \endentry
+    \entry{moodle-context}{online}{}
+      \name{author}{1}{}{%
+        {{hash=4398ea1bd99ae706967bd57cee5306c7}{Moodle.org}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{4398ea1bd99ae706967bd57cee5306c7}
+      \strng{fullhash}{4398ea1bd99ae706967bd57cee5306c7}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Context}
+      \field{urlday}{14}
+      \field{urlmonth}{10}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb https://docs.moodle.org/29/en/Context
+      \endverb
+    \endentry
+    \entry{maple-logo}{online}{}
+      \name{author}{1}{}{%
+        {{hash=e58b6e5a1f6602f4d77a83c4e0bd0f10}{Maplesoft}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{e58b6e5a1f6602f4d77a83c4e0bd0f10}
+      \strng{fullhash}{e58b6e5a1f6602f4d77a83c4e0bd0f10}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Logos and Images}
+      \field{urlday}{09}
+      \field{urlmonth}{10}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://www.maplesoft.com/media/resources.aspx
+      \endverb
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

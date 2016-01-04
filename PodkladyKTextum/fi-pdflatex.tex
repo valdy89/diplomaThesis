@@ -1,8 +1,11 @@
 \documentclass[
-  digital,
+print,
+  11pt,
   table,   
-  lof,    
-  lot
+  nolof,    
+  nolot,
+  oneside,
+  final
 ]{fithesis3}
 
 \usepackage[resetfonts]{cmap}
@@ -15,21 +18,18 @@
     type          = mgr,
     author        = Bc. Milan Valúšek,
     gender        =m,
-    advisor       = prof. RNDr. Jiří Hřebíček csc.,
-    title         = {The Proof of P = NP},
-    TeXtitle      = {},
-    keywords      = {keyword1, keyword2, ...},
-    TeXkeywords   = {keyword1, keyword2, \ldots},
+    advisor       = prof. RNDr. Jiří Hřebíček\, CSc.,
+    title         = {Podpora výuky matematiky v LMS Moodle s využitím Maple T.A.},
+    TeXtitle      = {Podpora výuky matematiky v LMS Moodle s využitím Maple T.A.},
+    keywords      = {E-learning, Learning Management system, Learning Tools Interoperability, Moodle, Maple T.A., webové služby, integrace },
+    TeXkeywords   = {E-learning, Learning Management system, Learning Tools Interoperability, Moodle, Maple T.A., webové služby, integrace },
 }
 \thesislong{abstract}{
-    This is the abstract of my thesis, which can
-
-    span multiple paragraphs.
+Práce se zabývá e-learningovými systémy LMS Moodle a Maple T.A., jejich základním stavebním prvkům a použití. Dále analyzuje možnosti rozšíření systému Moodle a existující možnosti integrace se systémem Maple T.A. V poslední části práce je navržen a implementován vlastní způsob integrace.
 }
 \thesislong{thanks}{
-    This is the acknowledgement for my thesis, which can
-
-    span multiple paragraphs.
+Rád bych poděkoval vedoucímu práce panu prof. RNDr. Jiřímu Hřebíčkovi, CSc. za jeho
+odborné vedení práce a cenné rady a připomínky. Dále bych rád poděkoval svým rodičům a blízkým za podporu při tvorbě této práce a během celého studia. 
 }
 %% The following section sets up the bibliography.
 \usepackage{csquotes}
@@ -41,10 +41,10 @@
   sortlocale=auto         %% For more unformation about the available
 ]{biblatex}               %% `style`s and `citestyles`, see:
 %% <http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf>.
-\addbibresource{example.bib} %% The bibliograpic database within
+\addbibresource{my_bib.bib} %% The bibliograpic database within
                           %% the file `example.bib` will be used.
 \usepackage{makeidx}      %% The `makeidx` package contains
-\makeindex                %% helper commands for index typesetting.
+              %% helper commands for index typesetting.
 %% These additional packages are used within the document:
 \usepackage{paralist}
 \usepackage{amsmath}
@@ -52,370 +52,296 @@
 \usepackage{amsfonts}
 \usepackage{url}
 \usepackage{menukeys}
+\makeatletter\thesis@load
+  \makeatletter
+    \def\thesis@blocks@thanks{%
+      \ifx\thesis@thanks\undefined\else
+	\thesis@blocks@clear
+	\begin{alwayssingle}%
+	  \chapter*{\thesis@@{thanksTitle}}%
+	  \thesis@thanks
+	\end{alwayssingle}%
+      \fi}
+  \makeatother
 \begin{document}
-\chapter{Introduction}
-Theses are rumoured to be the capstones of education, so I decided
-to write one of my own. If all goes well, I will soon have a
-diploma under my belt. Wish me luck!
 
 
-\chapter{These are}
-\section{the available}
-\subsection{sectioning commands.}
-\paragraph{Paragraphs and}
-\subparagraph{subparagraphs are available as well.}
-Inside the text, you can also use unnumbered lists,
+\chapter{Úvod}
+
+
+Moderní svět je již v dnešní době závislý na moderních technologiích. Vyžaduje to stále více společnost, ve které technologie nevyužívají jen mladí a techničtí lidé, ale i méně technicky gramotní uživatelé. Skladba těchto uživatelů navíc je, především díky dostupnosti a rozšířenosti mobilních zařízení, velice rozmanitá a rozdíly v úrovni vzdělání, věku a rozdíly v kultuře ani sociálně-ekonomický aspekt již nehrají takovou roli \cite{itustats}. S takto rozšiřující se základnou uživatelů moderních technologií roste poptávka po nových nástrojích a pokrytí existujících služeb mobilními (online) technologiemi, které neomezují uživatele místem, časem ani způsobem konzumace.
+
+
+Mezi základní služby, které tento trend následují a jdou naproti svým uživatelům, se řadí i elektronické vzdělávání, tzv. e-learning. Nicméně osobní kontakt s vyučujícím a kolektivem studentů u prezenčního studia zůstává stále důležitým aspektem v procesu vzdělávání, proto v nejbližších desetiletích e-learning klasické vzdělávání nejspíše nenahradí \cite{techvsteach}. I přesto si distanční forma studia získala důležitou pozici právě díky výhodám, které přinášejí moderní online technologie, jež dokáží odbourat řadu překážek (distance, čas, produktivita atd.). S e-learningem se také zvýšila dostupnost vzdělání pro poměrně velkou část populace, která nemůže studovat prezenčně a u nichž je individuální časový plán nutností (důchodci, zaměstnaní ad.).
+
+Nejsou to jen nové technologie, trendy nebo systémy, jež studenty doprovázejí v distančním vzdělávání; jsou to především tutoři a materiály, které jsou prezentovány nástroji určenými pro vzdělávání. Na druhou stranu prezentace a možnosti nástroje hrají svou roli při přípravě materiálů, vzdělávání, koordinaci výuky, kooperaci a evaluaci studentů a jejich práce. Každý nástroj má své silné a slabé stránky. Jejich kombinací můžeme dosáhnout lepších výsledků, ale jen v případě, že zapojení více nástrojů ve výsledku neztíží uživateli práci. Řešením jednoduchého použití více nástrojů je jejich integrace. Právě téma integrace je zajímavé a přínosné při rozvoji e-learningu, a proto je cílem této diplomové práce integrace nástroje Maple T.A. a e-learningové platformy LMS Moodle.
+
+V první částí diplomové práce si uvedeme definice pojmů ze světa distanční výuky. Zaměříme se blíže na LMS Moodle, který patří mezi velmi oblíbené výukové platformy, i když si s sebou nese nálepku složitého a někdy nepřehledného softwaru, a nástroj Maple T.A., který se zaměřuje na zkoušení a testování úloh především matematického zaměření. V rámci práce je vysvětleno, k čemu nástroje slouží, jak se dají použít, co nabízí a jak přistupují k uživatelům a jejich oprávněním a také jaké jsou základní stavební kameny obou systémů.
+
+Ve druhé části práce se zaměříme na způsoby rozšíření LMS Moodle a provedeme analýzu možností integrace s nástrojem Maple T.A. Rozebereme existující konektory a podíváme se na návrh vlastního jednoduchého řešení a detaily ze samotné implementace konektoru. Rozebereme také další možnosti rozvoje navrhovaného řešení.
+
+
+\chapter{Definice pojmů}
+	\section{E-learning}
+E-learning se rozvíjí a mění stejně rychle jako informační technologie, které využívá, a reaguje na aktuální dění ve společnosti. Proto není divu, že se nabízí více definic pojmu e-learning. Dostatečně je pojem e-learning popsán následujícími definicemi:
+
+\begin{enumerate}
+  \item „Význam slovního spojení e-learning může být brán jako elektronické vzdělávání. Elektronické vzdělávání znamená z hlediska učitele realizovat edukační proces elektronickými prostředky, v současnosti přesněji informačně-komunikačními prostředky. Elektronické učení z pozice žáka znamená realizovat těmito prostředky proces vlastního učení.“ \cite{ockajova}
+  \item „E-learning je výuka s využitím výpočetní techniky a internetu.“ \cite{korviny}
+  \item „E-learning zahrnuje jak teorii a výzkum, tak i jakýkoliv vzdělávací proces (s různým stupněm intencionality), v němž jsou v souladu s etickými principy používány informační a komunikační technologie pracující s daty v elektronické podobě. Způsob využívání prostředků ICT a dostupnost učebních materiálů jsou závislé především na vzdělávacích cílech a obsahu, charakteru vzdělávacího prostředí, potřebách a možnostech všech aktérů vzdělávacího procesu.” \cite{zounek}
+
+\end{enumerate}
+
+
+Nad rámec těchto definic můžeme e-learning také chápat jako samostudium prostřednictvím počítače, mobilu či jiného zařízení připojeného k internetu. Materiály u této formy výuky jsou zpravidla znovupoužitelné a jednoduše upravitelné. Nabízí učiteli téměř neomezené možnosti úprav a přístup odkudkoliv, kde má připojení k internetu. Studentům na druhé straně nabízí často okamžitou odezvu (nejedná-li se o úlohy vyžadující ruční úpravu) a dostupnost ke studijním materiálům. Nad rámec standardních služeb nabízí také nové komunikační možnosti jako fórum, skupinový chat apod.
+
+
+Na druhou stranu je potřebné podotknout, že e-learning nepřináší jen výhody. Hlavní problém, který při e-learningu nastává, je absence osobního kontaktu studenta s učitelem a ostatními studenty, jelikož nedochází k rozvoji dalších dovedností, jakými jsou například sebeprezentace a schopnost vyjadřovat se. Komunikace mezi učitelem a studentem navíc postrádá bezprostřední odezvu a částečně ztrácí efektivitu při řešení problému. Vedle toho přináší zvýšené nároky na učitele a jeho přípravu materiálů. Ty musí být patřičné kvality, protože podkladové materiály musí být jasné, samo-vysvětlující a zároveň by neměly být příliš obsáhlé, aby studenta nesváděly jen k rychlé povrchní prohlídce.
+
+Slovo e-learning se často nesprávně zaměňuje s pojmem „on-line výuka“. Vysvětleme si tedy rozdíl mezi těmito dvěma výrazy. On-line výuka předpokládá on-line (přímé) spojení mezi učitelem a studentem. Učitel tedy musí být připojený ve stejnou chvíli jako student, aby mohl komunikovat se studentem, odpovídat na jeho dotazy, radit mu, zkoušet ho. Učitel sice může být vzdálen od studenta několik desítek kilometrů, ale musí být fyzicky přítomen u počítače a interaktivně se studentem pracovat. [8] Pojem „e-learning“ kromě on-line výuky zahrnuje způsob vyučování, které rovněž probíhá vzdáleně, ale nemusí existovat přímé spojení mezi vyučujícím a studentem. Není po nich vyžadována přítomnost na stejném místě, ani ve stejný čas.
+
+
+	\section{Distanční vzdělávání}
+
+Výše zmíněné definice e-learningu mají společného jmenovatele, kterým jsou informační technologie. E-learning se tak stává prostředkem tzv. distančního vzdělávání. V následujícím textu jsou popsány základní definice distančního vzdělávání: 
+
+      \begin{itemize}
+	\item „Distanční vzdělávání je multimediální forma řízeného samostatného studia, které je koordinováno vzdělávací institucí a v němž jsou vyučující resp. konzultanti (tutoři) v průběhu vzdělávání trvale nebo převážně fyzicky odděleni od vzdělávaných. Multimediálnost zde znamená využití všech dostupných a účelných didaktických prvků a technických prostředků, kterými lze prezentovat učivo, komunikovat se studujícími, provádět průběžné hodnocení studijních pokroků a případně také hodnotit závěrečné výsledky studia. Aktuální a efektivní technologickou podporou distančního studia je metoda e-learning.“ \cite{zlamalova} 
+	\item Dle \cite{prucha} se „jedná o formu studia zprostředkovaného médii (telefon, rozhlas, televize, počítač, zvl. internet a elektronická pošta aj.). Je založeno na samostatném studiu účastníků, řízeném specializovanou institucí, bez prezenčního kontaktu studujících s vyučujícími. Výuku účastníků zajišťují speciálně připravené učební materiály (výukové balíky) a jiné metody studijní podpory a hodnocení, umožňující individuální přístup.“ 
+     \end{itemize}
+
+Distančním vzděláváním se, nejen na základě zmíněných definic, myslí alternativní styl výuky, který nevyžaduje přímý kontakt mezi aktéry výuky. Naopak probíhá převážně formou samostudia, které je řízeno připravenými materiály, s případnou pomocí tutora. Využívá různých komunikačních kanálů, se zvláštním zaměřením na internet a služby s ním spojené (elektronická pošta, konference, video kanály, webové prezentace, e-learningové platformy apod.).
+
+
+	\section{Learning management system}
+Learning management system (zkráceně LMS) je označení jakéhokoliv balíku softwarových nástrojů sloužícího k e-learningu, které jsou dostupné online, nejčastěji z webového rozhraní. Hlavním, nikoliv jediným, nástrojem je tvorba, distribuce a administrace vzdělávacích kurzů a materiálů. Vedle nástroje pro správu kurzů LMS obsahuje také tyto části \cite{lms}:
 \begin{itemize}
-  \item such as
-  \item this one
-  \begin{itemize}
-    \item     and they can be nested as well.
-    \item[>>] You can even turn the bullets into something fancier,
-    \item[\S] if you so desire.
-  \end{itemize}
+	\item Evidence a správa žáků
+	\item Katalog výukových kurzů a objektů
+	\item Správa studijních plánů
+	\item Evidence hodnocení žáků
+	\item Testování a zkoušení žáků
+	\item Správa přístupových práv
+	\item Komunikační nástroje
+	\item Autorské nástroje k vytváření výukových kurzů a objektů
+	\item Úložiště výukového obsahu
 \end{itemize}
-Numbered lists are
-\begin{enumerate}
-  \item very
-  \begin{enumerate}
-    \item similar
-  \end{enumerate}
-\end{enumerate}
-and so are description lists:
-\begin{description}
-  \item[Description list]
-    A list of terms with a description of each term
-\end{description}
-The spacing of these lists is geared towards paragraphs of text.
-For lists of words and phrases, the \textsf{paralist} package
-offers commands
-\begin{compactitem}
-  \item that
-  \begin{compactitem}
-    \item are
-    \begin{compactitem}
-      \item better
-      \begin{compactitem}
-        \item suited
-      \end{compactitem}
-    \end{compactitem}
-  \end{compactitem}
-\end{compactitem}
-\begin{compactenum}
-  \item to
-  \begin{compactenum}
-    \item this
-    \begin{compactenum}
-      \item kind of
-      \begin{compactenum}
-        \item content.
-      \end{compactenum}
-    \end{compactenum}
-  \end{compactenum}
-\end{compactenum}
-The \textsf{amsthm} package provides the commands necessary for the
-typesetting of mathematical definitions, theorems, lemmas and
-proofs.
+Jednotlivá řešení LMS nemusí nutně zahrnovat všechny tyto nástroje a naopak mohou nabízet širší paletu nástrojů.
+
+	\section{Learning Tools Interoperability}
+Learning Tools Interoperability (LTI) je specifikace vytvořená organizací IMS Global Learning Consortium a jejím cílem je ustanovení standardního přístupu k integraci výukových aplikací (často poskytované jako služby třetích stran) s výukovými platformami, jakými jsou LMS, CMS, portály, výukové repozitáře a další prostředí pro podporu výuky. V praxi to znamená přímočarou a bezimplementační integraci nástrojů s odlišnou funkcionalitou pomocí jednotného rozhraní, což vede ke snížení časových i finančních nákladů při integraci napříč systémy. \cite{imslti}
+
+Klíčovým konceptem LTI je „konzument” a „poskytovatel”. Specifikace udává jednotné rozhraní mezi e-learningovým nástrojem poskytujícím služby a e-learningovou platformou konzumující služby. V praxi je typických konzumentem LMS na bázi Moodlu nebo Blackboardu, ale není to podmínkou, a typickým poskytovatelem je software třetích stran podobný nástrojům Wimba, Mahara e-portfolio nebo třeba Maple T.A.. Specifikace LTI podporuje širší definici konzumenta i poskytovatele zahrnující například studentské portály (konzumenti) a různorodé externě hostované funkcionality (poskytovatelé). \cite{imsltiinvest}
 
 
-\begin{theorem}
-  This is a theorem that offers a profound insight into the
-  mathematical sectioning commands.
-\end{theorem}
-\begin{theorem}[Another theorem]
-  This is another theorem. Unlike the first one, this theorem has
-  been endowed with a name.
-\end{theorem}
-\begin{lemma}
-  Let us suppose that $x^2+y^2=z^2$. Then
-  \begin{equation}
-    \biggl\langle u\biggm|\sum_{i=1}^nF(e_i,v)e_i\biggr\rangle
-    =F\biggl(\sum_{i=1}^n\langle e_i|u\rangle e_i,v\biggr).
-  \end{equation}
-\end{lemma}
-\begin{proof}
-  $\nabla^2 f(x,y)=\frac{\partial^2f}{\partial x^2}+
-   \frac{\partial^2f}{\partial y^2}$.
-\end{proof}
-\begin{corr}
-  This is a corrolary.
-\end{corr}
-\begin{remark}
-  This is a remark.
-\end{remark}
+Specifikace LTI má dvě hlavní větve: LTI 1 a LTI 2, kterými lze integrovat systémy. LTI 1 bylo poprvé uvolněno v roce 2006, kdy bylo příliš komplexní a neujalo se. Další vydání se snažila specifikaci zjednodušit. V roce 2012 je vydána verze LTI 1.1 a později téhož roku LTI 1.1.1. Právě tyto verze se využívají pro integraci mezi systémy, poskytují základní a jednoduché rozhraní pro komunikaci a přenos informací.
 
-\chapter{Floats and references}
-\begin{figure}
-  \begin{center}
-    %% PNG and JPG images can be inserted into the document as well,
-    %% but their resolution needs to be adequate. The minimum is
-    %% about 250 pixels per 1 centimeter. That means that a JPG or
-    %% PNG image typeset at 40 × 40 mm should be 1000 × 1000 px
-    %% large at minimum.
-    \includegraphics[width=40mm]{fithesis/logo/mu/fithesis-base.pdf}
-  \end{center}
-  \caption{The logo of the Masaryk University at 40\,mm}
-  \label{fig:mulogo1}
-\end{figure}
+LTI 2 byla dlouho vyvíjená verze, která byla vydána v lednu roku 2015. Umožňuje přenášení více informací (aktivní přenos výsledků, více sofistikovaný přenos informací a rozšiřitelnou množinu informací pro hlubší integraci) mezi systémy v obou směrech komunikace a přináší větší kontrolu a svobodu v umístění odkazů na poskytující software. Vzhledem k tomu, že se jedná o relativně novou specifikaci, není její implementace tolik rozšířená. \cite{imslti20}
 
-\begin{figure}
-  \begin{minipage}{.66\textwidth}
-    \includegraphics[width=\textwidth]{fithesis/logo/mu/fithesis-base.pdf}
-  \end{minipage}
-  \begin{minipage}{.33\textwidth}
-    \includegraphics[width=\textwidth]{fithesis/logo/mu/fithesis-base.pdf} \\
-    \includegraphics[width=\textwidth]{fithesis/logo/mu/fithesis-base.pdf}
-  \end{minipage}
-  \caption{The logo of the Masaryk University at $\frac23$ and
-    $\frac13$ of text width}
-  \label{fig:mulogo2}
-\end{figure}
 
-\begin{table}
-  \begin{tabularx}{\textwidth}{lllX}
-    \toprule
-    Day & Min Temp & Max Temp & Summary \\
-    \midrule
-    Monday & $13^{\circ}\mathrm{C}$ & $21^\circ\mathrm{C}$ & A
-    clear day with low wind and no adverse current advisories. \\
-    Tuesday & $11^{\circ}\mathrm{C}$ & $17^\circ\mathrm{C}$ & A
-    trough of low pressure will come from the northwest. \\
-    Wednesday & $10^{\circ}\mathrm{C}$ &
-    $21^\circ\mathrm{C}$ & Rain will spread to all parts during the
-    morning. \\
-    \bottomrule
-  \end{tabularx}
-  \caption{A weather forecast}
-  \label{tab:weather}
-\end{table}
 
-The logo of the Masaryk University is shown in Figure
-\ref{fig:mulogo1} and Figure \ref{fig:mulogo2} at pages
-\pageref{fig:mulogo1} and \pageref{fig:mulogo2}. The weather
-forecast is shown in Table \ref{tab:weather} at page
-\pageref{tab:weather}. The following chapter is Chapter
-\ref{chap:matheq} and starts at page \pageref{chap:matheq}.
-Items \ref{item:star1}, \ref{item:star2}, and
-\ref{item:star3} are starred in the following list:
-\begin{compactenum}
-  \item some text
-  \item some other text
-  \item $\star$ \label{item:star1}
-  \begin{compactenum}
-    \item some text
-    \item $\star$ \label{item:star2}
-    \item some other text
-    \begin{compactenum}
-      \item some text
-      \item some other text
-      \item yet another piece of text
-      \item $\star$ \label{item:star3}
-    \end{compactenum}
-    \item yet another piece of text
-  \end{compactenum}
-  \item yet another piece of text
-\end{compactenum}
-If your reference points to a place that has not yet been typeset,
-the \verb"\ref" command will expand to \textbf{??} during the first
-run of
-\texttt{pdflatex \jobname.tex}
-and a second run is going to be needed for the references to
-resolve. With online services -- such as Overleaf -- this is
-performed automatically.
+\chapter{LMS Moodle}
+Cílem této kapitoly je představit LMS Moodle, jeho základní stavební kameny, práci s kontexty, uživatelskými rolemi  a postup založení a nastavení konkrétního kurzu.
+	\section{Co je to Moodle?}
+Moodle je software pro tvorbu výukových systémů a elektronických kurzů na internetu. Jedná se o neustále se vyvíjející projekt (již od roku 1999), navržený na základě sociálně konstruktivistického\footnote{Více na https://docs.moodle.org/archive/cs/V\%C3\%BDchodiska.}  přístupu ke vzdělávání \cite{moodle-what-is}.  Slovo Moodle vychází z akronymu pro Modular Object-Oriented Dynamic Learning Environment (Modulární objektově orientované dynamické prostředí pro výuku). A s čím tedy Moodle přichází?
+		\begin{figure}
+		  \begin{center}
+		    \includegraphics[width=60mm]{images/moodle-logo.png}
+		   \end{center}
+		  \caption{Oficiální logo Moodlu. \cite{moodle-logo}}
+		  \label{fig:moodlelogo}
+		\end{figure}
 
-\chapter{Mathematical equations}
-\label{chap:matheq}
-\TeX{} comes pre-packed with the ability to typeset inline
-equations, such as $\mathrm{e}^{ix}=\cos x+i\sin x$, and display
-equations, such as \[
-  \mathbf{A}^{-1} = \begin{bmatrix}
-  a & b \\ c & d \\
-  \end{bmatrix}^{-1} =
-  \frac{1}{\det(\mathbf{A})} \begin{bmatrix}
-  \,\,\,d & \!\!-b \\ -c & \,a \\
-  \end{bmatrix} =
-  \frac{1}{ad - bc} \begin{bmatrix}
-  \,\,\,d & \!\!-b \\ -c & \,a \\
-  \end{bmatrix}.
-\] \LaTeX{} defines the automatically numbered \texttt{equation}
-environment:
-\begin{equation}
-  \gamma Px = PAx = PAP^{-1}Px.
-\end{equation}
-The package \textsf{amsmath} provides several additional
-environments that can be used to typeset complex equations:
-\begin{enumerate}
-  \item An equation can be spread over multiple lines using the
-  
+	\section{Historie}
+		\begin{figure}
+		  \begin{center}
+		    \includegraphics[width=80mm]{images/statistiky-moodle.png}
+		   \end{center}
+		  \caption{Počet kurzů a uživatelů ze stránek registrovaných na Moodle.org.   \cite{moodle-stats}}
+		  \label{fig:moodlestats}
+		\end{figure}
 
-  \item Several aligned equations can be typeset using the
-    \texttt{align} environment:
-    \begin{align}
-              a + b &= c + d     \\
-                  u &= v + w + x \\[1ex]
-      i + j + k + l &= m
-    \end{align}
+	\section{Vlastnosti Moodlu}
 
-  \item The \texttt{alignat} environment is similar to
-    \texttt{align}, but it doesn't insert horizontal spaces between
-    the individual columns:
-    \begin{alignat}{2}
-      a + b + c &+ d       &   &= 0 \\
-              e &+ f + g   &   &= 5
-    \end{alignat}
+		\subsection{Licence}
+		\subsection{Prerekvizity}
+		\subsection{Rozvoj}
+		\subsection{Výhody a nevýhody}
+	\section{Kurz}
+		\subsection{Rozložení}
+		\subsection{Výukové moduly}
+		\subsection{Bloky}
+	\section{Uživatelské role a kontext}
 
-  \item Much like chapter, sections, tables, figures, or list
-    items, equations -- such as \eqref{eq:first} and
-    \eqref{eq:mine} -- can also be labeled and referenced:
-    \begin{alignat}{4}
-      b_{11}x_1 &+ b_{12}x_2  &  &+ b_{13}x_3  &  &             &
-        &= y_1,                   \label{eq:first} \\
-      b_{21}x_1 &+ b_{22}x_2  &  &             &  &+ b_{24}x_4  &
-        &= y_2. \tag{My equation} \label{eq:mine}
-    \end{alignat}
+		\begin{figure}
+		  \begin{center}
+		    \includegraphics[width=100mm]{images/moodle-context.png}
+		   \end{center}
+		  \caption{Grafické zobrazení hierarchie kontextů.   \cite{moodle-context}}
+		  \label{fig:moodlecontext}
+		\end{figure}
 
-  \item The \texttt{gather} environment makes it possible to
-    typeset several equations without any alignment:
-    \begin{gather}
-      \psi = \psi\psi, \\
-      \eta = \eta\eta\eta\eta\eta\eta, \\
-      \theta = \theta.
-    \end{gather}
+	\section{Vytvoření kurzu a jeho nastaven}
 
-  \item Several cases can be typeset using the \texttt{cases}
-    environment:
-    \begin{equation}
-      |y| = \begin{cases}
-        \phantom-y & \text{if }z\geq0, \\
-                -y & \text{otherwise}.
-      \end{cases}
-    \end{equation}
-\end{enumerate}
-For the complete list of environments and commands, consult the
-\textsf{amsmath} package manual\footnote{
-  See \url{http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf}.
-  The \texttt{\textbackslash url} command is provided by the
-  package \textsf{url}.
-}.
+		\begin{figure}
+		  \begin{center}
+		    \includegraphics[width=120mm]{images/kurzy-pridani.png}
+		   \end{center}
+		  \caption{Náhled obrazovky s kategoriemi kurzy (uživatel s právy vytvořit kurz).  }
+		  \label{fig:moodlekurzypridani}
+		\end{figure}
 
-\chapter{\textnormal{We \textsf{have} \texttt{several} \textsc{fonts}
-  \textit{at} \textbf{disposal}}}
-The serified roman font is used for the main body of the text.
-\textit{Italics are typically used to denote emphasis or
-quotations.} \texttt{The teletype font is typically used for source
-code listings.} The \textbf{bold}, \textsc{small-caps} and
-\textsf{sans-serif} variants of the base roman font can be used to
-denote specific types of information.
+		\begin{figure}
+		  \begin{center}
+		    \includegraphics[width=120mm]{images/kurzy-pridani-detail.png}
+		   \end{center}
+		  \caption{Náhled na formulář pro přidání kurzu.}
+		  \label{fig:moodlekurzypridanidetail}
+		\end{figure}
 
-\tiny We \scriptsize can \footnotesize also \small change \normalsize
-the \large font \Large size, \LARGE although \huge it \Huge
-is \huge usually \LARGE not \Large necessary.\normalsize
+\chapter{Maple T.A.}
+	\section{Co je to Maple T.A.?}
+		\begin{figure}
+		  \begin{center}
+		    \includegraphics[width=60mm]{images/MapleTA_logo.jpg}
+		   \end{center}
+		  \caption{Oficiální logo Maple T.A.  \cite{maple-logo}}
+		  \label{fig:maplelogo}
+		\end{figure}
 
-A wide variety of mathematical fonts is also available, such as: \[
-  \mathrm{ABC}, \mathcal{ABC}, \mathbf{ABC}, \mathsf{ABC},
-  \mathit{ABC}, \mathtt{ABC}
-\] By loading the \textsf{amsfonts} packages, several additional
-fonts will become available: \[
-  \mathfrak{ABC}, \mathbb{ABC}
-\] Many other mathematical fonts are available\footnote{
-  See \url{http://tex.stackexchange.com/a/58124/70941}.
-}.
+	\section{Licencování}
+	\section{Předpoklady pro instalaci}
+	\section{Základy aplikace}
+		\subsection{Otázka (Question)}
 
-\chapter{Inserting the bibliography}
-After loading the \texttt{biblatex} package and linking a
-bibliography data\-base file to the document using the
-\verb"\addbibresource" command, you can start citing the entries.
-This is just dummy text \cite{inbook-full} lightly sprinkled with
-citations \cite[p.~123]{incollection-full}.  Several sources can be
-cited at once \cite{whole-collection, manual-minimal,manual-full}.
-\citetitle{inbook-full} was written by \citeauthor{inbook-full} in
-\citeyear{inbook-full}. We can also produce \textcite{inbook-full}
-or%% Let us define a compound command:
-\def\citeauthoryear#1{(\textcite{#1},~\citeyear{#1})}
-\citeauthoryear{inbook-full}. The full bibliographic citation is:
-\emph{\fullcite{inbook-full}}. We can easily insert a bibliographic
-citation into the footnote\footfullcite{inbook-full}.
+		\begin{figure}
+		  \begin{center}
+		    \includegraphics[width=60mm]{images/MapleTA_logo.jpg}
+		   \end{center}
+		  \caption{Oficiální logo Maple T.A.  \cite{maple-logo}}
+		  \label{fig:maplelogo}
+		\end{figure}
 
-The \verb"\nocite" command will not generate any
-output\nocite{booklet-full}, but it will insert its argument into
-the bibliography. The \verb"\nocite{*}" command will insert all the
-records in the bibliography database file into the bibliography.
-Try uncommenting the command
-%% \nocite{*}
-and watch the bibliography section come apart at the seams.
+		\begin{figure}
+		  \begin{center}
+		    \includegraphics[width=60mm]{images/MapleTA_logo.jpg}
+		   \end{center}
+		  \caption{Oficiální logo Maple T.A.  \cite{maple-logo}}
+		  \label{fig:maplelogo}
+		\end{figure}
 
-When typesetting the document for the first time, citing a
-\texttt{work} will expand to [\textbf{work}] and the
-\verb"\printbibliography" command will produce no output. It is now
-necessary to generate the bibliography by running \texttt{biber
-\jobname.bcf} from the command line and then by typesetting the
-document again twice. During the first run, the bibliography
-section and the citations will be typeset, and in the second run,
-the bibliography section will appear in the table of contents.
+		\begin{figure}
+		  \begin{center}
+		    \includegraphics[width=60mm]{images/MapleTA_logo.jpg}
+		   \end{center}
+		  \caption{Oficiální logo Maple T.A.  \cite{maple-logo}}
+		  \label{fig:maplelogo}
+		\end{figure}
 
-The \texttt{biber} command needs to be executed from within the
-directory, where the \LaTeX\ source file is located. In Windows,
-the command line can be opened in a directory by holding down the
-\keys{Shift} key and by clicking the right mouse button while
-hovering the cursor over a directory.  Select the \menu{Open
-Command Window Here} option in the context menu that opens shortly
-afterwards.
+		\begin{figure}
+		  \begin{center}
+		    \includegraphics[width=60mm]{images/MapleTA_logo.jpg}
+		   \end{center}
+		  \caption{Oficiální logo Maple T.A.  \cite{maple-logo}}
+		  \label{fig:maplelogo}
+		\end{figure}
 
-With online services -- such as Overleaf -- all commands are
-executed automatically.
+		\subsection{Úkol (Assignment)}
+		\subsection{Kniha hodnocení (Gradebook)}
+	\section{Uživatelské role}
+	\section{Vytvoření úkolu}
+\chapter{Analýza}
+	\section{Struktura zdrojových kódů Moodlu}
+	\section{Analýza konektorů od Maple T.A.}
+		\subsection{Klasický konektor}
+		\subsection{LTI konektor}
 
-{\csname captions\languagename\endcsname %% Temporarily override
-%% the BibLaTeX localization with the original babel definitions.
-\makeatletter %% Use the correct localization of the quotations.
-  \thesis@selectLocale{\thesis@locale}\makeatother
-\printbibliography[heading=bibintoc]} %% Print the bibliography.
+\chapter{Implementace}
+	\section{Webové služby Maple T.A.}
+		\subsection{Kontrola připojení}
+		\subsection{Vytvoření a ukončení relace}
+		\subsection{Získávání a manipulace s daty}
+		\subsection{Maple T.A. Launcher služby}
+		\subsection{Grade pushing}
+		\subsection{Monitoring}
+	\section{Návrh a porovnání s ostatními konektory}
+	\section{Databázový model}
+	\section{Struktura modulu a její realizace}
 
-\chapter{Inserting the index}
-After using the \verb"\makeindex" macro and loading the
-\texttt{makeidx} package that provides additional indexing
-commands, index entries can be created by issuing the \verb"\index"
-command. \index{dummy text|(}It is possible to create ranged index
-entries, which will encompass a span of text.\index{dummy text|)}
-To insert complex typographic material -- such as $\alpha$
-\index{alpha@$\alpha$} or \TeX{} \index{TeX@\TeX} --
-into the index, you need to specify a text string, which will
-determine how the entry will be sorted. It is also possible to
-create hierarchal entries. \index{vehicles!trucks}
-\index{vehicles!speed cars}
+		\begin{figure}
+		  \begin{center}
+		    \includegraphics[width=100mm]{images/struktura_modulu.png}
+		   \end{center}
+		  \caption{Struktura navrhovaného modulu}
+		  \label{fig:strukturamodulu}
+		\end{figure}
 
-After typesetting the document, it is necessary to generate the
-index by running
-\begin{center}%
-  \texttt{texindy -I latex -C utf8 -L }$\langle$\textit{locale}%
-  $\rangle$\texttt{ \jobname.idx}
-\end{center}
-from the command line, where $\langle$\textit{locale}$\rangle$
-corresponds to the main locale of your thesis -- such as
-\texttt{english}, and then typesetting the document again.
+		\begin{figure}
+		  \begin{center}
+		    \includegraphics[width=100mm]{images/prevod_na_xml.png}
+		   \end{center}
+		  \caption{Algoritmus k převedí asociativního pole na XML}
+		  \label{fig:prevodnaxml}
+		\end{figure}
 
-The \texttt{texindy} command needs to be executed from within the
-directory, where the \LaTeX\ source file is located. In Windows,
-the command line can be opened in a directory by holding down the
-\keys{Shift} key and by clicking the right mouse button while
-hovering the cursor over a directory. Select the \menu{Open Command
-Window Here} option in the context menu that opens shortly
-afterwards.
+		\begin{figure}
+		  \begin{center}
+		    \includegraphics[width=100mm]{images/xml_na_pole.png}
+		   \end{center}
+		  \caption{Webové služby vrací data v podobě XML, tímto voláním se převedou na asociativní pole.}
+		  \label{fig:prevodnapole}
+		\end{figure}
 
-With online services -- such as Overleaf -- the commands are
-executed automatically, although the locale may be erroneously
-detected, or the \texttt{makeindex} tool (which is only able to
-sort entries that contain digits and letters of the English
-alphabet) may be used instead of \texttt{texindy}. In either case,
-the index will be ill-sorted.
+		
+
+	\section{Detaily implementace}
+		\subsection{Vytovření nové instance}
+		\begin{figure}
+		  \begin{center}
+		    \includegraphics[width=100mm]{images/ajax-volani.png}
+		   \end{center}
+		  \caption{Voláním PHP za pomoci AJAXu se získávají hodnoty pro závislé pole formuláře.}
+		  \label{fig:volaniajax}
+		\end{figure}
+
+
+		\subsection{Nová naplánovaná úloha}
+
+		\begin{figure}
+		  \begin{center}
+		    \includegraphics[width=100mm]{images/cron-trida.png}
+		   \end{center}
+		  \caption{Implementace třídy je využíta jako naplánovaná úloha. }
+		  \label{fig:crontrida}
+		\end{figure}
+
+		\begin{figure}
+		  \begin{center}
+		    \includegraphics[width=100mm]{images/cron-registrace.png}
+		   \end{center}
+		  \caption{Ukázka záznamu z pole, které Moodle využivá při instalaci nové naplánované úlohy.}
+		  \label{fig:cronregistrace}
+		\end{figure}
+\chapter{Diskuze}
+
+\chapter{Závěr}
+
+
+
+
+\printbibliography[heading=bibintoc]
+\listoffigures
+\listoftables
+
+
+
 
 \makeatletter\thesis@blocks@clear\makeatother
 \phantomsection %% Print the index and insert it into the
 \addcontentsline{toc}{chapter}{\indexname} %% table of contents.
-\printindex
 
 \makeatletter\thesis@blocks@clear\makeatother
-%% Patch the appendix hyperrefs (see:
-%% <http://tex.stackexchange.com/q/174887/70941>)
+
 \renewcommand{\theHchapter}{A\arabic{chapter}}
 \appendix %% and start the appendices.
 

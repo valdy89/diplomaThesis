@@ -1,0 +1,340 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdftex 2015.12.20)  3 JAN 2016 14:50
+entering extended mode
+**C:/xampp/htdocs/diplomka/PodkladyKTextum/example.bib
+(C:/xampp/htdocs/diplomka/PodkladyKTextum/example.bib
+! Undefined control sequence.
+l.1 @preamble{ "\newcommand
+                           {\noopsort}[1]{} "
+? 
+! Undefined control sequence.
+l.1 @preamble{ "\newcommand{\noopsort
+                                     }[1]{} "
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.2         #
+              "\newcommand{\printfirst}[2]{#1} "
+? 
+! Undefined control sequence.
+l.2         # "\newcommand
+                          {\printfirst}[2]{#1} "
+? 
+! Undefined control sequence.
+l.2         # "\newcommand{\printfirst
+                                      }[2]{#1} "
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.2         # "\newcommand{\printfirst}[2]{#
+                                            1} "
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.3         #
+              "\newcommand{\singleletter}[1]{#1} "
+? 
+! Undefined control sequence.
+l.3         # "\newcommand
+                          {\singleletter}[1]{#1} "
+? 
+! Undefined control sequence.
+l.3         # "\newcommand{\singleletter
+                                        }[1]{#1} "
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.3         # "\newcommand{\singleletter}[1]{#
+                                              1} "
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.4         #
+              "\newcommand{\switchargs}[2]{#2#1} " }
+? 
+! Undefined control sequence.
+l.4         # "\newcommand
+                          {\switchargs}[2]{#2#1} " }
+? 
+! Undefined control sequence.
+l.4         # "\newcommand{\switchargs
+                                      }[2]{#2#1} " }
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.4         # "\newcommand{\switchargs}[2]{#
+                                            2#1} " }
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.4         # "\newcommand{\switchargs}[2]{#2#
+                                              1} " }
+? 
+! Undefined control sequence.
+l.9    journal = {\mbox
+                       {G-Animal's} Journal},
+? 
+! Undefined control sequence.
+l.16    journal = {\mbox
+                        {G-Animal's} Journal},
+? 
+! Undefined control sequence.
+l.40    journal = {\mbox
+                        {G-Animal's} Journal},
+? 
+! Undefined control sequence.
+l.53    year = "{\noopsort
+                          {1973b}}1973",
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.65    month = "10~" #
+                        jan,
+? 
+! Undefined control sequence.
+l.66    year = "{\noopsort
+                          {1973b}}1973",
+? 
+! Undefined control sequence.
+l.79    year = "{\noopsort
+                          {1973b}}1973",
+? 
+! Undefined control sequence.
+l.89    year = "{\noopsort
+                          {1973c}}1981",
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.100    month = "10~" #
+                         jan,
+? 
+! Undefined control sequence.
+l.101    year = "{\noopsort
+                           {1973c}}1981",
+? 
+! Undefined control sequence.
+l.111    year = "{\noopsort
+                           {1973c}}1981",
+? 
+! Undefined control sequence.
+l.120    year = "{\noopsort
+                           {1973a}}{\switchargs{--90}{1968}}",
+? 
+! Undefined control sequence.
+l.120    year = "{\noopsort{1973a}}{\switchargs
+                                               {--90}{1968}}",
+? 
+! Undefined control sequence.
+l.125    key = "Kn{\printfirst
+                              {v}{1987}}",
+? 
+[1{C:/Users/valusek/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+! You can't use `macro parameter character #' in horizontal mode.
+l.198    month = apr #
+                       "-" # may,
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.198    month = apr # "-" #
+                             may,
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.216    month = jun #
+                       "-" # aug,
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.216    month = jun # "-" #
+                             aug,
+? 
+! Undefined control sequence.
+l.235 @STRING{STOC-key = "OX{\singleletter
+                                          {stoc}}"}
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.244 ...ooktitle = "Proc. Fifteenth Annual ACM" #
+                                                   STOC,
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.252 ...ooktitle = "Proc. Fifteenth Annual ACM" #
+                                                   STOC,
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.275    title = "Proc. Fifteenth Annual" #
+                                            STOC,
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.281    title = "Proc. Fifteenth Annual" #
+                                            STOC,
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.295    title = "Proc. Fifteenth Annual" #
+                                            STOC,
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.298 ...ooktitle = "Proc. Fifteenth Annual ACM" #
+                                                   STOC,
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.315    month = jun #
+                       "-" # aug,
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.315    month = jun # "-" #
+                             aug,
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.348    month = nov #
+                       ", " # dec,
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.348    month = nov # ", " #
+                              dec,
+? 
+[2]
+! Undefined control sequence.
+l.355 ...e = "Volume~2 is listed under Knuth \cite
+                                                  {book-full}"
+? 
+)
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+! Emergency stop.
+<*> 
+    
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!
