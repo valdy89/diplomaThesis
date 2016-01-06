@@ -50,14 +50,17 @@ $string['selectClass'] = 'You have to select class';
 $string['protocol'] = 'Protocol';
 $string['protocoldescription'] = 'The network protocol (http or https) you type in the address bar of the browser to access your Maple T.A. server.';
 $string['server'] = 'Server Name';
-$string['serverdescription'] = 'The server name you type in the address bar of the browser to access your Maple T.A. server.';
-$string['port'] = 'Port Number';
-$string['portdescription'] = 'The port number you type in the address bar of the browser to access your Maple T.A. server.';
+$string['serverdescription'] = 'The server name you type in the address bar of the browser to access your Maple T.A. server. Include the port number if needed.';
 $string['context'] = 'Context';
 $string['contextdescription'] = 'The application name you type in the address bar of the browser after the server and port number to access your Maple T.A. server.';
 $string['secret'] = 'Shared Password';
 $string['secretdescription'] = 'A password shared by Moodle and Maple T.A. that will be used to encrypt Moodle <--> Maple T.A. communications.';
+$string['timeout'] = 'SessionID timeout';
+$string['timeoutdescription'] = 'Parametr sets time (minutes; max. 200) how long will be Session ID stored in Moodle.';
+
 $string['availableassignments'] = 'Available Maple T.A.';
+$string['settingsheading'] = 'Maple T.A. connection setup';
+$string['settingsinfo'] = 'Please setup following setting for Maple T.A. connection.';
 
 $string['synchronization'] = 'List synchronization';
 $string['startassignment'] = 'Start assignment';
@@ -65,4 +68,23 @@ $string['waitplease'] = 'Wait please - assignment will be loaded in a second.';
 
 $string['notmonitored'] = 'WS was not called.';
 
+$string['mode'] = 'Assignment type';
+$string['mode0'] = 'Proctore test';
+$string['mode1'] = 'Homework or quiz';
+$string['mode2'] = 'Practice';
+$string['mode3'] = 'Mastery assignment';
+$string['mode4'] = 'Study session';
+
+$string['totalpoints'] = 'Total Points';
+$string['passingscore'] = 'Passing score';
+$string['start'] = 'Start';
+$string['end'] = 'End';
+$string['timelimit'] = 'Timelimit (minutes)';
+$string['notsetvalue'] = 'Not set';
+
+
+$string['no'] = 'No';
+$string['yes'] = 'Yes';
+$string['showonlyexternal'] = 'Only Moodle users';
+$string['showonlyexternaldescription'] = 'Setting will show grades in gradebook of all users and grades from Maple T.A. (choice Yes) or only Moodle users(choice No).';
 

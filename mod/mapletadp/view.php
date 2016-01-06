@@ -71,18 +71,28 @@ if (isset($mapletadp)) {
     $controller = new mod_mapletadp\controller\Mapleta($DB, $CFG, $USER);
     $controllerData = new mod_mapletadp\controller\MapleData($DB, $CFG, $USER);
     $assignment = $controllerData->getAssignments($mapletadp->classid, $mapletadp->assignmentid);
-    $mapletaModel = new mod_mapletadp\model\Mapleta($DB, $CFG);
+    $launcherModel = new mod_mapletadp\model\Launcher($DB, $CFG);
     //var_dump($assignment);
 
 
     echo $OUTPUT->heading($assignment->name);
-    echo $mapletaModel->startAssignmentForm($assignment, $course->id);
+    echo $launcherModel->startAssignmentForm($assignment, $course->id);
     if ($run) {
         echo "<b>" . get_string('waitplease', 'mapletadp') . "</b>";
         $PAGE->requires->js('/mod/mapletadp/js/start_assignment.js');
     } else {
         $PAGE->requires->js('/mod/mapletadp/js/create_assignment_popup.js');
-        echo '<a href="#" id="startLink">' . get_string('startassignment', 'mapletadp') . '</a>';
+        echo "<div><table cellspacing='0' class='flexible generaltable generalbox'>";
+        echo "<tr><td>".get_string('mode', 'mapletadp')."</td><td> ".get_string('mode'.$assignment->mode, 'mapletadp'). "</td></tr>";
+        echo "<tr><td>".get_string('totalpoints', 'mapletadp')."</td><td>". $assignment->totalpoints. "</td></tr>";
+        echo "<tr><td>".get_string('passingscore', 'mapletadp')."</td><td>".($assignment->passingscore >= 0?$assignment->passingscore:  get_string('notsetvalue','mapletadp')). "</td></tr>";
+        echo "<tr><td>".get_string('start', 'mapletadp')."</td><td>".($assignment->start> 0 ? date('j. n. Y', $assignment->start):get_string('notsetvalue','mapletadp')). "</td></tr>";
+        echo "<tr><td>".get_string('end', 'mapletadp')."</td><td>".($assignment->end> 0 ? date('j. n. Y', $assignment->end):get_string('notsetvalue','mapletadp')). "</td></tr>";
+        echo "<tr><td>".get_string('timelimit', 'mapletadp')."</td><td>".($assignment->timelimit >= 0?$assignment->timelimit. " min.":get_string('notsetvalue','mapletadp'))."</td></tr>";
+        
+        
+        echo "</table></div>";
+        echo '<a href="#" id="startLink"><b>' . get_string('startassignment', 'mapletadp') . '</b></a>';
     }
 }
 

@@ -27,6 +27,9 @@ class Mapleta extends Base {
         return $this->model->refreshAllData();
     }
 
+    public function refreshGrades() {
+        return $this->model->refreshGrades();
+    }
     public function getMonitors() {
         return $this->model->getMonitors();
     }

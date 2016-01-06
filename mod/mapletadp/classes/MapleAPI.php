@@ -17,7 +17,7 @@ class MapleAPI {
 
     public function call($url, $request, $cookie = false) {
         $requestString = $this->arrayToXML($request);
-        $response = $this->simpleCall($url, $request, $cookie);
+        $response = $this->simpleCall($url, $requestString->asXML(), $cookie);
         return $this->XMLToArray($response);
     }
     public function simpleCall($url, $request, $cookie = false){

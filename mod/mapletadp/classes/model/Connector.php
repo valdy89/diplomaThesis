@@ -63,7 +63,7 @@ class Connector extends Base {
     //protected functions
 
 
-    protected function sendRequest($url, $request, $cookie = false) {
+    public function sendRequest($url, $request, $cookie = false) {
         $response = $this->mapleApi->call($url, $request, $cookie);
         return $response;
     }
@@ -93,7 +93,7 @@ class Connector extends Base {
 
     protected function getSessionID($user, $role, $classID = -1) {
         $session = $this->db->get_record_sql("SELECT * FROM {" . $this->mapletadp_session . "} WHERE userid = ? AND role = ? AND class = ? ORDER BY id DESC LIMIT 1", array($user->id, $role, $classID));
-        $expirationLimit = 30 * 60;
+        $expirationLimit = (($this->cfg->mapletadp_timeout<=200 && $this->cfg->mapletadp_timeout>0)?$this->cfg->mapletadp_timeout :30) * 60;
         if ($this->debug) {
             //    var_dump($session);
             //   var_dump($session && $session->timestamp > time() - $expirationLimit && $session->class == $classID && $session->role == $role && strlen($session->session)>0);
@@ -119,6 +119,24 @@ class Connector extends Base {
 
         return $session->session;
     }
+    
+    
+    public function getGrades($classID) {
+        GLOBAL $USER;
+        $params = $this->getGradesParams($classID);
+        $session = $this->getSessionID($USER, Connector::MAPLE_ROLE_ADMIN, $classID);
+
+        $response = $this->sendRequest('ws/grade', $params, $session);
+        $dataset = $this->getResponse($response);
+        var_dump($response);
+        if ($dataset !== false) {
+
+            return $dataset;
+        }
+
+        return false;
+    }
+    
 
     //params functions
     public function getConnectParams($user, $role, $classID) {
@@ -179,8 +197,10 @@ class Connector extends Base {
 
     public function pingServer($echo) {
         $params = $this->pingServerParams('Running');
+        var_dump($params);
         if ($params !== false) {
             $response = $this->sendRequest('ws/ping', $params);
+            var_dump($response);
             $dataset = $this->validatePingResponse($response);
             if ($dataset !== false) {
                 return 'running';
@@ -197,9 +217,9 @@ class Connector extends Base {
     }
 
     public function validatePingResponse($response) {
-        if (strlen($response['element']['value'])) {
-            return true;
-        }
+       // if (strlen($response['element']['value'])) {
+        //    return true;
+       // }
         return false;
     }
     
@@ -211,5 +231,15 @@ class Connector extends Base {
         }
         return false;
     }
+    
+    
+        public function getGradesParams($classID) {
+        $array = $this->helper->getArray();
+        $array['classId'] = $classID;
+        
+        return $array;
+    }
+    
+    
 
 }

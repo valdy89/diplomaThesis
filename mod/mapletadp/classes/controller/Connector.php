@@ -23,21 +23,6 @@ class Connector extends Base {
         $this->model = new \mod_mapletadp\model\Connector($db, $cfg);
     }
 
-    /*
-      public function connectMaple($user, $role, $classID = -1) {
-      $params = $this->model->getConnectParams($user, $role, $classID);
-      if ($params !== false) {
-      $response = $this->model->sendRequest('ws/connect', $params);
-      $dataset = $this->model->getConnectResponse($response);
-      if ($dataset !== false) {
-
-      return $dataset;
-      }
-      }
-      return false;
-      }
-     */
-
     public function createClass($params) {
         
     }
@@ -63,24 +48,15 @@ class Connector extends Base {
         return $classes;
     }
 
-    public function getGrades($params) {
-        
-    }
-
-    public function monitor($all = null, $tomcat = null, $db = null, $maple = null) {
-        
+    public function getGrades($classID) {
+        $grades = $this->model->getGrades($classID);
+        return $grades;
     }
 
     public function pingServer($echo) {
-        $params = $this->model->pingServerParams('Running');
-        if ($params !== false) {
-            $response = $this->model->sendRequest('ws/ping', $params);
-            $dataset = $this->model->validatePingResponse($response);
-            if ($dataset !== false) {
-                return 'running';
-            }
-        }
-        return 'down';
+        $return = $this->model->pingServer('Running');
+        
+        return $return;
     }
 
 }
