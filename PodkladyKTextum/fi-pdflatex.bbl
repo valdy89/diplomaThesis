@@ -172,9 +172,9 @@
       \field{edition}{1. vyd.}
       \field{isbn}{8086302164}
       \field{month}{10~01}
+      \field{pagetotal}{39}
       \field{series}{The Art of Computer Programming}
       \field{title}{Distanční studium v otázkách: (průvodce studujících a zájemců o studium)}
-      \field{volume}{39}
       \field{year}{2000}
     \endentry
     \entry{lms}{online}{}
@@ -217,7 +217,7 @@
     \endentry
     \entry{imsltiinvest}{report}{}
       \name{author}{1}{}{%
-        {{hash=41e1441e022dd008616eabcad5792e49}{Ońeill}{O\bibinitperiod}{Owen}{O\bibinitperiod}{}{}{}{}}%
+        {{hash=d0edb8529a8c467ea71f17de91482759}{OŃEILL}{O\bibinitperiod}{Owen}{O\bibinitperiod}{}{}{}{}}%
       }
       \list{institution}{1}{%
         {E-portfolios for Learner Pathways}%
@@ -225,8 +225,8 @@
       \list{location}{1}{%
         {Melbourne, Victoria}%
       }
-      \strng{namehash}{41e1441e022dd008616eabcad5792e49}
-      \strng{fullhash}{41e1441e022dd008616eabcad5792e49}
+      \strng{namehash}{d0edb8529a8c467ea71f17de91482759}
+      \strng{fullhash}{d0edb8529a8c467ea71f17de91482759}
       \field{sortinit}{0}
       \field{sortinithash}{990108227b3316c02842d895999a0165}
       \field{labelnamesource}{author}
@@ -258,10 +258,10 @@
     \endentry
     \entry{moodle-what-is}{online}{}
       \name{author}{1}{}{%
-        {{hash=4398ea1bd99ae706967bd57cee5306c7}{Moodle.org}{M\bibinitperiod}{}{}{}{}{}{}}%
+        {{hash=ae6c657c80d937fdbda6efa41ced6545}{MoodleDocs}{M\bibinitperiod}{}{}{}{}{}{}}%
       }
-      \strng{namehash}{4398ea1bd99ae706967bd57cee5306c7}
-      \strng{fullhash}{4398ea1bd99ae706967bd57cee5306c7}
+      \strng{namehash}{ae6c657c80d937fdbda6efa41ced6545}
+      \strng{fullhash}{ae6c657c80d937fdbda6efa41ced6545}
       \field{sortinit}{0}
       \field{sortinithash}{990108227b3316c02842d895999a0165}
       \field{labelnamesource}{author}
@@ -273,6 +273,83 @@
       \field{year}{2006}
       \verb{url}
       \verb https://docs.moodle.org/archive/cs/Co_je_Moodle
+      \endverb
+    \endentry
+    \entry{moodle-about}{online}{}
+      \name{author}{1}{}{%
+        {{hash=ae6c657c80d937fdbda6efa41ced6545}{MoodleDocs}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{ae6c657c80d937fdbda6efa41ced6545}
+      \strng{fullhash}{ae6c657c80d937fdbda6efa41ced6545}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{About Moodle}
+      \field{urlday}{19}
+      \field{urlmonth}{11}
+      \field{urlyear}{2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://docs.moodle.org/29/en/About_Moodle
+      \endverb
+    \endentry
+    \entry{pdcmoodle}{online}{}
+      \name{author}{1}{}{%
+        {{hash=dd44150f17ba0c5ccb3bd17bcd40d347}{s.r.o}{s\bibinitperiod}{PragoData\bibnamedelima Consulting}{P\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{dd44150f17ba0c5ccb3bd17bcd40d347}
+      \strng{fullhash}{dd44150f17ba0c5ccb3bd17bcd40d347}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Co je Moodle?}
+      \field{urlday}{18}
+      \field{urlmonth}{11}
+      \field{urlyear}{2015}
+      \field{year}{2013}
+      \verb{url}
+      \verb http://www.moodlepartner.cz/LMS-Moodle/co-je-moodle
+      \endverb
+    \endentry
+    \entry{pdcmoodleinst}{online}{}
+      \name{author}{1}{}{%
+        {{hash=dd44150f17ba0c5ccb3bd17bcd40d347}{s.r.o}{s\bibinitperiod}{PragoData\bibnamedelima Consulting}{P\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{dd44150f17ba0c5ccb3bd17bcd40d347}
+      \strng{fullhash}{dd44150f17ba0c5ccb3bd17bcd40d347}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Vzdělávací instituce}
+      \field{urlday}{18}
+      \field{urlmonth}{11}
+      \field{urlyear}{2015}
+      \field{year}{2013}
+      \verb{url}
+      \verb http://www.moodlepartner.cz/Pro-koho-Moodle/vzdelavaci-instituce
+      \endverb
+    \endentry
+    \entry{capterra}{online}{}
+      \name{author}{1}{}{%
+        {{hash=052210b7c0d3a3d74d4afec950dbfc53}{Capterra}{C\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{052210b7c0d3a3d74d4afec950dbfc53}
+      \strng{fullhash}{052210b7c0d3a3d74d4afec950dbfc53}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{Top LMS Software: The top 20 most popular}
+      \field{urlday}{08}
+      \field{urlmonth}{12}
+      \field{urlyear}{2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://www.capterra.com/learning-management-system-software/#infographic
       \endverb
     \endentry
     \entry{moodle-logo}{online}{}
@@ -293,13 +370,33 @@
       \verb https://moodle.org/logo/
       \endverb
     \endentry
+    \entry{history}{online}{}
+      \name{author}{1}{}{%
+        {{hash=4398ea1bd99ae706967bd57cee5306c7}{Moodle.org}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{4398ea1bd99ae706967bd57cee5306c7}
+      \strng{fullhash}{4398ea1bd99ae706967bd57cee5306c7}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{07}
+      \field{title}{History}
+      \field{urlday}{18}
+      \field{urlmonth}{11}
+      \field{urlyear}{2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://docs.moodle.org/28/en/History
+      \endverb
+    \endentry
     \entry{moodle-stats}{online}{}
       \name{author}{2}{}{%
-        {{hash=d7c5e14f3720c7c9adf9e63ad74a46fc}{Courses}{C\bibinitperiod}{Moodle.net}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=8c4108ad2f4bbbc8cf656f1519156d26}{Courses}{C\bibinitperiod}{Moodle.net:}{M\bibinitperiod}{}{}{}{}}%
         {{hash=f15c1cae7882448b3fb0404682e17e61}{Content}{C\bibinitperiod}{}{}{}{}{}{}}%
       }
-      \strng{namehash}{bcafc98bd0f101f21f06dcadd3b6993b}
-      \strng{fullhash}{bcafc98bd0f101f21f06dcadd3b6993b}
+      \strng{namehash}{fa75a7d204beaf3c91d2f305882d5bc3}
+      \strng{fullhash}{fa75a7d204beaf3c91d2f305882d5bc3}
       \field{sortinit}{0}
       \field{sortinithash}{990108227b3316c02842d895999a0165}
       \field{labelnamesource}{author}
@@ -312,12 +409,96 @@
       \verb https://moodle.net/stats/
       \endverb
     \endentry
+    \entry{softprereq}{online}{}
+      \name{author}{1}{}{%
+        {{hash=ae6c657c80d937fdbda6efa41ced6545}{MoodleDocs}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{ae6c657c80d937fdbda6efa41ced6545}
+      \strng{fullhash}{ae6c657c80d937fdbda6efa41ced6545}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{05}
+      \field{title}{Moodle 2.9 release notes}
+      \field{urlday}{08}
+      \field{urlmonth}{11}
+      \field{urlyear}{2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://docs.moodle.org/dev/Moodle_2.9_release_notes
+      \endverb
+    \endentry
+    \entry{hardprereq}{online}{}
+      \name{author}{1}{}{%
+        {{hash=ae6c657c80d937fdbda6efa41ced6545}{MoodleDocs}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{ae6c657c80d937fdbda6efa41ced6545}
+      \strng{fullhash}{ae6c657c80d937fdbda6efa41ced6545}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{Installing Moodle}
+      \field{urlday}{02}
+      \field{urlmonth}{12}
+      \field{urlyear}{2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://docs.moodle.org/29/en/Installing_Moodle
+      \endverb
+    \endentry
+    \entry{cooch}{book}{}
+      \name{author}{1}{}{%
+        {{hash=efc1a058f172a92b40dd41b1e637b828}{COOCH}{C\bibinitperiod}{Mary}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Birmingham}%
+      }
+      \list{publisher}{1}{%
+        {Packt}%
+      }
+      \strng{namehash}{efc1a058f172a92b40dd41b1e637b828}
+      \strng{fullhash}{efc1a058f172a92b40dd41b1e637b828}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1st pub}
+      \field{isbn}{9781849511940}
+      \field{pagetotal}{255}
+      \field{series}{The Art of Computer Programming}
+      \field{title}{Moodle 2.0 first look: discover what's new in Moodle 2.0, how the new features work, and how it will impact you}
+      \field{year}{2010}
+    \endentry
+    \entry{drlik}{book}{}
+      \name{author}{1}{}{%
+        {{hash=3f99d836c2b493c4731edadc1f40da9e}{Martin}{M\bibinitperiod}{DRLÍK}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Brno}%
+      }
+      \list{publisher}{1}{%
+        {Computer Press}%
+      }
+      \strng{namehash}{3f99d836c2b493c4731edadc1f40da9e}
+      \strng{fullhash}{3f99d836c2b493c4731edadc1f40da9e}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1. vydání}
+      \field{isbn}{8086302164}
+      \field{title}{Moodle: kompletní průvodce tvorbou a správou elektronických kurzů.}
+      \field{year}{2013}
+    \endentry
     \entry{moodle-context}{online}{}
       \name{author}{1}{}{%
-        {{hash=4398ea1bd99ae706967bd57cee5306c7}{Moodle.org}{M\bibinitperiod}{}{}{}{}{}{}}%
+        {{hash=ae6c657c80d937fdbda6efa41ced6545}{MoodleDocs}{M\bibinitperiod}{}{}{}{}{}{}}%
       }
-      \strng{namehash}{4398ea1bd99ae706967bd57cee5306c7}
-      \strng{fullhash}{4398ea1bd99ae706967bd57cee5306c7}
+      \strng{namehash}{ae6c657c80d937fdbda6efa41ced6545}
+      \strng{fullhash}{ae6c657c80d937fdbda6efa41ced6545}
       \field{sortinit}{0}
       \field{sortinithash}{990108227b3316c02842d895999a0165}
       \field{labelnamesource}{author}

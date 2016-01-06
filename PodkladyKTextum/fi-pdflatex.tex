@@ -5,7 +5,7 @@ print,
   nolof,    
   nolot,
   oneside,
-  final
+  draft
 ]{fithesis3}
 
 \usepackage[resetfonts]{cmap}
@@ -51,6 +51,8 @@ odborné vedení práce a cenné rady a připomínky. Dále bych rád poděkoval
 \usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage{url}
+\usepackage{breakurl} 
+\usepackage[breaklinks]{hyperref}
 \usepackage{menukeys}
 \makeatletter\thesis@load
   \makeatletter
@@ -139,21 +141,37 @@ Specifikace LTI má dvě hlavní větve: LTI 1 a LTI 2, kterými lze integrovat 
 LTI 2 byla dlouho vyvíjená verze, která byla vydána v lednu roku 2015. Umožňuje přenášení více informací (aktivní přenos výsledků, více sofistikovaný přenos informací a rozšiřitelnou množinu informací pro hlubší integraci) mezi systémy v obou směrech komunikace a přináší větší kontrolu a svobodu v umístění odkazů na poskytující software. Vzhledem k tomu, že se jedná o relativně novou specifikaci, není její implementace tolik rozšířená. \cite{imslti20}
 
 
-
 \chapter{LMS Moodle}
 Cílem této kapitoly je představit LMS Moodle, jeho základní stavební kameny, práci s kontexty, uživatelskými rolemi  a postup založení a nastavení konkrétního kurzu.
+
 	\section{Co je to Moodle?}
-Moodle je software pro tvorbu výukových systémů a elektronických kurzů na internetu. Jedná se o neustále se vyvíjející projekt (již od roku 1999), navržený na základě sociálně konstruktivistického\footnote{Více na https://docs.moodle.org/archive/cs/V\%C3\%BDchodiska.}  přístupu ke vzdělávání \cite{moodle-what-is}.  Slovo Moodle vychází z akronymu pro Modular Object-Oriented Dynamic Learning Environment (Modulární objektově orientované dynamické prostředí pro výuku). A s čím tedy Moodle přichází?
-		\begin{figure}
+
+Moodle je software pro tvorbu výukových systémů a elektronických kurzů na internetu. Jedná se o neustále se vyvíjející projekt (již od roku 1999), navržený na základě sociálně konstruktivistického\footnote{Více na \url{https://docs.moodle.org/archive/cs/V\%C3\%BDchodiska}.}  přístupu ke vzdělávání.  
+
+Slovo Moodle bylo původně akronymem pro Modular Object-Oriented Dynamic Learning Environment (Modulární objektově orientované dynamické prostředí pro výuku). Lze ho také považovat za sloveso, které popisuje proces líného bloumání od jednoho k druhému, dělání věcí podle svého, hravost, která často vede k pochopení problému a podporuje tvořivost. V tomto smyslu se vztahuje jak k samotnému zrodu Moodlu, tak k přístupu studenta či učitele k výuce v on-line kurzech \cite{moodle-what-is}. 
+
+A s čím tedy Moodle přichází?
+\begin{itemize}
+\item \emph{„Moodle je výuková platforma navržená k poskytnutí osobního prostředí pro vyučující, správce a studenty pomocí jediného robustního, bezpečného a integrovaného systému."}\cite{moodle-about}		
+\item \emph{„Moodle vznikl na podporu sociálně konstruktivistického přístupu ke vzdělávání. To je hlavním důvodem velké oblíbenosti Moodle v prostředí škol, zejména univerzit. Tam se vhodně uplatňují principy komunikace a spolupráce. Jsou známa úspěšná nasazení Moodle ve společnostech při vzdělávání zaměstnanců i v projektech celoživotního vzdělávání profesních skupin nebo v zájmovém vzdělávání.”} \cite{pdcmoodle}
+\item \emph{„LMS Moodle lze využít i jako nástroj pro podporu školících aktivit v rámci vzdělávacích institucí. Moodle může sloužit jak v roli systému zpřístupňujícího distanční či kombinované komerční vzdělávací služby (například s podporou prodeje či vystavování certifikátů), ale také jako systém s doplňkovými oporami klasických prezenčních kurzů.” }\cite{pdcmoodleinst}
+\end{itemize}
+
+Moodle je volně dostupný a oblíbený e-learningový systém \cite{capterra}, který lze využít jako podpůrný prostředek prezenční výuky, ale také jako plnohodnotný software při budování portálu distančního vzdělávání. Přináší možnost jednoduše a přehledně publikovat výukové a vzdělávací materiály online pro veřejnost i uzavřenou skupinu uživatelů.  Přístup k výuce je plně v režii tvůrce kurzu a může být koncipován jako plně automatický pro velký počet studentů, plně individuální s velkou mírou zpětné vazby a přístupu, nebo kombinace obou přístupů.
+\begin{figure}
 		  \begin{center}
 		    \includegraphics[width=60mm]{images/moodle-logo.png}
 		   \end{center}
 		  \caption{Oficiální logo Moodlu. \cite{moodle-logo}}
 		  \label{fig:moodlelogo}
 		\end{figure}
-
 	\section{Historie}
-		\begin{figure}
+Zakladatelem a hlavním programátorem je Martin Dougiamas, který se po dlouholetých zkušenostech s výukou v systému WebCT\footnote{WebCT byl samostatný e-learningový systém, který byl v roce 2006 odkoupen společností Blackboard.}  rozhodl vytvořit vlastní online nástroj. V roce 1999 vytvořil první prototyp a registroval obchodní známku Moodle™. V listopadu roku 2001 vznikla první instalace Moodlu pro australskou Curtin university v Perthu a byl vytvořen první příspěvek na doméně Moodle.com (mateřská doména Moodlu).  Na konci téhož roku byl projekt umístěn na CVS (Concurrent Version System - systém pro správu verzí). Později v roce 2010 Moodle přechází na GIT\footnote{GIT patří mezi široce používaný verzovací systém pro vývoj softwaru.}  a 2013 je CVS nahrazeno (celá kapitola vychází především z \cite{history}).
+
+První oficiální verze Moodle 1.0 vyšla v roce 2002 a jeho základní instalace byla dostupná společně s dokumentací. Uživatelé od té doby mohou diskutovat na nově vzniklém komunitním fóru. Vznikají nové tematické vzhledy a překlady do dalších jazyků. O rok později komunita přispívá prvním modulem (modul Workshop) a z domény Moodle.org se stává opora komunitního rozvoje (sdružuje dotazy, rady, návrhy na rozvoj atd.). Moodle rychle roste a v Oxfordu roku 2004 je uspořádán první MoodleMoot. Moot je označení konference pro příznivce Moodlu. Komunita se rozrůstá a je aktivní při sdílení zkušeností a pomoci.
+
+V roce 2007 získává Moodle ocenění (vítěz v kategoriích Education and Government Learning Management Systems a Small and Medium Corporate Learning Management Systems) a stává se vedoucím open sourcovým e-learningovým systémem. Nárůst uživatelů je obrovský. V roce 2004 má Moodle tisíc registrovaných uživatelů, v roce 2008 je jich půl milionu a v roce 2010 je zde již přes milion uživatelů a padesát Moodle partnerů. Databáze překladů čítá v témže roce více než sto jazyků. Aktuálně má Moodle registrováno šedesát tisíc stránek s celkovým počtem více než osmdesát miliónů uživatelů (viz. \ref{fig:moodlestats}). 
+ \begin{figure}
 		  \begin{center}
 		    \includegraphics[width=80mm]{images/statistiky-moodle.png}
 		   \end{center}
@@ -161,15 +179,81 @@ Moodle je software pro tvorbu výukových systémů a elektronických kurzů na 
 		  \label{fig:moodlestats}
 		\end{figure}
 
-	\section{Vlastnosti Moodlu}
+V listopadu roku 2010 vychází verze 2.0 a mění se systém vydávání nových verzí na šestiměsíční cykly. S novou verzí se Moodle zaměřuje také na mobilní technologie. V roce 2013 vychází plnohodnotná mobilní aplikace a také šablona vzhledu uzpůsobená zobrazení na mobilních zařízeních.
 
+		
+
+	\section{Vlastnosti Moodlu}
+Kapitola shrnuje informace o licenční politice, komunitním rozvoji a požadavcích pro instalaci a běh aplikace. Zhodnotíme si systém s jeho výhodami i nevýhodami.
 		\subsection{Licence}
+Moodle není nijak závislý na licencích za počet uživatelů, přístupů či kurzů. Jedná se o nezávislý software s otevřeným zdrojovým kódem (tzv. open source) pod licencí GNU = General Public License (zkráceně GPL), která umožňuje použití pro osobní i komerční užití. Také znamená možnost jakýchkoliv úprav a vlastních doplňků a jejich další šíření, pokud souhlasíte s tím, že: \emph{budete tento zdroj poskytovat ostatním; nebudete měnit ani odstraňovat původní údaje o licencích a autorských právech, a uplatníte stejné licenční podmínky i u jakýchkoliv odvozených produktů} \cite{moodle-what-is}. 
 		\subsection{Prerekvizity}
+Moodle pro svůj provoz nevyžaduje specifický operační systém (je implementován v PHP) nebo databázi. Není tedy nutné platit za licence dalšího softwaru. Specifikace poslední verze\footnote{V době psaní této práce byla verze Moodle 2.9.3+.}  má následující minimální softwarovou konfiguraci pro provoz \cite{softprereq}:
+\begin{itemize}
+\item PHP 5.4.4
+\item MariaDB 5.5.31 (a vyšší) nebo MySQL 5.5.31 (a vyšší) nebo Postgres 9.1 (a vyšší) nebo MSSQL 2008 (a vyšší) nebo Oracle 10.2 (a vyšší)
+\item ostatní softwarové komponenty jsou odvozeny od operačního systému (například jako webový server může být Apache, IIS, Nginx a další) 
+\end{itemize}
+
+Mezi minimální hardwarové požadavky patří \cite{hardprereq}:
+
+\begin{itemize}
+\item dostatečně velké úložiště na materiály a zdrojové kódy Moodle; 5GB je označeno jako absolutní minimum 
+\item odlišné umístění pro zálohování se stejnou nebo větší kapacitou než úložiště výše
+\item minimálně 1GHz procesor, doporučuje se 2GHz dual core; skutečné nároky jsou určeny počtem uživatelů a zdrojů
+\item systémová pamět minimálně 1GB; skutečné nároky jsou určeny počtem uživatelů a konfigurací stránek
+\end{itemize}
+
+
 		\subsection{Rozvoj}
+Rozvoj Moodlu se opírá o komunitu, kterou tvoří nejen programátoři pracující na Moodle, ale také široká uživatelská základna. Komunita zastává také funkci uživatelského testování se zpětnou vazbou tvůrcům a bugreporting\footnote{hlášení chyb}. Zastává také funkci podpory, kdy si uživatelé navzájem pomáhají a radí, jak řešit problémy. Vedle komunity se během řady let vývoje Moodlu vytvořila skupina komerčních partnerů, kteří nabízejí služby spojené s Moodlem. Typicky se jedná o služby, jako je instalace Moodlu, jeho nastavení a správa, upgrade na novější verze, migrace, hosting, přizpůsobení vzhledu a funkcionality, vývoj nových rozšíření a nadstaveb a další.
 		\subsection{Výhody a nevýhody}
+Výše zmíněná komunita Moodlu se bezesporu řadí mezi stěžejní výhody, stejně jako sít partnerů. Mezi další výhody Moodlu patří \cite{cooch}:
+\begin{itemize}
+\item vícejazyčné překlady
+\item relativní jednoduchost použití (tento bod jsem doplnil označením relativní, platí dle mého názoru při použití základních struktur a nastavení)
+\item škálovatelnost
+\item vysoká frekvence oprav a nových verzí (velké verze jsou vydávány dvakrát ročně, opravy pak na téměř denní bázi), které jsou dostupné z GITu
+\item robustnost
+\item bezpečnost
+\item možnost instalace v cloudu
+\item kompatibilita s mobilními zařízeními
+\end{itemize}
+
+
+Na druhou stranu má Moodle i své nevýhody. Mezi ně bychom mohli zařadit například:
+\begin{itemize}
+\item Náročnost na hardware - zvyšující se počet studentů úměrně zvyšuje nároky na hardware (především systémové paměti)
+\item Složitá nastavení - v Moodlu můžete nastavením změnit prakticky vše od nadpisu na titulní straně až po logiku vyhodnocení známek a vytvoření webových služeb. Ačkoliv se to může jevit jako výhoda, problém je někdy v nelogickém pojmenování a vysoké závislosti mezi nastaveními. Změna jednoduchého nastavení může mít zpočátku neočekávané následky.
+\item Komplikovaná změna vzhledu - Moodle ve své základní instalaci nevypadá jako moderní graficky přitažlivý systém a dostupné šablony jsou často jen variací tohoto vzhledu. Vytvoření vlastního vzhledu Moodle umožňuje, ale i pro grafika se zkušenostmi s tvorbou šablon pro Moodle to není jednoduché.
+\end{itemize}
+
+Na základě výčtu vlastností výše je zřejmé, že Moodle je skvělým nástrojem pro menší a střední organizace, střední i základní školy, či podporu části výuky na vysokých školách. Je dostupný cenově i požadavky na prostředí. Pokud jej ale chcete používat efektně a efektivně pro velké množství konkurenčně přistupujících uživatelů, nevyhnete se nákladům na kvalitní hardware a správce, často z řad komerčních partnerů a poskytovatelů služeb spojených s Moodlem. 
+
 	\section{Kurz}
 		\subsection{Rozložení}
+Typickým rozložením aplikace je dvou či tří sloupcový layout, ojediněle se vyskytuje layout s jediným sloupcem. Základem každé stránky Moodle je kontejner pro vložení hlavního obsahu pro danou sekci/stránku. Při vstupu do kurzu se v něm zobrazí přehled a složení kurzu, v detailu výukového modulu se zobrazí látka daného modulu, v případě správy kurzu, modulu, Moodlu atd. je obsahem kontejneru samotný formulář s nastavením dané položky.
+
+Boční sloupce obsahují tzv. bloky s kontextovými ovládacími prvky a doplňky (bloky si blíže představíme níže). Bloky je možné umístit do levého i pravého sloupce, čímž ovlivníme, zda výsledný vzhled bude se dvěma nebo třemi sloupci. Není-li do sloupce přidělen alespoň jeden blok, sloupec je skryt. 
+
+U instalace bez zásahu do nastavení je při zapnutém i vypnutém režimu úprav (přepínač vypíná a zapíná ovládací prvky editace) kurz i jeho nastavení poskládáno do dvou sloupců, hlavního obsahu a kontextové nabídky pro správu kurzu a stránek.
+
 		\subsection{Výukové moduly}
+Výukovým modulem je prostor v kurzu vyplněný specifickým typem činností. Moodle definuje dvě kategorie modulů na základě toho, zda je modul interaktivní, či nikoliv. Vyžaduje-li modul aktivní přístup studenta popř. učitele, řadí se mezi tzv. činnosti. V opačném případě jde pouze o pasivní prvek nazývající se studijním materiálem.
+Základní instalace Moodlu obsahuje následující výukové moduly (přehled modulů vychází z \cite{drlik} a zdrojových kódů Moodlu): 
+
+\textbf{Činnosti}:
+\begin{itemize}
+\item \textbf{Anketa} - umožňuje učiteli položit otázku a definovat výběr z více odpovědí. Výsledky ankety mohou být studentům zpřístupněny poté, co odpoví, po jistém termínu nebo případně nikdy. Výsledky lze zobrazovat jmenovitě i anonymně.
+\item \textbf{Balíček SCORM} - umožňuje do kurzu vložit obsah ve formátu dle specifikací SCORM a AICC. Jedná se o soubory, které jsou zabaleny podle standardu pro výukové objekty. Obsah je většinou zobrazen na několika stránkách spolu s prvkem pro navigaci mezi stránkami. Pro zobrazení obsahu existují různé možnosti - ve vyskakovacím okně, s obsahem, s navigačními tlačítky apod. Činnosti SCORM obecně zahrnují úlohy, jejichž hodnocení se zapisuje do klasifikace v kurzu.
+\item \textbf{Databáze} - umožňuje vytvářet, prohlížet a prohledávat kolekci záznamů vztahujících se prakticky k libovolnému tématu. Záznamy mohou obsahovat text, obrázky, hypertextové odkazy, číselné údaje a další informace. Vzhled kolekce, jednotlivých záznamů i formuláře pro editaci lze řídit pomocí šablon. Definici struktury záznamů a jejich vzhledu lze sdílet pomocí tzv. předloh. Vyučující mohou záznamy importovat a exportovat.
+\item \textbf{Dotazník} - umožňuje realizovat dotazníkové šetření. Slouží pro získání zpětné vazby od účastníků kurzu. Při návrhu dotazníku lze použít řadu typů položek včetně výběru z daných hodnot nebo volné tvořené odpovědi. Vyplněné dotazníky mohou být anonymní, je-li to žádoucí. Výsledky mohou být k dispozici i studentům, nebo pouze vyučujícím. Dotazníky na titulní stránce serveru mohou vyplňovat též nepřihlášení uživatelé.
+\item \textbf{Externí nástroj} - umožňuje studentům pracovat s prostředky a činnostmi na jiných webových stránkách. Nástroj na straně poskytovatele externích služeb musí podporovat specifikaci LTI. Tvůrci kurzu mohou využívat pouze nástroje, které správce stránek přidá do seznamu externích nástrojů.
+\item \textbf{Fórum} - nabízí možnost asynchronní komunikace účastníků kurzu. K dispozici je několik typů fór: běžné fórum, kde může každý začínat nové diskuse a zapojit se do stávajících; fórum, v němž může každý student začít nejvýše jednu diskusi; nebo fórum, v němž musí student nejprve sám za sebe odpovědět položené otázky před tím, než vidí odpovědi ostatních. K příspěvkům lze přikládat soubory jako přílohy. Příspěvky ve fóru je možno hodnotit, a to i ostatními studenty (vzájemné hodnocení). Hodnocení se přepočítává na výslednou známku, která může být součástí klasifikace v kurzu.
+\item \textbf{Chat} - umožňuje účastníkům kurzu diskutovat na webu synchronně v reálném čase. Chatování může být jednorázovou aktivitou, nebo je lze opakovat pravidelně každý den, týden apod. Záznamy z chatu jsou uloženy a mohou být zpřístupněny všem účastníkům kurzu nebo jen vybraným uživatelům na základě nastaveného oprávnění. Chat je obzvláště užitečný v případech, kdy se účastníci kurzu nemohou setkávat tváří v tvář.
+\item \textbf{Průzkum} - poskytuje řadu standardních dotazníkových nástrojů, které se osvědčily při hodnocení a stimulaci výuky v on-line prostředí. Učitel je může použít pro sběr údajů od svých studentů, které jim pomohou seznámit se se svou třídou a zamyslet se nad svým učením.
+
+\end{itemize}
 		\subsection{Bloky}
 	\section{Uživatelské role a kontext}
 

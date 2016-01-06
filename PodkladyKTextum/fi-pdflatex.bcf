@@ -2227,15 +2227,25 @@
     <bcf:citekey order="10">imsltiinvest</bcf:citekey>
     <bcf:citekey order="11">imslti20</bcf:citekey>
     <bcf:citekey order="12">moodle-what-is</bcf:citekey>
-    <bcf:citekey order="13">moodle-logo</bcf:citekey>
-    <bcf:citekey order="14">moodle-stats</bcf:citekey>
-    <bcf:citekey order="15">moodle-stats</bcf:citekey>
-    <bcf:citekey order="16">moodle-context</bcf:citekey>
-    <bcf:citekey order="17">maple-logo</bcf:citekey>
-    <bcf:citekey order="18">maple-logo</bcf:citekey>
-    <bcf:citekey order="19">maple-logo</bcf:citekey>
-    <bcf:citekey order="20">maple-logo</bcf:citekey>
-    <bcf:citekey order="21">maple-logo</bcf:citekey>
+    <bcf:citekey order="13">moodle-about</bcf:citekey>
+    <bcf:citekey order="14">pdcmoodle</bcf:citekey>
+    <bcf:citekey order="15">pdcmoodleinst</bcf:citekey>
+    <bcf:citekey order="16">capterra</bcf:citekey>
+    <bcf:citekey order="17">moodle-logo</bcf:citekey>
+    <bcf:citekey order="18">history</bcf:citekey>
+    <bcf:citekey order="19">moodle-stats</bcf:citekey>
+    <bcf:citekey order="20">moodle-stats</bcf:citekey>
+    <bcf:citekey order="21">moodle-what-is</bcf:citekey>
+    <bcf:citekey order="22">softprereq</bcf:citekey>
+    <bcf:citekey order="23">hardprereq</bcf:citekey>
+    <bcf:citekey order="24">cooch</bcf:citekey>
+    <bcf:citekey order="25">drlik</bcf:citekey>
+    <bcf:citekey order="26">moodle-context</bcf:citekey>
+    <bcf:citekey order="27">maple-logo</bcf:citekey>
+    <bcf:citekey order="28">maple-logo</bcf:citekey>
+    <bcf:citekey order="29">maple-logo</bcf:citekey>
+    <bcf:citekey order="30">maple-logo</bcf:citekey>
+    <bcf:citekey order="31">maple-logo</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none" type="entry" sortscheme="none">
   <bcf:sorting>
