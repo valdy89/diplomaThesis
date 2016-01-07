@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.12.20)  5 JAN 2016 18:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.12.20)  7 JAN 2016 21:48
 entering extended mode
-**./fi-pdflatex.tex
-(fi-pdflatex.tex
+**C:/xampp/htdocs/diplomka/PodkladyKTextum/fi-pdflatex.tex
+(C:/xampp/htdocs/diplomka/PodkladyKTextum/fi-pdflatex.tex
 LaTeX2e <2015/10/01> patch level 2
 Babel <3.9m> and hyphenation patterns for 69 languages loaded.
 (fithesis3.cls
@@ -1461,13 +1461,31 @@ M)
 . 
 . Defining command \tw@make@key@macro with sig. 's m' on line 670.
 .................................................
+)
+("C:\Users\valusek\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ms\ragged2e.sty"
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+("C:\Users\valusek\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ms\everysel.sty"
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\CenteringLeftskip=\skip77
+\RaggedLeftLeftskip=\skip78
+\RaggedRightLeftskip=\skip79
+\CenteringRightskip=\skip80
+\RaggedLeftRightskip=\skip81
+\RaggedRightRightskip=\skip82
+\CenteringParfillskip=\skip83
+\RaggedLeftParfillskip=\skip84
+\RaggedRightParfillskip=\skip85
+\JustifyingParfillskip=\skip86
+\CenteringParindent=\skip87
+\RaggedLeftParindent=\skip88
+\RaggedRightParindent=\skip89
+\JustifyingParindent=\skip90
 ) (fithesis/locale/fithesis-czech.def
 File: fithesis/locale/fithesis-czech.def 2015/11/29
-)
-(fithesis/locale/mu/fithesis-czech.def
+) (fithesis/locale/mu/fithesis-czech.def
 File: fithesis/locale/mu/fithesis-czech.def 2015/11/17
-)
-(fithesis/locale/mu/fi/fithesis-czech.def
+) (fithesis/locale/mu/fi/fithesis-czech.def
 File: fithesis/locale/mu/fi/fithesis-czech.def 2015/06/26
 ) (fithesis/style/fithesis-base.sty
 Package: fithesis/style/fithesis-base 2015/06/23
@@ -1492,12 +1510,12 @@ Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bcount=\count369
 \calc@Adimen=\dimen267
 \calc@Bdimen=\dimen268
-\calc@Askip=\skip77
-\calc@Bskip=\skip78
+\calc@Askip=\skip91
+\calc@Bskip=\skip92
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count370
-\calc@Cskip=\skip79
+\calc@Cskip=\skip93
 )
 ("C:\Users\valusek\AppData\Local\Programs\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.
 sty"
@@ -1531,7 +1549,7 @@ File: microtype-pdftex.def 2013/05/23 v2.5a Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 915.
 LaTeX Info: Redefining \lslig on input line 915.
-\MT@outer@space=\skip80
+\MT@outer@space=\skip94
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
@@ -1625,7 +1643,7 @@ Package: tabu 2011/02/26 v2.8 - flexible LaTeX tabulars (FC)
 \tabu@arstrutbox=\box59
 \tabu@hleads=\box60
 \tabu@vleads=\box61
-\tabu@cellskip=\skip81
+\tabu@cellskip=\skip95
 )
 ("C:\Users\valusek\AppData\Local\Programs\MiKTeX 2.9\tex\latex\booktabs\booktab
 s.sty"
@@ -1654,13 +1672,13 @@ File: fithesis/style/mu/fithesis-11.clo 2015/06/23
 )) (fithesis/style/mu/fithesis-fi.sty
 Package: fithesis/style/mu/fithesis-fi 2015/12/08
 )
-Package hyperref Info: Option `unicode' set `true' on input line 57.
+Package hyperref Info: Option `unicode' set `true' on input line 59.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\puenc.def"
 File: puenc.def 2012/11/06 v6.83m Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `unicode' set `true' on input line 57.
+Package hyperref Info: Option `unicode' set `true' on input line 59.
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\stringenc.sty"
 Package: stringenc 2011/12/02 v1.10 Convert strings between diff. encodings (HO
@@ -1675,7 +1693,7 @@ Package csquotes Info: Adjusting default style.
 
 
 Package csquotes Warning: No style for language 'czech'.
-(csquotes)                Using fallback style on input line 68.
+(csquotes)                Using fallback style on input line 70.
 
 Package csquotes Info: Redefining alias 'default' -> 'fallback'.
 Package biblatex Info: Trying to load language 'czech'...
@@ -1684,38 +1702,25 @@ Package biblatex Info: ... file 'czech.lbx' found.
 ("C:\Users\valusek\AppData\Local\Programs\MiKTeX 2.9\tex\latex\biblatex\lbx\cze
 ch.lbx"
 File: czech.lbx 2015/10/21 v3.1 biblatex localization (PK/JW/AB)
-) (fi-pdflatex.aux
-
-LaTeX Warning: Label `fig:maplelogo' multiply defined.
-
-
-LaTeX Warning: Label `fig:maplelogo' multiply defined.
-
-
-LaTeX Warning: Label `fig:maplelogo' multiply defined.
-
-
-LaTeX Warning: Label `fig:maplelogo' multiply defined.
-
-)
+) (fi-pdflatex.aux)
 \openout1 = `fi-pdflatex.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -1724,14 +1729,14 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'fi-pdflatex.bbl' found.
  (fi-pdflatex.bbl)
-Package biblatex Info: Reference section=0 on input line 68.
-Package biblatex Info: Reference segment=0 on input line 68.
+Package biblatex Info: Reference section=0 on input line 70.
+Package biblatex Info: Reference segment=0 on input line 70.
 \AtBeginShipoutBox=\box62
 
 
 Package hyperref Warning: Draft mode on.
 
-Package hyperref Info: Link coloring OFF on input line 68.
+Package hyperref Info: Link coloring OFF on input line 70.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1740,9 +1745,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count385
 )
-LaTeX Info: Redefining \ref on input line 68.
-LaTeX Info: Redefining \pageref on input line 68.
-LaTeX Info: Redefining \nameref on input line 68.
+LaTeX Info: Redefining \ref on input line 70.
+LaTeX Info: Redefining \pageref on input line 70.
+LaTeX Info: Redefining \nameref on input line 70.
 
 ABD: EveryShipout initializing macros
 ("C:\Users\valusek\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
@@ -1759,7 +1764,10 @@ mkii"
 \MPnumerator=\count390
 \makeMPintoPDFobject=\count391
 \everyMPtoPDFconversion=\toks52
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
+) ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 70.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
 Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
@@ -1767,7 +1775,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
 )
-LaTeX Info: Redefining \microtypecontext on input line 68.
+LaTeX Info: Redefining \microtypecontext on input line 70.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1793,7 +1801,7 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/qpl/m/sc/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
  <fithesis/logo/mu/fithesis-fi.pdf, id=30, 291.0875pt x 292.09125pt>
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 68.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 70.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1880,30 +1888,6 @@ LaTeX Font Warning: Font shape `T1/qpl/m/sl' in size <10.95> not available
  [6]
 Kapitola 1.
 
-Overfull \hbox (5.21133pt too wide) in paragraph at lines 77--78
-\T1/qpl/m/n/10.95 u∫i-va-te-l∑m, se ∞adÌ i elek-tro-nickÈ vzd•-l·-v·nÌ, tzv. e-
-learning. NicmÈn• osobnÌ|
- []
-
-
-Overfull \hbox (4.95313pt too wide) in paragraph at lines 77--78
-\T1/qpl/m/n/10.95 tÌch e-learning kla-sickÈ vzd•-l·-v·nÌ nej-spÌ≤e ne-na-hradÌ 
-[2]. I p∞esto si distan£nÌ|
- []
-
-
-Overfull \hbox (26.85945pt too wide) in paragraph at lines 79--80
-\T1/qpl/m/n/10.95 a proto je cÌ-lem tÈto di-plo-movÈ pr·ce in-te-grace n·-stroj
-e Ma-ple T.A. a e-learningovÈ|
- []
-
-
-Overfull \hbox (11.21118pt too wide) in paragraph at lines 81--82
-[]\T1/qpl/m/n/10.95 V prvnÌ £·stÌ di-plo-movÈ pr·ce si uve-deme de-fi-nice pojm
-∑ ze sv•ta distan£nÌ|
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
@@ -1912,220 +1896,230 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 [2]
 Kapitola 2.
-
-Overfull \hbox (6.2626pt too wide) in paragraph at lines 91--92
-\T1/qpl/m/n/10.95 zice ∫·ka zna-men· re-a-li-zo-vat t•-mito pro-st∞edky pro-ces
- vlast-nÌho u£enÌ.|
- []
-
-
-Overfull \hbox (0.67819pt too wide) in paragraph at lines 93--94
-\T1/qpl/m/n/10.95 l·-va-cÌch cÌ-lech a ob-sahu, cha-rak-teru vzd•-l·-va-cÌho pr
-o-st∞edÌ, po-t∞e-b·ch|
- []
-
-
-Overfull \hbox (7.7081pt too wide) in paragraph at lines 98--99
-\T1/qpl/m/n/10.95 na-bÌzÌ £asto oka-m∫i-tou ode-zvu (nejedn·-li se o ˙lohy vy-∫
-a-du-jÌcÌ ru£nÌ ˙pravu)|
- []
-
 [3
 
 ]
-Overfull \hbox (4.17111pt too wide) in paragraph at lines 103--104
-\T1/qpl/m/n/10.95 to-men u po-£Ì-ta£e a in-ter-ak-tivn• se stu-den-tem pra-co-v
-at. [8] Po-jem e-learning|
- []
-
-
-Overfull \hbox (3.7879pt too wide) in paragraph at lines 103--104
-\T1/qpl/m/n/10.95 krom• on-line v˝-uky za-hr-nuje zp∑-sob vy-u-£o-v·nÌ, kterÈ r
-ov-n•∫ pro-bÌh· vzd·-|
- []
-
-
-Overfull \hbox (2.72571pt too wide) in paragraph at lines 108--109
+Overfull \hbox (2.72571pt too wide) in paragraph at lines 110--111
 \T1/qpl/m/n/10.95 V˝≤e zmÌ-n•nÈ de-fi-nice e-learningu majÌ spo-le£-nÈho jme-no
 -va-tele, kte-r˝m jsou|
  []
 
+LaTeX Font Info:    Try loading font information for OMS+qpl on input line 113.
 
-Overfull \hbox (4.67406pt too wide) in paragraph at lines 108--109
-\T1/qpl/m/n/10.95 nÌho vzd•-l·-v·nÌ. V n·-sle-du-jÌ-cÌm textu jsou po-ps·ny z·-
-kladnÌ de-fi-nice distan£-|
- []
-
-LaTeX Font Info:    Try loading font information for OMS+qpl on input line 111.
-
-LaTeX Font Info:    No file OMSqpl.fd. on input line 111.
+LaTeX Font Info:    No file OMSqpl.fd. on input line 113.
 
 LaTeX Font Warning: Font shape `OMS/qpl/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 111.
+(Font)              for symbol `textbullet' on input line 113.
 
-[4]
-Overfull \hbox (1.54231pt too wide) in paragraph at lines 134--135
-\T1/qpl/m/n/10.95 Learning Tools In-te-ro-pe-ra-bi-lity (LTI) je spe-ci-fi-kace
- vy-tvo-∞en· or-ga-ni-zacÌ IMS|
- []
-
-[5]
-Overfull \hbox (7.16052pt too wide) in paragraph at lines 136--137
-\T1/qpl/m/n/10.95 ud·v· jed-notnÈ roz-hranÌ mezi e-learningov˝m n·-stro-jem po-
-sky-tu-jÌ-cÌm slu∫by|
- []
-
-[6]
+[4] [5]
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 139.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 139.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 139.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 139.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 139.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 139.
+ [6]
 Kapitola 3.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 149.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 149.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 149.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 149.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 149.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 149.
-
-Overfull \hbox (3.84259pt too wide) in paragraph at lines 156--157
-\T1/qpl/m/it/10.95 v·nÌ. To je hlav-nÌm d∑-vo-dem velkÈ ob-lÌ-be-nosti Mo-odle 
-v pro-st∞edÌ ≤kol, zejmÈna|
- []
-
-
-Overfull \hbox (2.45207pt too wide) in paragraph at lines 156--157
-\T1/qpl/m/it/10.95 zn·ma ˙sp•≤n· na-sa-zenÌ Mo-odle ve spo-le£-nos-tech p∞i vzd
-•-l·-v·nÌ za-m•st-nanc∑|
- []
-
-<images/moodle-logo.png, id=85, 4025.0375pt x 1026.83624pt>
+<images/moodle-logo.png, id=86, 4025.0375pt x 1026.83624pt>
 Overfull \vbox (0.72447pt too high) has occurred while \output is active []
 
 
 [7
 
 ] <images/statistiky-moodle.png, id=91, 306.39468pt x 213.79875pt> [8]
-[9]
-Overfull \hbox (0.28397pt too wide) in paragraph at lines 195--196
-[]\T1/qpl/m/n/10.95 ostatnÌ soft-wa-rovÈ kom-po-nenty jsou od-vo-zeny od ope-ra
-£-nÌho sys-tÈmu|
- []
+[9] [10] [11]
+Underfull \vbox (badness 4120) has occurred while \output is active []
 
-[10] [11] [12]
-Overfull \hbox (9.87613pt too wide) in paragraph at lines 249--250
-[]\T1/qpl/b/n/10.95 Datab·ze \T1/qpl/m/n/10.95 - umo∫-¨uje vy-tv·-∞et, pro-hlÌ-
-∫et a pro-hle-d·-vat ko-lekci z·-znam∑|
- []
-
-[13]
-Overfull \hbox (0.66728pt too wide) in paragraph at lines 254--255
-[]\T1/qpl/b/n/10.95 Pr∑zkum \T1/qpl/m/n/10.95 - po-sky-tuje ∞adu stan-dard-nÌch
- do-taz-nÌ-ko-v˝ch n·-stroj∑, kterÈ|
- []
-
-<images/moodle-context.png, id=111, 505.89pt x 325.96782pt>
-<images/kurzy-pridani.png, id=112, 676.02562pt x 377.15906pt>
-<images/kurzy-pridani-detail.png, id=113, 472.01344pt x 569.12625pt> [14]
-[15] [16]
+ [12]
+[13] [14] [15] <images/moodle-context.png, id=117, 505.89pt x 325.96782pt>
+[16] [17] <images/kurzy-pridani.png, id=125, 676.02562pt x 377.15906pt>
+[18] [19] [20]
+<images/kurzy-pridani-detail.png, id=135, 472.01344pt x 569.12625pt> [21]
+[22]
 Kapitola 4.
-<images/MapleTA_logo.jpg, id=123, 1037.8775pt x 251.94125pt> [17
+<images/MapleTA_logo.jpg, id=142, 1037.8775pt x 251.94125pt> [23
 
-] [18]
+] [24] [25]
+[26] [27] <images/MapleTA_graph.png, id=159, 297.36093pt x 338.76563pt>
+
+LaTeX Warning: Citation 'maple-questions' on page 28 undefined on input line 48
+6.
+
+<images/MapleTA_paint.png, id=160, 297.36093pt x 266.49562pt>
+
+LaTeX Warning: Citation 'maple-questions' on page 28 undefined on input line 49
+6.
+
+[28] <images/MapleTA_math.png, id=164, 297.36093pt x 338.76563pt>
+
+LaTeX Warning: Citation 'maple-questions' on page 29 undefined on input line 50
+9.
+
+[29] [30] [31] [32] [33]
 Kapitola 5.
-[19
+[34
+
+] [35]
+Overfull \vbox (8.28783pt too high) has occurred while \output is active []
+
+
+[36] [37] [38]
+Underfull \vbox (badness 3108) has occurred while \output is active []
+
+ [39]
+[40]
+Kapitola 6.
+
+LaTeX Warning: Reference `wsping' on page 41 undefined on input line 693.
+
+
+LaTeX Warning: Reference `wsconnect' on page 41 undefined on input line 707.
+
+[41
 
 ]
-Kapitola 6.
-<images/struktura_modulu.png, id=134, 447.17062pt x 240.9pt>
-<images/prevod_na_xml.png, id=135, 460.72125pt x 149.8097pt>
-<images/xml_na_pole.png, id=136, 277.78781pt x 106.89937pt>
-<images/ajax-volani.png, id=137, 517.18219pt x 213.79875pt>
-<images/cron-trida.png, id=138, 463.7325pt x 172.39406pt>
-<images/cron-registrace.png, id=139, 335.75438pt x 147.55125pt> [20
 
-] [21]
-[22]
+LaTeX Warning: Reference `wsdata' on page 42 undefined on input line 728.
+
+[42] [43] [44]
+Underfull \vbox (badness 1577) has occurred while \output is active []
+
+ [45]
+[46] [47] <images/struktura_modulu.png, id=226, 447.17062pt x 240.9pt>
+<images/prevod_na_xml.png, id=227, 460.72125pt x 149.8097pt>
+<images/xml_na_pole.png, id=228, 277.78781pt x 106.89937pt>
+Overfull \hbox (33.9333pt too wide) in paragraph at lines 868--876
+\T1/qpl/m/n/10.95 nÌm funkce \T1/qpl/m/it/10.95 json_encode($object)\T1/qpl/m/n
+/10.95 . V po-sled-nÌm kroku se vol· funkce \T1/qpl/m/it/10.95 json_decode($jso
+n,|
+ []
+
+[48]
+<images/priklad_volani_z_connectoru.png, id=232, 509.65407pt x 190.46156pt>
+Underfull \vbox (badness 2142) has occurred while \output is active []
+
+ [49]
+[50] <images/ajax-volani.png, id=239, 517.18219pt x 213.79875pt> [51]
+Overfull \hbox (3.30615pt too wide) in paragraph at lines 908--909
+\T1/qpl/m/n/10.95 d·nÌ novÈ t∞Ìdy (ob-r·-zek 6.6), kter· roz-≤i-∞uje t∞Ìdu core
+\task\scheduled_task|
+ []
+
+<images/cron-trida.png, id=243, 463.7325pt x 172.39406pt>
+<images/cron-registrace.png, id=244, 335.75438pt x 147.55125pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [52]
+[53]
+Overfull \hbox (1.58698pt too wide) in paragraph at lines 932--933
+[]\T1/qpl/m/n/10.95 Souhrn v≤ech kom-po-nent -- tvo∞Ì jed-no-du-ch˝ skript, kte
+r˝ ov•∞Ì funk£-|
+ []
+
+
+Overfull \hbox (1.66368pt too wide) in paragraph at lines 932--933
+\T1/qpl/m/n/10.95 nost jed-not-li-v˝ch kom-po-nent Ma-ple T.A.(viz. obr.) vo-l·
+-nÌm webo-v˝ch|
+ []
+
+[54]
 Kapitola 7.
-[23
+[55
 
 ]
 Kapitola 8.
-[24
+[56
 
 ]
-Overfull \hbox (53.995pt too wide) in paragraph at lines 416--416
+Overfull \hbox (53.995pt too wide) in paragraph at lines 958--958
 $\T1/lmtt/m/n/10.95 www . itu . int / en / ITU -[] D / Statistics / Documents /
  facts / ICTFactsFigures2015 .$|
  []
 
 
-Overfull \hbox (15.44746pt too wide) in paragraph at lines 416--416
+Overfull \hbox (15.44746pt too wide) in paragraph at lines 958--958
 []\T1/qpl/m/n/10.95 Petr KOR-VINY. \T1/qpl/m/it/10.95 Mo-odle (nejen) na OPF\T1
 /qpl/m/n/10.95 . Dub. 2005. \T1/qpl/m/sc/10.95 url\T1/qpl/m/n/10.95 : $\T1/lmtt
 /m/n/10.95 http : / / elearning .$|
  []
 
 
-Overfull \hbox (6.28229pt too wide) in paragraph at lines 416--416
+Overfull \hbox (0.87129pt too wide) in paragraph at lines 958--958
+[]\T1/qpl/m/n/10.95 Hana STêÕ-TESK¡. \T1/qpl/m/it/10.95 His-to-rie e-learningu 
+v ÉeskÈ re-pub-lice\T1/qpl/m/n/10.95 . 2003. \T1/qpl/m/sc/10.95 url\T1/qpl/m/n/
+10.95 : $\T1/lmtt/m/n/10.95 http :$|
+ []
+
+
+Overfull \hbox (6.28229pt too wide) in paragraph at lines 958--958
 \T1/qpl/m/it/10.95 kground\T1/qpl/m/n/10.95 . 2015. \T1/qpl/m/sc/10.95 url\T1/q
 pl/m/n/10.95 : $\T1/lmtt/m/n/10.95 https : / / www . imsglobal . org / activity
  / learning -[]$|
  []
 
+[57
 
-Overfull \hbox (17.99783pt too wide) in paragraph at lines 416--416
+]
+Overfull \hbox (17.99783pt too wide) in paragraph at lines 958--958
 \T1/qpl/m/n/10.95 2015. \T1/qpl/m/sc/10.95 url\T1/qpl/m/n/10.95 : $\T1/lmtt/m/n
 /10.95 https : / / www . imsglobal . org / specs / ltiv2p0$ \T1/qpl/m/n/10.95 (
 cit. 15.10.2015). |
  []
 
-[25
 
-]
-Overfull \hbox (12.16695pt too wide) in paragraph at lines 416--416
+Overfull \hbox (12.16695pt too wide) in paragraph at lines 958--958
 $\T1/lmtt/m/n/10.95 http : / / www . capterra . com / learning -[] management -
 [] system -[] software /$|
  []
 
 
-Overfull \hbox (23.80687pt too wide) in paragraph at lines 416--416
-[]\T1/qpl/m/n/10.95 Moodle.org. \T1/qpl/m/it/10.95 Mo-odle logo\T1/qpl/m/n/10.9
-5 . \T1/qpl/m/sc/10.95 url\T1/qpl/m/n/10.95 : $\T1/lmtt/m/n/10.95 https : / / m
-oodle . org / logo/$ \T1/qpl/m/n/10.95 (cit. 10.10.2015). |
- []
-
-
-Overfull \hbox (1.61502pt too wide) in paragraph at lines 416--416
+Overfull \hbox (1.61502pt too wide) in paragraph at lines 958--958
 []\T1/qpl/m/n/10.95 Moodle.net: Cour-ses a Con-tent. \T1/qpl/m/it/10.95 Mo-odle
  Sta-tis-tics\T1/qpl/m/n/10.95 . \T1/qpl/m/sc/10.95 url\T1/qpl/m/n/10.95 : $\T1
 /lmtt/m/n/10.95 https : / / moodle .$|
  []
 
 
-Overfull \hbox (36.70155pt too wide) in paragraph at lines 416--416
-\T1/qpl/m/n/10.95 Com-pu-ter Pro-gra-m-ming. Bir-mingham: Packt, 2010. 255 s. \
-T1/qpl/m/sc/10.95 isbn\T1/qpl/m/n/10.95 : 9781849511940. |
+Overfull \hbox (3.6838pt too wide) in paragraph at lines 958--958
+\T1/qpl/m/it/10.95 how the new fe-a-tu-res work, and how it will im-pact you\T1
+/qpl/m/n/10.95 . 1st pub. Bir-mingham:|
  []
 
-[26] (fi-pdflatex.lof)
+[58]
+Overfull \hbox (6.92961pt too wide) in paragraph at lines 958--958
+[]\T1/qpl/m/n/10.95 Peter R. CROMPTON.   Does Ma-pleTA pro-duce Con-structi-ve
+ly Aligned|
+ []
+
+
+Overfull \hbox (7.4905pt too wide) in paragraph at lines 958--958
+[]\T1/qpl/m/n/10.95 Maplesoft. \T1/qpl/m/it/10.95 Ma-ple T.A. Ques-tion Ty-pes\
+T1/qpl/m/n/10.95 . 2015. \T1/qpl/m/sc/10.95 url\T1/qpl/m/n/10.95 : $\T1/lmtt/m/
+n/10.95 http : / / www . maplesoft .$|
+ []
+
+[59] (fi-pdflatex.lof)
 \tf@lof=\write7
 \openout7 = `fi-pdflatex.lof'.
 
- [27
+ [60
 
 ] (fi-pdflatex.lot)
 \tf@lot=\write8
 \openout8 = `fi-pdflatex.lot'.
 
- [28
+ [61
 
 ]
 P\v {r}\'{\i }loha A.
-[29
+[62
 
 ]
 
@@ -2134,30 +2128,35 @@ Package catoptions Warning: Undefined options
 (catoptions)                fontenc.sty,T1,. 
 (catoptions)                Default action already taken in each case .
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 435.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 435.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 977.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 977.
 (fi-pdflatex.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 435.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 435.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 977.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 977.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                fi-pdflatex
+(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'fi-pdflatex.run.xml'.
 \openout1 = `fi-pdflatex.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39694 strings out of 493634
- 725046 string characters out of 3143737
- 1164666 words of memory out of 3000000
- 42387 multiletter control sequences out of 15000+200000
- 72783 words of font info for 83 fonts, out of 3000000 for 9000
+ 39840 strings out of 493634
+ 728656 string characters out of 3143737
+ 1168996 words of memory out of 3000000
+ 42517 multiletter control sequences out of 15000+200000
+ 76005 words of font info for 86 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 69i,8n,84p,10414b,2364s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 69i,12n,84p,10498b,2387s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/valusek/A
 ppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/tex-gyre/q-ec.enc}{C:/Users/va
 lusek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/tex-gyre/q-ec-sc.enc}<C
@@ -2167,9 +2166,9 @@ m Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Program Files/MiKTeX 2.
 eX 2.9/fonts/type1/public/tex-gyre/qplb.pfb><C:/Users/valusek/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/public/tex-gyre/qplr.pfb><C:/Users/valusek/AppData
 /Local/Programs/MiKTeX 2.9/fonts/type1/public/tex-gyre/qplri.pfb>
-Output written on fi-pdflatex.pdf (37 pages, 236520 bytes).
+Output written on fi-pdflatex.pdf (70 pages, 331612 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
+ 306 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 20674 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 21206 words of extra memory for PDF output out of 24883 (max. 10000000)
 

@@ -49,10 +49,10 @@
     \endentry
     \entry{techvsteach}{article}{}
       \name{author}{1}{}{%
-        {{hash=3575578f579ff585b6ca053676b5a91c}{Trucano}{T\bibinitperiod}{Michael}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=89f05b737020b55d3c0b4d963376e7b8}{TRUCANO}{T\bibinitperiod}{Michael}{M\bibinitperiod}{}{}{}{}}%
       }
-      \strng{namehash}{3575578f579ff585b6ca053676b5a91c}
-      \strng{fullhash}{3575578f579ff585b6ca053676b5a91c}
+      \strng{namehash}{89f05b737020b55d3c0b4d963376e7b8}
+      \strng{fullhash}{89f05b737020b55d3c0b4d963376e7b8}
       \field{sortinit}{0}
       \field{sortinithash}{990108227b3316c02842d895999a0165}
       \field{labelnamesource}{author}
@@ -130,6 +130,22 @@
       \field{title}{E-learning - jedna z podob učení v moderní společnost}
       \field{year}{2009}
     \endentry
+    \entry{striteska}{online}{}
+      \name{author}{1}{}{%
+        {{hash=ef707baa2da4f81dfa9ab277deb0d88d}{STŘÍTESKÁ}{S\bibinitperiod}{Hana}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{ef707baa2da4f81dfa9ab277deb0d88d}
+      \strng{fullhash}{ef707baa2da4f81dfa9ab277deb0d88d}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Historie e-learningu v České republice}
+      \field{year}{2003}
+      \verb{url}
+      \verb http://www.fi.muni.cz/usr/jkucera/pv109/2003p/xstrites.htm
+      \endverb
+    \endentry
     \entry{zlamalova}{book}{}
       \name{author}{1}{}{%
         {{hash=04d88e2f665a045684537fc54de83740}{ZLÁMALOVÁ}{Z\bibinitperiod}{Helena}{H\bibinitperiod}{}{}{}{}}%
@@ -138,7 +154,7 @@
         {Praha}%
       }
       \list{publisher}{1}{%
-        {Centrum pro studium vysokého školství}%
+        {Univerzita Jana Amose Komenského Praha}%
       }
       \strng{namehash}{04d88e2f665a045684537fc54de83740}
       \strng{fullhash}{04d88e2f665a045684537fc54de83740}
@@ -146,12 +162,14 @@
       \field{sortinithash}{990108227b3316c02842d895999a0165}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{2. upr. vyd}
-      \field{isbn}{8086302105}
-      \field{pagetotal}{79}
-      \field{series}{Řízení vysokých škol}
-      \field{title}{Úvod do distančního vzdělávání}
-      \field{year}{2000}
+      \field{edition}{1. vyd}
+      \field{isbn}{9788086723563}
+      \field{pagetotal}{144}
+      \field{title}{Distanční vzdělávání a eLearning: učební text pro distanční studium}
+      \field{year}{2008}
+      \verb{url}
+      \verb http://www.tykva.net/files/UJAK/MVT/Distancni_vzdelavani.pdf
+      \endverb
     \endentry
     \entry{prucha}{book}{}
       \name{author}{1}{}{%
@@ -173,9 +191,27 @@
       \field{isbn}{8086302164}
       \field{month}{10~01}
       \field{pagetotal}{39}
-      \field{series}{The Art of Computer Programming}
       \field{title}{Distanční studium v otázkách: (průvodce studujících a zájemců o studium)}
       \field{year}{2000}
+    \endentry
+    \entry{nuov}{online}{}
+      \name{author}{1}{}{%
+        {{hash=57652a798136dce09071a4581d154f4a}{vzdělávání}{v\bibinitperiod}{Národní}{N\bibinitperiod}{ústav\bibnamedelima odborného}{ú\bibinitperiod\bibinitdelim o\bibinitperiod}{}{}}%
+      }
+      \strng{namehash}{57652a798136dce09071a4581d154f4a}
+      \strng{fullhash}{57652a798136dce09071a4581d154f4a}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Jaký je rozdíl mezi dálkovým a distančním studiem?}
+      \field{urlday}{12}
+      \field{urlmonth}{10}
+      \field{urlyear}{2015}
+      \field{year}{2008}
+      \verb{url}
+      \verb http://www.nuov.cz/jaky-je-rozdil-mezi-dalkovym-a-vecernim-studiem
+      \endverb
     \endentry
     \entry{lms}{online}{}
       \name{author}{1}{}{%
@@ -366,6 +402,7 @@
       \field{urlday}{10}
       \field{urlmonth}{10}
       \field{urlyear}{2015}
+      \field{year}{2015}
       \verb{url}
       \verb https://moodle.org/logo/
       \endverb
@@ -468,13 +505,12 @@
       \field{edition}{1st pub}
       \field{isbn}{9781849511940}
       \field{pagetotal}{255}
-      \field{series}{The Art of Computer Programming}
       \field{title}{Moodle 2.0 first look: discover what's new in Moodle 2.0, how the new features work, and how it will impact you}
       \field{year}{2010}
     \endentry
     \entry{drlik}{book}{}
       \name{author}{1}{}{%
-        {{hash=3f99d836c2b493c4731edadc1f40da9e}{Martin}{M\bibinitperiod}{DRLÍK}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=2db5422e2cc87707cd102b353338c77a}{DRLÍK}{D\bibinitperiod}{Martin}{M\bibinitperiod}{}{}{}{}}%
       }
       \list{location}{1}{%
         {Brno}%
@@ -482,8 +518,8 @@
       \list{publisher}{1}{%
         {Computer Press}%
       }
-      \strng{namehash}{3f99d836c2b493c4731edadc1f40da9e}
-      \strng{fullhash}{3f99d836c2b493c4731edadc1f40da9e}
+      \strng{namehash}{2db5422e2cc87707cd102b353338c77a}
+      \strng{fullhash}{2db5422e2cc87707cd102b353338c77a}
       \field{sortinit}{0}
       \field{sortinithash}{990108227b3316c02842d895999a0165}
       \field{labelnamesource}{author}
@@ -527,6 +563,130 @@
       \field{urlyear}{2015}
       \verb{url}
       \verb http://www.maplesoft.com/media/resources.aspx
+      \endverb
+    \endentry
+    \entry{heck2004}{article}{}
+      \name{author}{1}{}{%
+        {{hash=584c17202e167004437257bb4fd52eeb}{Heck}{H\bibinitperiod}{André}{A\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{584c17202e167004437257bb4fd52eeb}
+      \strng{fullhash}{584c17202e167004437257bb4fd52eeb}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AMSTEL Institute, UvA}
+      \field{title}{Assessment with Maple TA: creation of test items}
+      \field{year}{2004}
+    \endentry
+    \entry{mapleta}{online}{}
+      \name{author}{1}{}{%
+        {{hash=e58b6e5a1f6602f4d77a83c4e0bd0f10}{Maplesoft}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{e58b6e5a1f6602f4d77a83c4e0bd0f10}
+      \strng{fullhash}{e58b6e5a1f6602f4d77a83c4e0bd0f10}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Web-based Testing and Assessment for Math Courses}
+      \field{urlday}{02}
+      \field{urlmonth}{11}
+      \field{urlyear}{2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://www.maplesoft.com/products/mapleta/
+      \endverb
+    \endentry
+    \entry{mapletalicence}{online}{}
+      \name{author}{1}{}{%
+        {{hash=e58b6e5a1f6602f4d77a83c4e0bd0f10}{Maplesoft}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{e58b6e5a1f6602f4d77a83c4e0bd0f10}
+      \strng{fullhash}{e58b6e5a1f6602f4d77a83c4e0bd0f10}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{How to Buy Maple T.A.}
+      \field{urlday}{02}
+      \field{urlmonth}{11}
+      \field{urlyear}{2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://www.maplesoft.com/products/mapleta/purchase.aspx
+      \endverb
+    \endentry
+    \entry{mapletarequirements}{online}{}
+      \name{author}{1}{}{%
+        {{hash=e58b6e5a1f6602f4d77a83c4e0bd0f10}{Maplesoft}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{e58b6e5a1f6602f4d77a83c4e0bd0f10}
+      \strng{fullhash}{e58b6e5a1f6602f4d77a83c4e0bd0f10}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{System Requirements: Maple T.A. and Maple T.A. MAA Placement Test Suite Server Requirements}
+      \field{urlday}{02}
+      \field{urlmonth}{11}
+      \field{urlyear}{2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://www.maplesoft.com/products/system_requirements.aspx
+      \endverb
+    \endentry
+    \entry{crompton}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=e404def9e8ae90c3735316593426df71}{CROMPTON}{C\bibinitperiod}{Peter\bibnamedelima R.}{P\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{e404def9e8ae90c3735316593426df71}
+      \strng{fullhash}{e404def9e8ae90c3735316593426df71}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{CETL-MSOR Conference 2010}
+      \field{title}{Does MapleTA produce Constructively Aligned Maths assessment?}
+      \field{year}{2011}
+      \field{pages}{29}
+      \range{pages}{1}
+    \endentry
+    \entry{char}{report}{}
+      \name{author}{1}{}{%
+        {{hash=81562e01a3f4e6df6a1b9690ae753edb}{CHAR}{C\bibinitperiod}{Bruce}{B\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {Drexel University Department of Computer Science}%
+      }
+      \strng{namehash}{81562e01a3f4e6df6a1b9690ae753edb}
+      \strng{fullhash}{81562e01a3f4e6df6a1b9690ae753edb}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{DU-CS-11-04. Citeseer}
+      \field{title}{Developing questions for Maple TA using Maple library modules and non-mathematical computation}
+      \field{type}{Tech. Rep.}
+      \field{year}{2011}
+    \endentry
+    \entry{mapletaquestion}{online}{}
+      \name{author}{1}{}{%
+        {{hash=e58b6e5a1f6602f4d77a83c4e0bd0f10}{Maplesoft}{M\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{e58b6e5a1f6602f4d77a83c4e0bd0f10}
+      \strng{fullhash}{e58b6e5a1f6602f4d77a83c4e0bd0f10}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Maple T.A. Question Types}
+      \field{urlday}{04}
+      \field{urlmonth}{11}
+      \field{urlyear}{2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://www.maplesoft.com/products/mapleta/QuestionTypes.aspx
       \endverb
     \endentry
   \endsortlist
