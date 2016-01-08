@@ -6,45 +6,45 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {4\p@ }
 \defcounter {refsection}{0}\relax 
-\addvspace {4\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Ofici\IeC {\'a}ln\IeC {\'\i } logo Moodlu. \cite {moodle-logo}}}{8}{figure.3.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Po\IeC {\v c}et kurz\IeC {\r u} a u\IeC {\v z}ivatel\IeC {\r u} ze str\IeC {\'a}nek registrovan\IeC {\'y}ch na Moodle.org. \cite {moodle-stats}}}{9}{figure.3.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Grafick\IeC {\'e} zobrazen\IeC {\'\i } hierarchie kontext\IeC {\r u}. \cite {moodle-context}}}{17}{figure.3.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.4}{\ignorespaces N\IeC {\'a}hled obrazovky s~kategoriemi kurzy (u\IeC {\v z}ivatel s~pr\IeC {\'a}vy vytvo\IeC {\v r}it kurz). }}{19}{figure.3.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces N\IeC {\'a}hled na formul\IeC {\'a}\IeC {\v r} pro p\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } kurzu.}}{22}{figure.3.5}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Koncept spolupr\IeC {\'a}ce mezi konzumentem a poskytovatelem. \cite {imslti20}}}{6}{figure.2.1}
 \defcounter {refsection}{0}\relax 
 \addvspace {4\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Ofici\IeC {\'a}ln\IeC {\'\i } logo Maple T.A. \cite {maple-logo}}}{23}{figure.4.1}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Ofici\IeC {\'a}ln\IeC {\'\i } logo Moodlu. \cite {moodle-logo}}}{9}{figure.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Ot\IeC {\'a}zka s kreslen\IeC {\'\i }m grafu. \cite {maple-questions}}}{28}{figure.4.2}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Po\IeC {\v c}et kurz\IeC {\r u} a u\IeC {\v z}ivatel\IeC {\r u} ze str\IeC {\'a}nek registrovan\IeC {\'y}ch na Moodle.org. \cite {moodle-stats}}}{10}{figure.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Ot\IeC {\'a}zka s voln\IeC {\'y}m n\IeC {\'a}\IeC {\v c}rtem. \cite {maple-questions}}}{29}{figure.4.3}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Grafick\IeC {\'e} zobrazen\IeC {\'\i } hierarchie kontext\IeC {\r u}. \cite {moodle-context}}}{18}{figure.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Ot\IeC {\'a}zka s kreslen\IeC {\'\i }m grafu. \cite {maple-questions}}}{30}{figure.4.4}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces N\IeC {\'a}hled obrazovky s~kategoriemi kurzy (u\IeC {\v z}ivatel s~pr\IeC {\'a}vy vytvo\IeC {\v r}it kurz). }}{20}{figure.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces N\IeC {\'a}hled na formul\IeC {\'a}\IeC {\v r} pro p\IeC {\v r}id\IeC {\'a}n\IeC {\'\i } kurzu.}}{24}{figure.3.5}
+\defcounter {refsection}{0}\relax 
+\addvspace {4\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Ofici\IeC {\'a}ln\IeC {\'\i } logo Maple T.A. \cite {maple-logo}}}{25}{figure.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Ot\IeC {\'a}zka s~kreslen\IeC {\'\i }m grafu. \cite {maple-question}}}{31}{figure.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Ot\IeC {\'a}zka s~voln\IeC {\'y}m n\IeC {\'a}\IeC {\v c}rtem. \cite {maple-question}}}{32}{figure.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Ot\IeC {\'a}zka s~kreslen\IeC {\'\i }m grafu. \cite {maple-question}}}{33}{figure.4.4}
 \defcounter {refsection}{0}\relax 
 \addvspace {4\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {4\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Struktura navrhovan\IeC {\'e}ho modulu}}{49}{figure.6.1}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Datab\IeC {\'a}zov\IeC {\'y} model pro navrhovan\IeC {\'e} roz\IeC {\v s}\IeC {\'\i }\IeC {\v r}en\IeC {\'\i }.}}{50}{figure.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Algoritmus k~p\IeC {\v r}eveden\IeC {\'\i } asociativn\IeC {\'\i }ho pole na XML}}{49}{figure.6.2}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Struktura navrhovan\IeC {\'e}ho modulu}}{53}{figure.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Webov\IeC {\'e} slu\IeC {\v z}by vrac\IeC {\'\i } data v~podob\IeC {\v e} XML, t\IeC {\'\i }mto vol\IeC {\'a}n\IeC {\'\i }m se p\IeC {\v r}evedou na asociativn\IeC {\'\i } pole.}}{50}{figure.6.3}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Formul\IeC {\'a}\IeC {\v r} pro nastaven\IeC {\'\i } v\IeC {\'y}ukov\IeC {\'e}ho modulu Maple T.A.}}{56}{figure.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Vol\IeC {\'a}n\IeC {\'\i } webov\IeC {\'y}ch slu\IeC {\v z}eb z~druh\IeC {\'e} vrsty -- Connectoru.}}{50}{figure.6.4}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Lok\IeC {\'a}ln\IeC {\'\i } roz\IeC {\v s}\IeC {\'\i }\IeC {\v r}en\IeC {\'\i } je dostupn\IeC {\'e} z navigace.}}{59}{figure.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Vol\IeC {\'a}n\IeC {\'\i }m PHP za pomoci AJAXu se z\IeC {\'\i }sk\IeC {\'a}vaj\IeC {\'\i } hodnoty pro z\IeC {\'a}visl\IeC {\'e} pole formul\IeC {\'a}\IeC {\v r}e.}}{52}{figure.6.5}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Monitor komponent syst\IeC {\'e}mu Maple T.A.}}{59}{figure.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Implementace t\IeC {\v r}\IeC {\'\i }dy je vyu\IeC {\v z}\IeC {\'\i }ta jako napl\IeC {\'a}novan\IeC {\'a} \IeC {\'u}loha. }}{53}{figure.6.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Uk\IeC {\'a}zka z\IeC {\'a}znamu pole ze souboru tasks.php , kter\IeC {\'e} Moodle vyu\IeC {\v z}iv\IeC {\'a} p\IeC {\v r}i instalaci nov\IeC {\'e} napl\IeC {\'a}novan\IeC {\'e} \IeC {\'u}lohy.}}{53}{figure.6.7}
+\addvspace {4\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {4\p@ }
 \defcounter {refsection}{0}\relax 

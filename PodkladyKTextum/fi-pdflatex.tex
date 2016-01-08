@@ -4,8 +4,7 @@ print,
   table,   
   nolof,    
   nolot,
-  oneside,
-  draft
+  oneside,final
 ]{fithesis3}
 
 \usepackage[resetfonts]{cmap}
@@ -29,7 +28,7 @@ Práce se zabývá e-learningovými systémy LMS Moodle a Maple T.A., jejich zá
 }
 \thesislong{thanks}{
 Rád bych poděkoval vedoucímu práce panu prof. RNDr. Jiřímu Hřebíčkovi, CSc. za jeho
-odborné vedení práce a cenné rady a připomínky. Dále bych rád poděkoval svým rodičům a blízkým za podporu při tvorbě této práce a během celého studia. 
+odborné vedení a pomoc při přípravě této práce. Dále bych rád poděkoval svým rodičům a blízkým za podporu během celého studia. 
 }
 %% The following section sets up the bibliography.
 \usepackage{csquotes}
@@ -55,6 +54,9 @@ odborné vedení práce a cenné rady a připomínky. Dále bych rád poděkoval
 \usepackage[breaklinks]{hyperref}
 \usepackage{menukeys}
 \usepackage{ragged2e}  % for '\RaggedRight' macro (allows hyphenation)
+
+\usepackage{listings}
+\usepackage{color}
 \newcolumntype{Y}{>{\RaggedRight\arraybackslash}X} 
 \makeatletter\thesis@load
   \makeatletter
@@ -67,6 +69,39 @@ odborné vedení práce a cenné rady a připomínky. Dále bych rád poděkoval
 	\end{alwayssingle}%
       \fi}
   \makeatother
+
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
+\renewcommand{\lstlistingname}{Úryvek}
+\renewcommand{\lstlistlistingname}{Seznam úryvků}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{white},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+
+
 \begin{document}
 
 
@@ -92,6 +127,7 @@ E-learning se rozvíjí a mění stejně rychle jako informační technologie, k
 \begin{enumerate}
   \item \emph{„Význam slovního spojení e-learning může být brán jako elektronic\-ké vzdělávání. Elektronické vzdělávání znamená z~hlediska učitele realizovat edukační proces elektronickými prostředky, v~současnosti přesněji informačně-komunikačními prostředky. Elektronické učení z~pozice žáka znamená realizovat těmito prostředky proces vlastního učení.“} \cite{ockajova}
   \item \emph{„E-learning je výuka s~využitím výpočetní techniky a internetu.“} \cite{korviny}
+  \item \emph{„Obecně vzato představuje e-learning způsob vzdělávání, který v~yužívá moderní informační a komunikační technologie k~předávání v~ýukového obsahu, komunikaci účastníků vzdělávání a k~řízení v~ýukového procesu.” }\cite{cznic}
   \item \emph{„E-learning zahrnuje jak teorii a výzkum, tak i jakýkoliv vzdělávací proces (s~různým stupněm intencionality), v~němž jsou v~souladu s~etickými principy používány informační a komunikační technologie pracující s~daty v~elektronické podobě. Způsob využívání prostředků ICT a dostupnost učebních materiálů jsou závislé především na vzdělávacích cílech a obsahu, charakteru vzdělávacího prostředí, potřebách a možnostech všech aktérů vzdělávacího procesu.” }\cite{zounek}
 
 \end{enumerate}
@@ -112,6 +148,8 @@ Výše zmíněné definice e-learningu mají společného jmenovatele, kterým j
       \begin{itemize}
 	\item \emph{„Distanční vzdělávání je multimediální forma řízeného samostatné\-ho studia, které je koordinováno vzdělávací institucí a v~němž jsou vyučující resp. konzultanti (tutoři) v~průběhu vzdělávání trvale nebo převážně fyzicky odděleni od vzdělávaných. Multimediálnost zde znamená využití všech dostupných a účelných didaktických prvků a technických prostředků, kterými lze prezentovat učivo, komunikovat se studujícími, provádět průběžné hodnocení studijních pokroků a případně také hodnotit závěrečné výsledky studia. Aktuální a efektivní technologickou podporou distančního studia je metoda e-learn\-ing.“} \cite{zlamalova} 
 	\item Podle \cite{prucha} se \emph{„jedná o~formu studia zprostředkovaného médii (telefon, rozhlas, televize, počítač, zvl. internet a elektronická pošta aj.). Je založeno na samostatném studiu účastníků, řízeném specializovanou institucí, bez prezenčního kontaktu studujících s~vyučujícími. Výuku účastníků zajišťují speciálně připravené učební materiály (výukové balíky) a jiné metody studijní podpory a hodnocení, umožňující individuální přístup.“} 
+	\item \emph{„Zde je základem samostudium a speciálně zpracovaný obsah studia (v~podobě tištěné nebo elektronické). Obsah studia není tvořen klasickými učebnicemi nebo skripty, ale jedná se o~metodicky propracovaný materiál, který umožňuje studujícím pochopit učivo bez každodenního kontaktu s~vyučujícím. Výkony studentů jsou průběžně sledovány (např. pomocí dílčích úkolů či testů), studentům je k~dispozici učitel – tutor.“}\cite{cznic}
+
 	\item \emph{„Distanční forma je samostudium, kdy výuka neprobíhá v~učebnách a nevyžaduje se osobní účast učitelů a studentů ve škole. Student se školou komunikuje např. prostřednictvím počítačových interaktivních programů, e-mailu, internetu, záleží na  možnostech školy, především její technické vybavenosti. Užívaným informačním technologiím jsou metodicky i didakticky přizpůsobeny veškeré učební pomůcky.“} \cite{nuov}
      \end{itemize}
 
@@ -136,7 +174,14 @@ Jednotlivá řešení LMS nemusí nutně zahrnovat všechny tyto nástroje a nao
 	\section{Learning Tools Interoperability}
 Learning Tools Interoperability{\textregistered} (dále jen LTI) je specifikace vytvořená organizací IMS Global Learning Consortium a jejím cílem je ustanovení standardního přístupu k~integraci výukových aplikací (často poskytované jako služby třetích stran) s~výukovými platformami, jakými jsou LMS, CMS, portály, výukové repozitáře a další prostředí pro podporu výuky. V~praxi to znamená přímočarou a bezimplementační integraci nástrojů s~odlišnou funkcionalitou pomocí jednotného rozhraní, což vede ke snížení časových i finančních nákladů při integraci napříč systémy. \cite{imslti}
 
-Klíčovým konceptem LTI je „konzument” a „poskytovatel”. Specifikace udává jednotné rozhraní mezi e-learningovým nástrojem poskytujícím služ\-by a e-learningovou platformou konzumující služby. V~praxi je typických konzumentem LMS na bázi Moodlu nebo Blackboardu\footnote{\url{http://uki.blackboard.com/}}, ale není to podmínkou, a typickým poskytovatelem je software třetích stran podobný nástrojům Wimba\footnote{\url{http://www.wimba.com/}}, Mahara e-portfolio\footnote{\url{https://mahara.org/}} nebo třeba Maple T.A.. Specifikace LTI podporuje širší definici konzumenta i poskytovatele zahrnující například studentské portály (konzumenti) a různorodé externě hostované funkcionality (poskytovatelé). \cite{imsltiinvest}
+\begin{figure}[htb]
+		  \begin{center}
+		    \includegraphics[width=100mm]{images/ltipic.png}
+		   \end{center}
+		  \caption{Koncept spolupráce mezi konzumentem a poskytovatelem. \cite{imslti20}}
+		  \label{fig:ltipic}
+		\end{figure}
+Klíčovým konceptem LTI je „konzument” a „poskytovatel” (obrázek \ref{fig:ltipic}). Specifikace udává jednotné rozhraní mezi e-learningovým nástrojem poskytujícím služ\-by a e-learningovou platformou konzumující služby. V~praxi je typických konzumentem LMS na bázi Moodlu nebo Blackboardu\footnote{\url{http://uki.blackboard.com/}}, ale není to podmínkou, a typickým poskytovatelem je software třetích stran podobný nástrojům Wimba\footnote{\url{http://www.wimba.com/}}, Mahara e-portfolio\footnote{\url{https://mahara.org/}} nebo třeba Maple T.A.. Specifikace LTI podporuje širší definici konzumenta i poskytovatele zahrnující například studentské portály (konzumenti) a různorodé externě hostované funkcionality (poskytovatelé). \cite{imsltiinvest}
 
 
 Specifikace LTI má dvě hlavní větve: LTI 1 a LTI 2, kterými lze integrovat systémy. LTI 1 bylo poprvé uvolněno v~roce 2006, kdy bylo příliš komplexní a neujalo se. Další vydání se snažila specifikaci zjednodušit. V~roce 2012 je vydána verze LTI 1.1 a později téhož roku LTI 1.1.1. Právě tyto verze se využívají pro integraci mezi systémy, poskytují základní a jednoduché rozhraní pro komunikaci a přenos informací.
@@ -155,7 +200,8 @@ Slovo Moodle bylo původně akronymem pro Modular Object-Oriented Dynamic Learni
 
 A~s~čím tedy Moodle přichází?
 \begin{itemize}
-\item \emph{„Moodle je výuková platforma navržená k~poskytnutí osobního prostředí pro vyučující, správce a studenty pomocí jediného robustního, bezpečného a integrovaného systému."}\cite{moodle-about}		
+\item \emph{„Moodle je výuková platforma navržená k~poskytnutí osobního prostředí pro vyučující, správce a studenty pomocí jediného robustního, bezpečného a integrovaného systému."}\cite{moodle-about}	
+\item \emph{„LMS Moodle je živý systém se spoustou nadšených uživatelů, správců sítí, programátorů, učitelů a vlastně v~neposlední řadě a na prvním místě i studentů. Tento systém se stále mění dle aktuálních potřeb uživatelů, dle možností dostupných technologií, dle novinek a trendu směřování online výuky studentů."}\cite{cznic}
 \item \emph{„Moodle vznikl na podporu sociálně konstruktivistického přístupu ke vzdělávání. To je hlavním důvodem velké oblíbenosti Moodle v~prostředí škol, zejména univerzit. Tam se vhodně uplatňují principy komunikace a spolupráce. Jsou známa úspěšná nasazení Moodle ve společnostech při vzdělávání zaměstnanců i v~projektech celoživotního vzdělávání profesních skupin nebo v~zájmovém vzdělávání.”} \cite{pdcmoodle}
 \item \emph{„LMS Moodle lze využít i jako nástroj pro podporu školících aktivit v~rámci vzdělávacích institucí. Moodle může sloužit jak v~roli systému zpřístupňujícího distanční či kombinované komerční vzdělávací služby (například s~podporou prodeje či vystavování certifikátů), ale také jako systém s~doplňkovými oporami klasických prezenčních kurzů.” }\cite{pdcmoodleinst}
 \end{itemize}
@@ -163,7 +209,7 @@ A~s~čím tedy Moodle přichází?
 Moodle je volně dostupný a oblíbený e-learningový systém \cite{capterra}, který lze využít jako podpůrný prostředek prezenční výuky, ale také jako plnohodnotný software při budování portálu distančního vzdělávání. Přináší možnost jednoduše a přehledně publikovat výukové a vzdělávací materiály on-line pro veřejnost i uzavřenou skupinu uživatelů.  Přístup k~výuce je plně v~režii tvůrce kurzu a může být koncipován jako plně automatický pro velký počet studentů, plně individuální s~velkou mírou zpětné vazby a přístupu, nebo kombinace obou přístupů.
 \begin{figure}
 		  \begin{center}
-		    \includegraphics[width=60mm]{images/moodle-logo.png}
+		    \includegraphics[width=70mm]{images/moodle-logo.png}
 		   \end{center}
 		  \caption{Oficiální logo Moodlu. \cite{moodle-logo}}
 		  \label{fig:moodlelogo}
@@ -173,7 +219,7 @@ Zakladatelem a hlavním programátorem je Martin Dougiamas, který se po dlouhol
 
 První oficiální verze Moodle 1.0 vyšla v~roce 2002 a jeho základní instalace byla dostupná společně s~dokumentací. Uživatelé od té doby mohou diskutovat na nově vzniklém komunitním fóru. Vznikají nové tematické vzhledy a překlady do dalších jazyků. O~rok později komunita přispívá prvním modulem (modul Workshop) a z~domény Moodle.org se stává opora komunitního rozvoje (sdružuje dotazy, rady, návrhy na rozvoj atd.). Moodle rychle roste a v~Oxfordu roku 2004 je uspořádán první MoodleMoot. Moot je označení konference pro příznivce Moodlu. Komunita se rozrůstá a je aktivní při sdílení zkušeností a pomoci.
 
-V~roce 2007 získává Moodle ocenění (vítěz v~kategoriích Education and Government Learning Management Systems a Small and Medium Corporate Learning Management Systems) a stává se vedoucím open sourcovým e-learningovým systémem. Nárůst uživatelů je obrovský. V~roce 2004 má Moodle tisíc registrovaných uživatelů, v~roce 2008 je jich půl milionu a v~roce 2010 je zde již přes milion uživatelů a padesát Moodle partnerů. Databáze překladů čítá v~témže roce více než sto jazyků. Aktuálně má Moodle registrováno šedesát tisíc stránek s~celkovým počtem více než osmdesát miliónů uživatelů (viz. obrázek\ref{fig:moodlestats}). 
+V~roce 2007 získává Moodle ocenění (vítěz v~kategoriích Education and Government Learning Management Systems a Small and Medium Corporate Learning Management Systems) a stává se vedoucím open sourcovým e-learningovým systémem. Nárůst uživatelů je obrovský. V~roce 2004 má Moodle tisíc registrovaných uživatelů, v~roce 2008 je jich půl milionu a v~roce 2010 je zde již přes milion uživatelů a padesát Moodle partnerů. Databáze překladů čítá v~témže roce více než sto jazyků. Aktuálně má Moodle registrováno šedesát tisíc stránek s~celkovým počtem více než osmdesát miliónů uživatelů (obrázek\ref{fig:moodlestats}). 
  \begin{figure}
 		  \begin{center}
 		    \includegraphics[width=80mm]{images/statistiky-moodle.png}
@@ -234,7 +280,7 @@ Na druhou stranu má Moodle i své nevýhody. Mezi ně bychom mohli zařadit nap
 Na základě výčtu vlastností výše je zřejmé, že Moodle je skvělým nástrojem pro menší a střední organizace, střední i základní školy, či podporu části výuky na vysokých školách. Je dostupný cenově i požadavky na prostředí. Pokud jej ale chcete používat efektně a efektivně pro velké množství konkurenčně přistupujících uživatelů, nevyhnete se nákladům na kvalitní hardware a správce, často z~řad komerčních partnerů a poskytovatelů služeb spojených s~Moodlem. 
 
 	\section{Kurz}
-V této kapitole probereme výukové moduly (činnosti i studijní materiály), bloky a rozvržení stránky kurzu.  
+V~této kapitole probereme výukové moduly (činnosti i studijní materiály), bloky a rozvržení stránky kurzu.  
 		\subsection{Rozložení}
 Typickým rozložením aplikace je dvou či tří sloupcový layout, ojediněle se vyskytuje layout s~jediným sloupcem. Základem každé stránky Moodle je kontejner pro vložení hlavního obsahu pro danou sekci/stránku. Při vstupu do kurzu se v~něm zobrazí přehled a složení kurzu, v~detailu výukového modulu se zobrazí látka daného modulu, v~případě správy kurzu, modulu, Moodlu atd. je obsahem kontejneru samotný formulář s~nastavením dané položky.
 
@@ -286,12 +332,12 @@ Vedle výukových modulů, které jsou jednoznačně určené k~tvorbě obsahu k
 	\section{Uživatelské role a kontext}
 Moodle definuje uživatelskou roli ve spojení s~kontextem. Kontext ohraničuje části systému a umožňuje těmto částem přidělovat různé vazby uživatele s~rolí. Příkladem může být kategorie kurzů, která má svůj vlastní kontext. Kategorie obsahuje kurzy, které mají také svůj kontext. V~kurzech se vytváří aktivity a materiály, mimo stojí tzv. bloky. I~tyto části kurzu mají svůj vlastní kontext. K~těmto kontextům nyní můžeme přiřadit uživatele ve vazbě s~rolí. Uživatel tedy může být v~kontextu kurzu A~definován jako učitel a v~kontextu kurzu B jako student. V~rámci kurzu B může náš uživatel mít v~kontextu modulu diskuze roli moderátora. 
 
-Globální roli má uživatel zapsanou bez ohledu na kontext a je platná bez ohledu na místo, kde se uživatel právě nachází. Lokální role se naopak zapisuje v~rámci kontextu a tím se vytváří systém práv ke každé stránce v~daném kontextu. Práva mohou být přebírána z~jiných kontextů, jelikož Moodle vytváří nad kontexty hierarchii (viz. obrázek \ref{fig:moodlecontext}). Přebírání práv je však možné směrem dolů. Směrem do strany (sdílení mezi kontexty stejné úrovně) a nahoru (do nadřazeného kontextu) nelze. Moodle k~uživatelským rolím uchovává informaci o~případném archetypu. Archetypem se myslí rodičovská skupina, ze které role vychází a dědí z~ní základní množinu vlastností. 
+Globální roli má uživatel zapsanou bez ohledu na kontext a je platná bez ohledu na místo, kde se uživatel právě nachází. Lokální role se naopak zapisuje v~rámci kontextu a tím se vytváří systém práv ke každé stránce v~daném kontextu. Práva mohou být přebírána z~jiných kontextů, jelikož Moodle vytváří nad kontexty hierarchii (obrázek \ref{fig:moodlecontext}). Přebírání práv je však možné směrem dolů. Směrem do strany (sdílení mezi kontexty stejné úrovně) a nahoru (do nadřazeného kontextu) nelze. Moodle k~uživatelským rolím uchovává informaci o~případném archetypu. Archetypem se myslí rodičovská skupina, ze které role vychází a dědí z~ní základní množinu vlastností. 
  
 
 		\begin{figure}
 		  \begin{center}
-		    \includegraphics[width=100mm]{images/moodle-context.png}
+		    \includegraphics[width=120mm]{images/moodle-context.png}
 		   \end{center}
 		  \caption{Grafické zobrazení hierarchie kontextů.   \cite{moodle-context}}
 		  \label{fig:moodlecontext}
@@ -333,7 +379,7 @@ Vytvoření nového kurzu v~prostředí LMS Moodle je jednoduchý proces, kte\-r
 		  \label{fig:moodlekurzypridani}
 		\end{figure}
 \subsection*{Přidání kurzu}
-Pro vytvoření nového kurzu musí být přihlášený uživatel zapsán v~roli, kte\-rá umožňuje tvorbu kurzů. Uživateli s~příslušnými právy se na stránce s~přehledem kurzů zobrazuje tlačítko Přidat nový kurz (viz. obrazek \ref{fig:moodlekurzypridani}). Po stisknutí tlačítka se zobrazí veškerá nastavení kurzu po následujících záložkách (viz. obrázek \ref{fig:moodlekurzypridanidetail}):
+Pro vytvoření nového kurzu musí být přihlášený uživatel zapsán v~roli, kte\-rá umožňuje tvorbu kurzů. Uživateli s~příslušnými právy se na stránce s~přehledem kurzů zobrazuje tlačítko Přidat nový kurz (obrazek \ref{fig:moodlekurzypridani}). Po stisknutí tlačítka se zobrazí veškerá nastavení kurzu po následujících záložkách (obrázek \ref{fig:moodlekurzypridanidetail}):
  
 
 \subsection*{Obecná nastavení}
@@ -357,7 +403,7 @@ Moodle nabízí čtyři typy uspořádání kurzu a na základě výběru se mě
 \begin{itemize}
 	\item Týdenní uspořádání -- sekce kurzu jsou rozděleny na týdny počínaje dnem začátku kurzu. Dále uživatel zadává počet sekcí (týdnů), které se připraví, a zda se budou neaktivní týdny zobrazovat rozbalené. Posledním nastavením je stránkování, tedy jestli budou všechna témata na jedné stránce nebo se každé bude zobrazovat na samostatné stránce.
 	\item Tematické uspořádání -- je rozdělení do více témat, kde téma není omezeno časově, ale zaměřením na konkrétní látku. Další nastavení jsou stejná jako v~případě týdenního uspořádání.
-	\item Formát jednoho modulu -- vytvoří kurz s~jedním jediným modulem. Používá se například při vytváření kurzu z~tzv. SCORMů (viz. popis výše), ale může to být kterýkoliv dostupný modul. A~právě výběr použitého modulu je jako další nastavení.
+	\item Formát jednoho modulu -- vytvoří kurz s~jedním jediným modulem. Používá se například při vytváření kurzu z~tzv. SCORMů, ale může to být kterýkoliv dostupný modul. A~právě výběr použitého modulu je jako další nastavení.
 	\item Diskuzní uspořádání -- znamená, že na stránce kurzu jsou zobrazeny diskuze. Další nastavení určuje, kolik jich bude zobrazeno.
 \end{itemize}
 \subsection*{Ostatní nastavení}
@@ -390,7 +436,7 @@ Maple T.A. patří do rodiny nástrojů Maple společnosti Maplesoft, která je 
 
 		\begin{figure}
 		  \begin{center}
-		    \includegraphics[width=60mm]{images/MapleTA_logo.jpg}
+		    \includegraphics[width=80mm]{images/MapleTA_logo.jpg}
 		   \end{center}
 		  \caption{Oficiální logo Maple T.A.  \cite{maple-logo}}
 		  \label{fig:maplelogo}
@@ -459,7 +505,7 @@ První z~metod je nejoblíbenější a nejjednodušší na použití. U~zbylých
 Kniha hodnocení je nástroj, který sjednocuje výsledky studentů k~prohlížení a analýze. Po dokončení průchodu úkolem jsou zaznamenané hodnoty zobrazeny právě v~knize hodnocení. Nástroj z~informací vytváří statistiky studentů, úkolů a otázek, ze kterých generuje reporty o~jednotlivých studentech, třídách nebo pro výběr více tříd. Vytvořením politiky známkování může instruktor vytvořit různé váhy známky z~úkolů a na základě této politiky poté exportovat známky do souboru nebo je publikovat studentům k~prohlížení. Kniha umožňuje dodatečné úpravy známek a přidání hodnocení, která nejsou založena na průchodu úkolem (prezentace, ústní zkoušení, příprava materiálů atd.).
 	\section{Typy úloh} \label{sec:typyuloh}
 
-V~této kapitole si představíme základní typy vestavěných otázek, které se v~Maple T.A. mohou vyskytnout (celá kapitola vychází z~\cite{mapletaquestion} a \cite{char}):
+V~této kapitole si představíme základní typy vestavěných otázek, které se v~Maple T.A. mohou vyskytnout (celá kapitola vychází z~\cite{maple-question} a \cite{char}):
 
 	\subsection{Volná matematická odpověď}
 Maple T.A. umožňuje ptát se na otázky s~volnou odpovědí, u~nichž student odpovídá stejně, jako by se jednalo o~papírovou práci. Matematickou notaci lze využít jak při vytváření otázky, tak při psaní odpovědi, jelikož editor matematických formulí zjednodušuje zadávání matematických výrazů. Otázky jsou navíc hodnoceny nejen na základě definovaného řetězce, matematický preprocesor umožňuje označení korektní odpovědi i v~případě matematického ekvivalentu. Například pokud je správnou odpovědí jedna pětina, a student odpoví, že správně jsou dvě desetiny, Maple T.A. ji vyhodnotí také správně. Otevřené otázky mohou mít i nekonečnou množinu správných odpovědí (například: \emph{„Uveďte funkci, která má maximum v~x = 0”}). Otázky mohou být prakticky z~jakékoliv oblasti matematiky a Maple T.A. je bude schopen vyhodnotit a oznámkovat automaticky.
@@ -481,9 +527,9 @@ Ostatní způsoby jsou již na uvážení instruktora, který může rozhodnout 
 Kreslení grafů je velice zajímavé řešení otázky, které Maple T.A. opět dokáže vyhodnotit samostatně. Grafem, který má student nakreslit, může být prakticky cokoliv. Od zadání bodu po náčrt asymptot, parabol a intervalů. Student zadává odpovědi kliknutím na klíčové body v~grafu, zadáním dvou bodů pro zakreslení přímky nebo bodu a vrcholu pro parabolu. V~zadání otázky mohou být některé linky v~grafu zakresleny a student má určit některé další informace (například kudy bude procházet tečna k~dané křivce). 
 		\begin{figure}[hbt]
 		  \begin{center}
-		    \includegraphics[width=70mm]{images/MapleTA_graph.png}
+		    \includegraphics[width=90mm]{images/MapleTA_graph.png}
 		   \end{center}
-		  \caption{Otázka s kreslením grafu.  \cite{maple-questions}}
+		  \caption{Otázka s~kreslením grafu.  \cite{maple-question}}
 		  \label{fig:maplegraph}
 		\end{figure}
 
@@ -491,9 +537,9 @@ Kreslení grafů je velice zajímavé řešení otázky, které Maple T.A. opět
 Dalším typem otázek je volné zakreslení křivek do obrázku nebo načrtnutí diagramu. Po studentovi se v~tomto typu obvykle požaduje vytvoření čar nebo křivek na základě připraveného zadání. Typickým příkladem může být zadání, v~němž má student uvést, kterým směrem působí síly odstředivé a dostředivé, do obrázku pneumatiky auta. Student kreslí šipky přímo do obrázku a vyhodnocení může být s~tolerancí.
   		\begin{figure}[hbt]
 		  \begin{center}
-		    \includegraphics[width=70mm]{images/MapleTA_paint.png}
+		    \includegraphics[width=90mm]{images/MapleTA_paint.png}
 		   \end{center}
-		  \caption{Otázka s volným náčrtem.  \cite{maple-questions}}
+		  \caption{Otázka s~volným náčrtem.  \cite{maple-question}}
 		  \label{fig:maplepaint}
 		\end{figure}
 
@@ -504,9 +550,9 @@ Učitel nahraje do systému jakýkoliv obrázek a v~editoru vytvoří místa, na
 Matematickou aplikací je úloha, ve které student pomocí interaktivních prv\-ků zadává řešení a na základě vstupu se mění další hodnoty, grafy nebo zobrazení. K~zadání výsledku v~úloze mohou být připravena pole pro doplňování hodnot nebo osy pro přetažení posuvníku. Maple T.A. úkoly tohoto typu hodnotí automaticky a proměnné v~zadání mohou být generovány tak, aby vznikla množina unikátních zadání stejného typu.
 		\begin{figure}[hbt]
 		  \begin{center}
-		    \includegraphics[width=70mm]{images/MapleTA_math.png}
+		    \includegraphics[width=90mm]{images/MapleTA_math.png}
 		   \end{center}
-		  \caption{Otázka s kreslením grafu.  \cite{maple-questions}}
+		  \caption{Otázka s~kreslením grafu.  \cite{maple-question}}
 		  \label{fig:maplemath}
 		\end{figure}
 
@@ -594,6 +640,9 @@ Rozšíření typu availability umožňuje vytváření nových podmínek. Chcem
 \item \textbf{backup} \\*
 Další složkou na seznamu je \emph{backup}. Jak již název napovídá, jedná se o~složku se zdrojovými kódy pro vytváření a správu záloh. Každé rozšíření se zapnutou volbou zálohování má ještě vlastní složku, kte\-rá určuje cíl a metodu zálohování.
 
+\item \textbf{blocks} \\*
+Složka \emph{blocks} obsahuje již zmíněné bloky, které mohou rozšiřovat Moodle o~dodatečné funkcionality v~různých kontextech. Každý z~bloků opět musí mít soubor \emph{version.php}. Druhým povinným souborem je implementace třídy \texttt{block{\_}base} a všech jejích funkcí. Soubor i třída v~něm musí dodržet jmennou konvenci \texttt{block{\_}\textbf{jmeno{\_}bloku}}, kde se \texttt{\textbf{jmeno{\_}bloku}} se rovná jménu složky s~rozšířením a pojmenováním rozšíření v~souboru \emph{version.php}.
+
 \item \textbf{completion} \\*
 Složka \emph{completion} skrývá podobnou funkcionalitu jako \emph{availability}. Li\-ší se pouze v~tom, že místo podmínek pro přístup ke kurzu či modulu ukrývá logiku podmínek pro jejich splnění (dosažení celkové známky, zobrazení všech podstránek knihy, vytvoření příspěvku ve fóru atd.). V~podsložce \emph{criteria} naleznete jednotlivé podmínky, které mohou být nastaveny. Seznam může být stejně jako v~případě podmínek rozšíření availability doplněn o~další vlastní.
 
@@ -622,57 +671,41 @@ Zdrojový kód se snaží o~jednoduchost a minimální přenesení informací do
 
 Druhou částí konektoru je plugin pro vytvoření bloku. Jelikož Moodle knihovna pro práci s~formuláři nepodporuje závislá pole pro výběr hodnot (závislé pole mění svůj obsah na základě výběru hodnoty jiného pole), konektor obchází tento nedostatek přidružením třídy ke kurzu. Tvůrce kurzu vytvoří blok z~nabídky dostupných bloků a v~jeho nastavení přidruží třídu ke kurzu nebo umožní vytvořit novou třídy, vždy se jedná o~jednu jedinou třídu pro daný kurz. Pokud potřebujete úkoly/testy z~jiné třídy než přidružené blokem, není možné to provést z~Moodlu a neobejde se to bez kopírování těchto úloh do jedné či druhé třídy v~Maplu. 
 
-Z~hlediska uložení dat v~databázi tvoří konektor dvě tabulky. Jedna pro výukový modul a jedna pro blok (přiřazení třídy kurzu). Jedná se o~tabulky  mdl\_mapleta (viz. tabulka \ref{tab:mdlmapleta}) a mdl\_mapleta\_course\_map (viz. tabulka \ref{tab:mdlmapletacoursemap}).
-\begin{table}[htb]
-\begin{tabularx}{\textwidth}{|l|Y|}
-\hline
-\multicolumn{2}{|c|}{\textbf{mdl\_mapleta }} \\
-\hline
-\textbf{Atribut} & \textbf{Popis} \\
-\hline
-id & identifikátor \\
-course & cizí klíč do tabulky mdl\_course\\
-name & název instance modulu\\
-assignmentid & cizí klid do tabulky úkolů v~systému Maple T.A.f asdfasd fsad fsdf sda asfas\\
-assignmentmode & typ úkolu\\
-modedescription & popis typu\\
-passingscore & minimální hodnota výsledku pro splnění úkolu\\
-totalpoints & maximální hodnota výsledku\\
-timelimit & časový limit\\
-starttime & datum, odkdy je úkol aktivní\\
-endtime & datum, dokdy je úkol aktivní\\
-policy & popis politiky hodnocení úkolu \\
-\hline
-\end{tabularx}
-\caption{Atributy databázové tabulky mdl\_mapleta.}
-  \label{tab:mdlmapleta}
-\end{table}
-\begin{table}[htb]
-\begin{tabularx}{\textwidth}{|l|Y|}
-\hline
-\multicolumn{2}{|c|}{\textbf{mdl\_mapleta\_course\_map }} \\
-\hline
-\textbf{Atribut} & \textbf{Popis} \\
-\hline
-id & identifikátor\\
-courseid & cizí klíč do tabulky mdl\_course\\
-classid & identifikátor třídy v~systému Maple T.A.\\
-classname & jméno třídy v~Maple T.A.\\
-\hline
-\end{tabularx}
-\caption{Atributy databázové tabulky mdl\_mapleta\_course\_map.}
-  \label{tab:mdlmapletacoursemap}
-\end{table}
+Z~hlediska uložení dat v~databázi tvoří konektor dvě tabulky. Jedna pro výukový modul a jedna pro blok (přiřazení třídy kurzu). Jedná se o~tabulky  \emph{mdl\_mapleta} a\emph{ mdl\_mapleta\_course\_map}.
+
+\subsection*{mdl\_mapleta}
+\begin{itemize}
+	\item \textit{id} -- identifikátor
+	\item \textit{course} -- cizí klíč do tabulky mdl\_course
+	\item \textit{name} -- název instance modulu
+	\item \textit{assignmentid} -- cizí klid do tabulky úkolů v~systému Maple T.A.
+	\item \textit{assignmentmode} -- typ úkolu
+	\item \textit{modedescription} -- popis typu
+	\item \textit{passingscore} -- minimální hodnota výsledku pro splnění úkolu
+	\item \textit{totalpoints} -- maximální hodnota výsledku
+	\item \textit{timelimit} -- časový limit
+	\item \textit{starttime} -- datum, odkdy je úkol aktivní
+	\item \textit{endtime} -- datum, dokdy je úkol aktivní
+	\item \textit{policy} -- popis politiky hodnocení úkolu 
+\end{itemize}
+\subsection*{mdl\_mapleta\_course\_map}
+\begin{itemize}
+	\item \textit{id} -- identifikátor
+	\item \textit{courseid} --  cizí klíč do tabulky mdl\_course
+	\item \textit{classid} -- identifikátor třídy v~systému Maple T.A.
+	\item \textit{classname} -- jméno třídy v~Maple T.A.
+
+\end{itemize}
 
 Nespornou výhodou je, že se jako administrátor nestaráte o~implementaci a případné změny webových služeb. Nový konektor přichází vždy s~instalací a snaží se držet kompatibilitu i s~aktuální verzí Moodlu. Přesto i zde mohou vzniknout drobné rozpory, které nevyřešíte bez zásahu technického administrátora.
 
 		\subsection{LTI konektor}
-Vedle klasického konektoru stojí spojení obou nástrojů pomocí specifikace LTI. Maple T.A. podporuje integraci s~dalšími systémy prostřednictvím LTI od verze 10 (konkrétně balíček oprav s~označením 1000-003-SP), která vyšla v~září roku 2015. Jedná se tedy o~novinku ve světě integrace Maple T.A. Hlavní výhodou integrace pomocí LTI je, že není potřeba jediný řádek kódu navíc. Veškeré informace k~propojení systémů lze zadat pomocí uživatelského rozhraní. Je možné využít obou verzí specifikace LTI (LTI1 i LTI2), ale integrace na jejich základě se liší. [konector guide od maple]
+Vedle klasického konektoru stojí spojení obou nástrojů pomocí specifikace LTI. Maple T.A. podporuje integraci s~dalšími systémy prostřednictvím LTI od verze 10 (konkrétně balíček oprav s~označením \emph{1000-003-SP}), která vyšla v~září roku 2015. Jedná se tedy o~novinku ve světě integrace Maple T.A. Hlavní výhodou integrace pomocí LTI je, že není potřeba jediný řádek kódu navíc. Veškeré informace k~propojení systémů lze zadat pomocí uživatelského rozhraní. Je možné využít obou verzí specifikace LTI (LTI1 i LTI2), ale integrace na jejich základě se liší.
 
-Při integraci dle specifikace LTI1 administrátor Maple T.A. vytvoří chráněné heslo pro šifrování komunikace s~Moodlem, a poté vytvoří LTI odkaz. V~odkazu administrátor definuje podmínky připojení a namapuje odkaz do místa v~Maple T.A., kam bude uživatel přesměrován a přihlášen. Má na výběr mezi přihlášením do systému, třídy nebo přímo do úkolu. Na straně Moodle musí administrátor přidat tento odkaz ze: Správa stránek > Moduly > Moduly činností > LTI > Správa typů externích nástrojů. Poté zbývá jen vytvořit nový modul typu Externí nástroj.
+Při integraci dle specifikace LTI1 administrátor Maple T.A. vytvoří chráněné heslo pro šifrování komunikace s~Moodlem, a poté vytvoří LTI odkaz. V~odkazu administrátor definuje podmínky připojení a namapuje odkaz do místa v~Maple T.A., kam bude uživatel přesměrován a přihlášen. Má na výběr mezi přihlášením do systému, třídy nebo přímo do úkolu. Na straně Moodle musí administrátor přidat tento odkaz ze: \textbf{Správa stránek > Moduly > Moduly činností > LTI > Správa typů externích nástrojů}. Poté zbývá jen vytvořit nový modul typu Externí nástroj.
 
 
-LTI2 nevyžaduje vytvoření chráněného hesla, jelikož jeho vytvoření a přiřazení se provede automaticky. Administrátor v~Moodlu vytvoří novou registraci nástroje z: Správa stránek > Moduly > Moduly činností > LTI > Správa registrací externích nástrojů. Vytvořením a odesláním formuláře požádá Maple T.A. o~vytvoření spojení. Administrátor Maple T.A. tuto žádost vidí v~rámci nastavení integrace s~ostatními systémy. Po schválení žádosti postupuje stejně jako v~prvním případě. Vytvoří nový odkaz v~Maple T.A. a přidá ho mezi externí nástroje v~Moodle (Správa stránek > Moduly > Moduly činností > LTI > Správa typů externích nástrojů).
+LTI2 nevyžaduje vytvoření chráněného hesla, jelikož jeho vytvoření a přiřazení se provede automaticky. Administrátor v~Moodlu vytvoří novou registraci nástroje z: \textbf{Správa stránek > Moduly > Moduly činností > LTI > Správa registrací externích nástrojů}. Vytvořením a odesláním formuláře požádá Maple T.A. o~vytvoření spojení. Administrátor Maple T.A. tuto žádost vidí v~rámci nastavení integrace s~ostatními systémy. Po schválení žádosti postupuje stejně jako v~prvním případě. Vytvoří nový odkaz v~Maple T.A. a přidá ho mezi externí nástroje v~Moodle (\textbf{Správa stránek > Moduly > Moduly činností > LTI > Správa typů externích nástrojů}).
 
 \chapter{Implementace}
 V~této kapitole si představíme návrh a detaily řešení vlastního konektoru. Cílem implementace má být vytvoření pluginu pro Moodle dodržujícího podobu klasického výukového modulu, tak aby se jeho ovládání podobalo často používaným modulům a bylo pro tvůrce kurzu intuitivním.
@@ -690,7 +723,7 @@ Webové služby Maple T.A. nabízejí rozhraní pro dotazování a práci s~Mapl
 V~následujících podkapitolách si tyto skupiny projdeme.
 
 		\subsection{Kontrola připojení}
-Skupina obsahuje jedinou metodu, která ověřuje připojení k~aplikaci Maple T.A. a vrací hodnotu odeslanou v~požadavku (viz. tabulka \ref{wsping}). Požadavek je konstruován jako XML, které se odesílá jako tělo standardního HTTP požadavku metodou POST. Odpověď je opět formátována jako XML text. Součástí požadavku je časové razítko a podpis. Podpisem je řetězec, v~němž je metodou base64 zakódováno časové razítko a sdíleno heslo.
+Skupina obsahuje jedinou metodu, která ověřuje připojení k~aplikaci Maple T.A. a vrací hodnotu odeslanou v~požadavku (viz. tabulka \ref{tab:wsping}). Požadavek je konstruován jako XML text, které se odesílá jako tělo standardního HTTP požadavku metodou POST. Odpověď je opět formátována jako XML text. Součástí požadavku je časové razítko a podpis. Podpisem je řetězec, v~němž je metodou base64 zakódováno časové razítko a sdíleno heslo.
 
 \begin{table}[htb]
 \begin{tabularx}{\textwidth}{|l|l|l|Y|}
@@ -704,7 +737,7 @@ Ping Server  & ws/ping  & žádné  & ověřit připojení k~serveru\\
   \label{tab:wsping}
 \end{table}
 		\subsection{Vytvoření a ukončení relace}
-Tato skupina obsahuje dvě metody. První pro přihlášení a vytvoření nové relace (spojení konkrétního uživatele v~konkrétním kontextu), druhou pro ukončení a odhlášení z~relace. Přihlášení nabízí na základě přepínače dva přístupy k~vytvoření relace. Uživatel se může přihlásit do systémů stejně jako by se přihlašoval přímo do aplikace. Druhý přístup nabízí možnost uživatele nejen přihlásit, ale také mu otevřít konkrétní třídu. Na základě výběru přihlášení jsou uživateli zpřístupněny další možnosti volání. Odhlášení probíhá stejně pro oba způsoby přihlášení (viz. tabulka \ref{wsconnect}).
+Tato skupina obsahuje dvě metody. První pro přihlášení a vytvoření nové relace (spojení konkrétního uživatele v~konkrétním kontextu), druhou pro ukončení a odhlášení z~relace. Přihlášení nabízí na základě přepínače dva přístupy k~vytvoření relace. Uživatel se může přihlásit do systémů stejně jako by se přihlašoval přímo do aplikace. Druhý přístup nabízí možnost uživatele nejen přihlásit, ale také mu otevřít konkrétní třídu. Na základě výběru přihlášení jsou uživateli zpřístupněny další možnosti volání. Odhlášení probíhá stejně pro oba způsoby přihlášení (viz. tabulka \ref{tab:wsconnect}).
 
 Komunikace probíhá stejně jako u~předchozí skupiny, tedy odesláním požadavku v~XML tvaru pomocí HTTP metody POST obsahující podpis; odpověď přichází formátována v~XML a obsahuje status požadavku, identifikátor sezení, zprávu o~požadavku a kód, kterým požadavek skončil.
 
@@ -725,7 +758,7 @@ Přihlášení &  ws/connect & žádné& Vytvořit nové relace a přihlásit u�
 
 
 		\subsection{Získávání a manipulace s~daty}
-Služby pro získávání dat a manipulaci s~těmito daty umožňují přihlášenému uživateli získat seznamy tříd, úkolů, známek apod. a upravovat je. Metody zahrnuté v~této skupině jsou přístupné na základě typu připojení uživatele (viz. tabulka \ref{wsdata}).
+Služby pro získávání dat a manipulaci s~těmito daty umožňují přihlášenému uživateli získat seznamy tříd, úkolů, známek apod. a upravovat je. Metody zahrnuté v~této skupině jsou přístupné na základě typu připojení uživatele (viz. tabulka \ref{tab:wsdata}).
 \begin{table}[htbp]
 \begin{tabularx}{\textwidth}{|l|l|l|Y|}
 \hline
@@ -794,8 +827,14 @@ Vedle samotného konektoru bude existovat plugin tentokrát typu local. Rozší�
 
 Při návrhu databázového modelu pro výukový modul jsem vycházel z~požadavků Moodlu a z~návratových atributů volání webových služeb. Dalším faktorem ovlivňujícím návrh bylo rozhodnutí pracovat s~lokální kopií dat. Tím je myšleno, že data poskytovaná přes webové služby budou udržována i na straně Moodlu, tak aby bylo pro tutora možné zakládat kurzy s~moduly Maple T.A. bez nutné okamžité dostupnosti webových služeb a snížila se i časová režie volání. Toto rozhodnutí samozřejmě přináší i svá úskalí v~podobě nutné správy lokálních dat. Pro udržování databáze je vytvořen automaticky spouštěný skript, který data stahuje v~pravidelných intervalech a uchovává je konzistentní. Kromě toho je vytvořeno lokální rozšíření, které uživateli umožňuje okamžité spuštění skriptu ručně.
 
-Nyní se tedy podívejme na samotný model a popišme si jednotlivé tabulky.
-
+Nyní se tedy podívejme na samotný model (obrázek \ref{fig:datamodel}) a popišme si jednotlivé tabulky.
+\begin{figure}[htb]
+		  \begin{center}
+		    \includegraphics[width=120mm]{images/datamodel.png}
+		   \end{center}
+		  \caption{Databázový model pro navrhované rozšíření.}
+		  \label{fig:datamodel}
+		\end{figure}
 \subsection*{Tabulka mdl\_mapletadp}
 Moodle u~svých rozšíření vyžaduje tabulku pojmenovanou jako prefix mdl\_ a název rozšíření. Tabulka musí obsahovat atributy společné pro všechny výukové moduly. Mimo jiné jsou v~tabulce uchovány atributy specifické pro jednotlivé instance modulu v~kurzech.
 \begin{itemize}
@@ -837,6 +876,15 @@ Do tabulky mdl\_mapletadp\_classes se ukládají lokální kopie tříd.
 \end{itemize}
 \subsection*{Tabulka mdl\_mapletadp\_gradebook}
 Do této tabulky se stahují data s~výsledky uživatelů z~jednotlivých úkolů. Data budou nadále zpracovávána a zobrazována v~rozšířeních dle potřeby.
+\begin{itemize}
+	\item \textit{id} -- identifikátor
+	\item \textit{userLogin} -- uživatelské jméno uživatele, který plnil úkol v~systému Maple T.A.
+	\item \textit{score} -- počet bodů, které uživatel obdržel
+	\item \textit{dateGraded} --  UNIX časové razítko s~datem a časem dokončení (oznámkování)
+	\item \textit{externalData} -- identifikátor uživatele, který Moodle předal při spuštění úkolu
+	\item \textit{assignmentId} --   cizí klíč do tabulky mdl\_mapleta\_assignments (ukazuje na atribut mapleId)
+\end{itemize}
+
 \subsection*{Tabulka mdl\_mapletadp\_session}
 Některé z~webových služeb vyžadují pro práci atribut SESSIONID, který slouží jako identifikátor relace uživatele. Aby pro každý jednotlivý požadavek nebylo nutné si tento znovu vyžádat, udržuji si ho v~tabulce ve vazbě na uživatele a kontext. 
 \begin{itemize}
@@ -848,93 +896,165 @@ Některé z~webových služeb vyžadují pro práci atribut SESSIONID, který sl
 	\item \textit{role} -- označení uživatelské role v~systému Maple T.A., pro kterou byla vytvořena relace
 \end{itemize}
 	\section{Struktura modulu a její realizace}
-Pro implementaci vlastního konektoru jsem zvolil model o~více vrstvách, kde každá vrstva postupně odbavuje požadavek na data (viz. obrázek \ref{fig:strukturamodulu}).
+Pro implementaci vlastního konektoru jsem zvolil model o~více vrstvách, kde každá vrstva postupně odbavuje požadavek na data (obrázek \ref{fig:strukturamodulu}).
+
 		\begin{figure}[htb]
 		  \begin{center}
-		    \includegraphics[width=100mm]{images/struktura_modulu.png}
+		    \includegraphics[width=110mm]{images/struktura_modulu.png}
 		   \end{center}
 		  \caption{Struktura navrhovaného modulu}
 		  \label{fig:strukturamodulu}
 		\end{figure}
-Nejnižší vrstvu tvoří třída MapleAPI, která má na starost vlastní komunikaci s~webovými službami. Mezi hlavní funkce patří funkce call, která pomocí cURL knihovny odesílá POST Request. URL se získává z~nastavení modulu a tělo se skládá z~parametrů, které chodí v~podobě asociativního pole. Klíče pole používají pro vytvoření párových značek XML požadavku, do kterých se poté vkládají hodnoty z~pole (viz. obrázek \ref{fig:prevodnaxml}).
+Nejnižší vrstvu tvoří třída MapleAPI, která má na starost vlastní komunikaci s~webovými službami. Mezi hlavní funkce patří funkce call, která pomocí cURL knihovny odesílá POST Request. URL se získává z~nastavení modulu a tělo se skládá z~parametrů, které chodí v~podobě asociativního pole. Klíče pole používají pro vytvoření párových značek XML požadavku, do kterých se poté vkládají hodnoty z~pole:
+\begin{lstlisting}[language=PHP, caption=Algoritmus k~převedení asociativního pole na XML]
+public function arrayToXML($request) {
+  $xml_data = new \SimpleXMLElement('<Request></Request>');
+  foreach ($request as $key => $value) {
+     if (is_array($value)) {
+       if (is_numeric($key)) {
+         $key = 'item' . $key;
+       }
+       $subnode = $xml_data->addChild($key);
+        array_to_xml($value, $subnode);
+      } else {
+         $xml_data->addChild("$key", htmlspecialchars("$value"));
+      }
+  }
+  return $xml_data;
+}
+\end{lstlisting}
 
-		\begin{figure}[htb]
-		  \begin{center}
-		    \includegraphics[width=100mm]{images/prevod_na_xml.png}
-		   \end{center}
-		  \caption{Algoritmus k~převedení asociativního pole na XML}
-		  \label{fig:prevodnaxml}
-		\end{figure}
-Naopak odpověď získaná v~podobě XML se parsuje na asociativní pole. Zde se využívá jednoduché posloupnosti příkazů (viz. obrázek \ref{fig:prevodnapole}). Funkce \emph{simplexml\_load\_string()} má jako první parametr řetězec, ze kterého se pokouší vytvořit objekt pro knihovnu SimpleXML. Jako řetězec funkci předáme odpověď z~volání webových služeb. Další dvě volání jen využívají vlastnosti převodu objektu nebo pole na objekt JSON a zpět. V~tomto případě se bere objekt vytvořený v~předchozím kroku, vytvoří se JSON voláním funkce \emph{json\_encode(\$object)}. V~posledním kroku se volá funkce \emph{json\_decode(\$json, TRUE)}. Druhý atribut nastavený na TRUE určuje za návratovou hodnotu asociativní pole (nastavením na FALSE by se vytvořil objekt).
-		\begin{figure}
-		  \begin{center}
-		    \includegraphics[width=100mm]{images/xml_na_pole.png}
-		   \end{center}
-		  \caption{Webové služby vrací data v~podobě XML, tímto voláním se převedou na asociativní pole.}
-		  \label{fig:prevodnapole}
-		\end{figure}
+Naopak odpověď získaná v~podobě XML se parsuje na asociativní pole. Zde se využívá následující posloupnosti příkazů:
+\begin{lstlisting}[language=PHP, caption=Převedení XML na asociativní pole.]
+public function XMLToArray($xmlstring) {
+    
+  $xml = simplexml_load_string($xmlstring);
+  $json = json_encode($xml);
+  $array = json_decode($json, TRUE);
 
-Druhou úroveň modelu tvoří třída Connector, jejíž stavba se blíží návrhovému vzoru model-view-controller. Vrstva data ještě neprezentuje, proto zde chybí část pohledu. Vrstva používá a sbírá parametry do pole pro volání MapleAPI. U~dat provádí kontrolu návratového statusu. Connector také drží konstanty, které se používají k~volání webových služeb (například jména rolí). Jako příklad si uvedeme metodu modelu Connector, která jako vstupní parametry očekává identifikátor třídy a uživatele, nepovinným parametrem je identifikátor úkolu a na jeho základě se vrací úkol (je-li hodnota větší než nula) nebo seznam úkolů dané třídy (obrázek \ref{fig:volanizconnectoru}).
-		\begin{figure}
-		  \begin{center}
-		    \includegraphics[width=100mm]{images/priklad_volani_z_connectoru.png}
-		   \end{center}
-		  \caption{Volání webových služeb z~druhé vrsty -- Connectoru.}
-		  \label{fig:volanizconnectoru}
-		\end{figure}
+   return $array;
+}
 
-Na třetí úrovni leží vlastní implemenatace modulu s~kontrolery a moduly, které s~daty a informacemi z~druhé vrstvy pracují. Potřeby této práce naplňují tři částí. První tvoří model MapleData, která získává a kontroluje data z~Connectoru, a poté je ukládá, mění, maže, vytváří a vrací z~lokálních tabulek. Druhou částí je MapleTA, která má na starost vytvoření instance, zobrazení dat ve formulářích a funkce pro spuštění synchronizace dat a známek. Poslední částí je Launcher, který je výchozím bodem pro práci s~automatickým přihlášením a spuštěním specifické části aplikace Maple T.A. (úkol, domácí stránka třídy, administrace systému atd.).
+\end{lstlisting}
+ Funkce \texttt{simplexml\_load\_string()} má jako první parametr řetězec, ze kterého se pokouší vytvořit objekt pro knihovnu SimpleXML. Jako řetězec funk\-ci předáme odpověď z~volání webových služeb. Další dvě volání jen využívají vlastnosti převodu objektu nebo pole na objekt JSON a zpět. V~tomto případě se bere objekt vytvořený v~předchozím kroku, vytvoří se JSON voláním funkce \texttt{json\_encode(\$object)}. V~posledním kroku se volá funkce \texttt{json\_decode(\$json, TRUE)}. Druhý atribut nastavený na TRUE určuje za návratovou hodnotu asociativní pole (nastavením na FALSE by se vytvořil objekt).
+	
+
+Druhou úroveň modelu tvoří třída Connector, jejíž stavba se blíží návrhovému vzoru \emph{model-view-controller}\footnote{Více na \url{http://blog.codinghorror.com/understanding-model-view-controller/}}. Vrstva data ještě neprezentuje, proto zde chybí část pohledu. Vrstva používá a sbírá parametry do pole pro volání MapleAPI. U~dat provádí kontrolu návratového statusu. Connector také drží konstanty, které se používají k~volání webových služeb (například jména rolí). Jako příklad si uvedeme metodu modelu Connector, která jako vstupní parametry očekává identifikátor třídy a uživatele, nepovinným parametrem je identifikátor úkolu a na jeho základě se vrací úkol (je-li hodnota větší než nula) nebo seznam úkolů dané třídy:
+\begin{lstlisting}[language=PHP, caption=Zpracování dat vrácených z Connectoru.]    
+public function getAssignments($classID,$user,$assigmentID = 0) {
+  $params = $this->getAssignmentsParams($classID, $assigmentID);
+   if ($params !== false) {
+     $session = $this->getSessionID($user, Connector::MAPLE_ROLE_ADMIN, $classID);
+     $response = $this->sendRequest('ws/assignment', $params, $session);
+     $dataset = $this->getResponse($response);
+      if ($dataset !== false) {
+          return $dataset;
+      }
+  }
+  return false;
+}
+
+\end{lstlisting}
+
+Na třetí úrovni leží vlastní implemenatace modulu s~kontrolery a moduly, které s~daty a informacemi z~druhé vrstvy pracují. Potřeby této práce naplňují tři částí. První tvoří model \emph{MapleData}, která získává a kontroluje data z~Connectoru, a poté je ukládá, mění, maže, vytváří a vrací z~lokálních tabulek. Druhou částí je \emph{MapleTA}, která má na starost vytvoření instance, zobrazení dat ve formulářích a funkce pro spuštění synchronizace dat a známek. Poslední částí je \emph{Launcher}, který je výchozím bodem pro práci s~automatickým přihlášením a spuštěním specifické části aplikace Maple T.A. (úkol, domácí stránka třídy, administrace systému atd.).
 
 	\section{Detaily implementace}
 Uvedeme si příklady implementace vlastního konektoru a vysvětlíme si, jak ovlivňují chování systému.
 \subsection{Nastavení modulu po instalaci}
+První věcí po instalaci modulu je jeho konfigurace (ta je dostupná i kdykoliv později) pro připojení k~serveru a drobná nastavení chování samotného modulu. K~tomu se využívá souboru \emph{settings.php}, který patří mezi soubory podporované Moodlem jako část rozšíření, a ten zařadí toto nastavení mezi ostatní klasická nastavení (dostupné z~menu \textbf{Správa stránek > Moduly > Moduly činností > Maple T.A.}). Tento tvoří specifický formulář (obrázek \ref{fig:maplesettings}), jehož atributy jsou uloženy mezi nastavení Moodlu, a jsou tedy dostupné odkudkoliv z~celého Moodlu. Mezi zadávané atributy patří:
+\begin{itemize}
+
+\item Protokol -- nastavení HTTP nebo HTTPS podle protokolu, na kterém beží server Maple T.A.
+\item Jméno server -- URL server s~instalací Maple T.A. včetně portu (je-li používán)
+\item Kontext -- část URL, kterou zadáváte při vstupu do Maple T.A. z~webového prohlížeče
+\item Sdílené heslo -- slouží k~podepisování komunikace mezi Moodlem a Maple T.A.
+\item Životnost SessionID -- nastavení doby, po kterou si Moodle drží identifikátory sezení
+\item Pouze uživatelé z~Moodlu -- nastavení zobrazení uživatelů v~Moodlu (všichni uživatelé Maple T.A. nebo pouze ti z~Moodlu); využívá se například v~knize známek
+\end{itemize}
+		\begin{figure}[htb]
+		  \begin{center}
+		    \includegraphics[width=120mm]{images/maple_settings.png}
+		   \end{center}
+		  \caption{Formulář pro nastavení výukového modulu Maple T.A.}
+		  \label{fig:maplesettings}
+		\end{figure}
 
 \subsection{Vytvoření nové instance}
-Výše je zmíněný problém se závislými poli formuláře a způsob řešení v~konektoru od Maplesoftu. Ve vlastním konektoru je tento problém vyřešen pomocí jQuery, což je JavaScriptová knihovna, která programátorovi umožňuje využítí JavaScriptu jednoduše a „udělat více s~méně kodém” [35] (volně přeloženo). Formuláři při vytváření předám všechny dostupné úkoly napříč třídami (knihovna pro práci s~formuláři zpracuje u~select boxů pouze s~data při jeho inicializaci) a skript pole po načtení stránky vyprázdní. Při změně výběru třídy si AJAXovým voláním(viz. obrázek \ref{fig:volaniajax}) získám úkoly, které k~dané třídě patří.
-		\begin{figure}
-		  \begin{center}
-		    \includegraphics[width=100mm]{images/ajax-volani.png}
-		   \end{center}
-		  \caption{Voláním PHP za pomoci AJAXu se získávají hodnoty pro závislé pole formuláře.}
-		  \label{fig:volaniajax}
-		\end{figure}
+Výše je zmíněný problém se závislými poli formuláře a způsob řešení v~konektoru od Maplesoftu. Ve vlastním konektoru je tento problém vyřešen pomocí jQuery, což je JavaScriptová knihovna, která programátorovi umožňuje využítí JavaScriptu jednoduše a \emph{„udělat více s~méně kodém”}\cite{jquery} (volně přeloženo). Formuláři při vytváření předám všechny dostupné úkoly napříč třídami (knihovna pro práci s~formuláři zpracuje u~select boxů pouze s~data při jeho inicializaci) a skript pole po načtení stránky vyprázdní. Při změně výběru třídy si AJAXovým voláním získám úkoly, které k~dané třídě patří:
+\begin{lstlisting}[language=Octave, caption=Volání PHP za pomoci AJAXu; získání hodnot pro závislé pole formuláře.]    
+$.ajax({
+   method: "POST",
+   url: "/mod/mapletadp/assignment_list.php?classID=" + $('#id_classId').val()
+}).success(function (data) {
+   result_obj = $.parseJSON(data);
+   var list = "";
+   $('#id_assignmentId').empty();
+   $.each(result_obj, function (i, val) {
+      list += '<option value="' + i + '">' + val + '</option>';
+   });
+   $('#id_assignmentId').empty().append(list);
+
+});
+\end{lstlisting}
 
 		\subsection{Detail modulu a spuštění úkolu}
 Náhled modulu tvoří přehled informací o~úkolu, který je s~modulem spárován (typ úkolu, rozmezí, v~němž je aktivní, maximální počet bodů a počet bodů pro splnění atd.). Student zahájí testování kliknutím na odkaz Spustit úkol. Vytvoří se nové okno, ze kterého se automaticky odesílá přes Launcher POST požadavek na přihlášení a spuštění úlohy. V~případě úspěchu dojde k~přesměrování přímo do úkolu. Výsledky uživatelů, kteří se k~úloze přihlašují z~Moodlu, si Maple T.A. ukládá s~uživatelským identifikátorem Moodlu. Díky tomu se dají výsledky využít pro další rozšiřování modulu.
 
 		\subsection{Nová naplánovaná úloha}
-V~textu práce se zmiňuji o~naplánovaných úlohách (cron úlohy), které budou využity pro synchronizaci seznamů a dat. Moodle úlohy, které se provádí automaticky, přenáší do systému úloh spouštěných v~pravidelných intervalech na pozadí aplikace. Moodle využívá pouze jeden skript jako skutečnou úlohu běžící jako cron (démon, který v~operačním systému spouští příkazy na pozadí), jedná se o~skript cron.php. Administrátor serveru při instalaci Moodlu nastaví, aby byl tento skript pouštěn pravidelně v~krátkých intervalech (například každých pět minut). Nad tímto skriptem leží programová část systému. Moodle umožňuje definovat nové úkoly a definovat četnost spouštění. Úlohy se při aktivaci cron.php provolají podle daného nastavení, čímž se snižuje náročnost prováděných operací (není nutné provádět vždy vše). 
+V~textu práce se zmiňuji o~naplánovaných úlohách (cron úlohy), které budou využity pro synchronizaci seznamů a dat. Moodle úlohy, které se provádí automaticky, přenáší do systému úloh spouštěných v~pravidelných intervalech na pozadí aplikace. Moodle využívá pouze jeden skript jako skutečnou úlohu běžící v~CRONu (démon, který v~operačním systému spouští příkazy na pozadí), jedná se o~skript \emph{cron.php}. Administrátor serveru při instalaci Moodlu nastaví, aby byl tento skript pouštěn pravidelně v~krátkých intervalech (například každých pět minut). Nad tímto skriptem leží programová část systému. Moodle umožňuje definovat nové úkoly a definovat četnost spouštění. Úlohy se při aktivaci\emph{ cron.php} provolají podle daného nastavení, čímž se snižuje náročnost prováděných operací (není nutné provádět vždy vše). 
 
-Nový úkol v~Moodlu vznikne provedením několika kroků. Prvním je přidání nové třídy (obrázek \ref{fig:crontrida}), která rozšiřuje třídu core{\textbackslash}task{\textbackslash}scheduled\_task a implementuje metody get\_name (vrací jméno úlohy) a execute (obsahuje kód, který je proveden).
+Nový úkol v~Moodlu vznikne provedením několika kroků. Prvním je přidání nové třídy, která rozšiřuje třídu \texttt{core{\textbackslash}task{\textbackslash}scheduled\_task} a implementuje metody \texttt{get\_name()} (vrací jméno úlohy) a \texttt{execute()} (obsahuje kód, který je proveden):
+\begin{lstlisting}[language=PHP, caption=Implementace třídy je využíta jako naplánovaná úloha.]    
+class synchronize extends \core\task\scheduled_task {
+  public function get_name() {
+     return get_string('synchronization', 'mod_mapletadp');
+  }
 
-
-		\begin{figure}
-		  \begin{center}
-		    \includegraphics[width=100mm]{images/cron-trida.png}
-		   \end{center}
-		  \caption{Implementace třídy je využíta jako naplánovaná úloha. }
-		  \label{fig:crontrida}
-		\end{figure}
-Ve druhém kroku se provede registrace úlohy do Moodlu pomocí speciálního souboru tasks.php, který obsahuje pole se jmény úloh v~rozšíření a jejich nastavením (obrázek \ref{fig:cronregistrace}). Soubor musí být umístěn ve složce db.
-
-		\begin{figure}
-		  \begin{center}
-		    \includegraphics[width=100mm]{images/cron-registrace.png}
-		   \end{center}
-		  \caption{Ukázka záznamu pole ze souboru tasks.php , které Moodle využivá při instalaci nové naplánované úlohy.}
-		  \label{fig:cronregistrace}
-		\end{figure}
+  public function execute() {
+     global $CFG, $DB, $USER;
+     $mapletadp = new \mod_mapletadp\controller\Mapleta($DB, $CFG, $USER);
+     $mapletadp->refreshAllData();
+  }
+}
+\end{lstlisting}
+Ve druhém kroku se provede registrace úlohy do Moodlu pomocí speciálního souboru \emph{tasks.php}, který obsahuje pole se jmény úloh v~rozšíření a jejich nastavením. Soubor musí být umístěn ve složce db a obsahuje pole:
+\begin{lstlisting}[language=PHP, caption=Ukázka záznamu pole ze souboru tasks.php]    
+$tasks = array(                                                                                                                    
+  array(                                                                                                                          
+    'classname' => 'mod_mapletadp\task\synchronize',                                                                            
+    'blocking' => 0,                                                                                                            
+    'minute' => '*',                                                                                                            
+    'hour' => '*',                                                                                                              
+    'day' => '*',                                                                                                               
+    'dayofweek' => '*',                                                                                                         
+    'month' => '*'                                                                                                              
+  )
+);
+\end{lstlisting}
 Posledním krokem je navýšení verze a její načtení do paměti (soubor version.php). Poté se již úloha zobrazí v~manažeru úloh, kde administrátor může změnit nastavení úlohy nebo ji vypnout.
 
 		\subsection{Lokální rozšíření}
-Lokální rozšíření (viz. obr. ) nemá přímý vliv na výukový modul a práci studenta nebo učitele s~úkoly. Je to místo, v~němž mají vznikat další funkcionality, které budou instituce schopny využít. V~rámci diplomové práce rozšíření nabízí následující:
+Lokální rozšíření (obrázek \ref{fig:localext} ) nemá přímý vliv na výukový modul a práci studenta nebo učitele s~úkoly. Je to místo, v~němž mají vznikat další funkcionality, které budou instituce schopny využít. V~rámci diplomové práce rozšíření nabízí následující:
+\begin{figure}[htb]
+		  \begin{center}
+		    \includegraphics[width=60mm]{images/localext.png}
+		   \end{center}
+		  \caption{Lokální rozšíření je dostupné z navigace.}
+		  \label{fig:localext}
+		\end{figure}
 \begin{itemize}
- \item Souhrn všech komponent -- tvoří jednoduchý skript, který ověří funkčnost jednotlivých komponent Maple T.A.(viz. obr.) voláním webových služeb určených pro monitoring. Cílem rozšíření je možnost kontroly systému a zrychlení nalezení problému a případné opravy.
+ \item Souhrn všech komponent -- nástroj je tvořen jednoduchým skriptem, který ověří funkčnost jednotlivých komponent Maple T.A.(obrázek \ref{fig:monitor}) voláním webových služeb určených pro monitoring. Cílem rozšíření je možnost kontroly systému a zrychlení nalezení problému a případné opravy.
  \item Spustit manuální synchronizaci -- umožňuje spustit ručně skript pro synchronizaci dat a známek. Toho využijete například v~případě, že webhosting poskytuje pouze omezené pouštění CRON skriptů, nebo v~případě, že nastavení administrátorem je nevyhovující a potřebujete okamžitě data k~další práci.
  \item Spustit manuálně CRON úlohu -- je pouhý odkaz na URL, ze které lze spustit CRON úlohy celého Moodlu. Moodle tento odkaz nemá definován a lze pustit pouze zadání URL do prohlížeče.
  \item Kniha známek - tvoří přehled známek z~úkolu v~Maple T.A. s~vazbou na uživatele s~ID v~Moodlu. Pomocí přepínače nastavení připojení k~Maple T.A. se zobrazují výsledky všech studentů nebo jen těch, kteří přistoupili do Maple T.A. z~Moodlu.
 \end{itemize}
-
+\begin{figure}[htb]
+		  \begin{center}
+		    \includegraphics[width=100mm]{images/monitor.png}
+		   \end{center}
+		  \caption{Monitor komponent systému Maple T.A.}
+		  \label{fig:monitor}
+		\end{figure}
 
 \chapter{Diskuze}
 Během vývoje konektoru jsem se soustředil na funkčnost, kterou doručují i ostatní konektory - přímý přechod z~kurzu na plnění úkolu v~Maple T.A., doplněnou o~jednoduchý monitor dostupnosti komponent. Konektor je plně funkční a je možné jej využít při výuce matematiky, informatiky a případně dalších předmětů, ke kterým učitel využije funkcionality Moodlu (chemie, biologie, fyzika apod.). Funkčnost ovšem prověří až použití v~praxi, stejně jako každý software může obsahovat chyby.
@@ -956,12 +1076,6 @@ Příprava diplomové práce mi umožnila blíže se seznámit s~nástrojem Mapl
 
 
 \printbibliography[heading=bibintoc]
-\listoffigures
-\listoftables
-
-
-
-
 \makeatletter\thesis@blocks@clear\makeatother
 \phantomsection %% Print the index and insert it into the
 \addcontentsline{toc}{chapter}{\indexname} %% table of contents.
@@ -969,9 +1083,52 @@ Příprava diplomové práce mi umožnila blíže se seznámit s~nástrojem Mapl
 \makeatletter\thesis@blocks@clear\makeatother
 
 \renewcommand{\theHchapter}{A\arabic{chapter}}
+\listoffigures
+\listoftables
+\lstlistoflistings
+
+
+
+
 \appendix %% and start the appendices.
 
-\chapter{An appendix}
-Here you can insert the appendices of your thesis.
+\chapter{Demoverze}
+Pro úkázky implementace bez nutnosti nové instalace LMS Moodle a administračních zásahů do testovací instalace Maple T.A. je vytvořena demoverze dostupná na adrese \url{http://fryval.cz/}. V systému jsou připraveni následující uživatele:
+\begin{itemize}
+\item \textbf{uživatel v roli administrátor}
+	\begin{itemize}
+		\item Přihlašovací jméno -- admin
+		\item Heslo -- na vyžádání
+	\end{itemize}
+\item \textbf{uživatel v roli učitel}
+	\begin{itemize}
+		\item Přihlašovací jméno -- ucitel
+		\item Heslo -- na vyžádání
+	\end{itemize}
+\item \textbf{uživatel v roli student}
+	\begin{itemize}
+		\item Přihlašovací jméno -- student
+		\item Heslo -- na vyžádání
+	\end{itemize}
+\end{itemize}
+
+
+Instalace má několik omezení:
+\begin{itemize}
+	\item Sdílené heslo není nastavitelné pomocí nastavení modulu, z důvodu bezpečnosti (pro případ úniku administrátorského hesla) je přímo ve zdrojovém kódu.
+	\item Integrace do systému LMS Moodle je provedena z cloudové instalace Maple T.A. dostupné z adresy \url{https://muni.mapleta.com/muni/}.
+
+	\item Webhosting umožňuje nastavit spuštění CRON úlohy pouze 1x za hodinu. Využijte proto pro zrychlení možnosti ručního spuštění naplánovaných úloh z lokálního rozšíření Maple T.A.
+	\item Hesla k uživatelským účtům budou zaslána po odevzdání práce vedoucímu a oponentovi, a poté kdykoliv po domluvě. Toto opatření slouží proti poškození systému LMS Moodle, protože jak text, tak instalace jsou veřejně dostupné.
+	\end{itemize}
+
+\chapter{Přiložená data}
+Následující data jsou součástí diplomové práce:
+\begin{itemize}
+\item text diplomové práce ve formátu PDF a \LaTeX
+\item obrázky použíté v textu práce
+\item dokumentace webových služeb Maple T.A. ve formátu PDF
+\item ZIP archív zdrojových kódů
+\end{itemize}
 
 \end{document}

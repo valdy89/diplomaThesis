@@ -14,126 +14,128 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}\slshape Learning Tools Interoperability}{6}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}\bfseries LMS Moodle}{7}{chapter.3}
+\contentsline {chapter}{\numberline {3}\bfseries LMS Moodle}{8}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}\slshape Co je to Moodle?}{7}{section.3.1}
+\contentsline {section}{\numberline {3.1}\slshape Co je to Moodle?}{8}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}\slshape Historie}{8}{section.3.2}
+\contentsline {section}{\numberline {3.2}\slshape Historie}{9}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}\slshape Vlastnosti Moodlu}{9}{section.3.3}
+\contentsline {section}{\numberline {3.3}\slshape Vlastnosti Moodlu}{10}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}\rmfamily Licence}{9}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.1}\rmfamily Licence}{11}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}\rmfamily Prerekvizity}{10}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.2}\rmfamily Prerekvizity}{11}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.3}\rmfamily Rozvoj}{10}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.3}\rmfamily Rozvoj}{12}{subsection.3.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.4}\rmfamily V\IeC {\'y}hody a nev\IeC {\'y}hody}{11}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.4}\rmfamily V\IeC {\'y}hody a nev\IeC {\'y}hody}{12}{subsection.3.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}\slshape Kurz}{12}{section.3.4}
+\contentsline {section}{\numberline {3.4}\slshape Kurz}{13}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.1}\rmfamily Rozlo\IeC {\v z}en\IeC {\'\i }}{12}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.1}\rmfamily Rozlo\IeC {\v z}en\IeC {\'\i }}{13}{subsection.3.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.2}\rmfamily V\IeC {\'y}ukov\IeC {\'e} moduly}{13}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.2}\rmfamily V\IeC {\'y}ukov\IeC {\'e} moduly}{14}{subsection.3.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.3}\rmfamily Bloky}{16}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.3}\rmfamily Bloky}{17}{subsection.3.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}\slshape U\IeC {\v z}ivatelsk\IeC {\'e} role a kontext}{16}{section.3.5}
+\contentsline {section}{\numberline {3.5}\slshape U\IeC {\v z}ivatelsk\IeC {\'e} role a kontext}{17}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}\slshape Vytvo\IeC {\v r}en\IeC {\'\i } kurzu a jeho nastaven\IeC {\'\i }}{18}{section.3.6}
+\contentsline {section}{\numberline {3.6}\slshape Vytvo\IeC {\v r}en\IeC {\'\i } kurzu a jeho nastaven\IeC {\'\i }}{20}{section.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}\bfseries Maple T.A.}{23}{chapter.4}
+\contentsline {chapter}{\numberline {4}\bfseries Maple T.A.}{25}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}\slshape Co je to Maple T.A.?}{23}{section.4.1}
+\contentsline {section}{\numberline {4.1}\slshape Co je to Maple T.A.?}{25}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}\slshape Licencov\IeC {\'a}n\IeC {\'\i }}{24}{section.4.2}
+\contentsline {section}{\numberline {4.2}\slshape Licencov\IeC {\'a}n\IeC {\'\i }}{26}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}\slshape P\IeC {\v r}edpoklady pro instalaci}{25}{section.4.3}
+\contentsline {section}{\numberline {4.3}\slshape P\IeC {\v r}edpoklady pro instalaci}{27}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}\slshape Z\IeC {\'a}klady aplikace}{25}{section.4.4}
+\contentsline {section}{\numberline {4.4}\slshape Z\IeC {\'a}klady aplikace}{27}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}\rmfamily Ot\IeC {\'a}zka (Question)}{25}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.1}\rmfamily Ot\IeC {\'a}zka (Question)}{27}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}\rmfamily \IeC {\'U}kol (Assignment)}{26}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.2}\rmfamily \IeC {\'U}kol (Assignment)}{28}{subsection.4.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.3}\rmfamily Kniha hodnocen\IeC {\'\i } (Gradebook)}{27}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.3}\rmfamily Kniha hodnocen\IeC {\'\i } (Gradebook)}{29}{subsection.4.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}\slshape Typy \IeC {\'u}loh}{27}{section.4.5}
+\contentsline {section}{\numberline {4.5}\slshape Typy \IeC {\'u}loh}{29}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.1}\rmfamily Voln\IeC {\'a} matematick\IeC {\'a} odpov\IeC {\v e}\IeC {\v d}}{27}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.1}\rmfamily Voln\IeC {\'a} matematick\IeC {\'a} odpov\IeC {\v e}\IeC {\v d}}{29}{subsection.4.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.2}\rmfamily Adaptivn\IeC {\'\i } ot\IeC {\'a}zky}{27}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.2}\rmfamily Adaptivn\IeC {\'\i } ot\IeC {\'a}zky}{29}{subsection.4.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.3}\rmfamily Kreslen\IeC {\'\i } graf\IeC {\r u}}{28}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.3}\rmfamily Kreslen\IeC {\'\i } graf\IeC {\r u}}{30}{subsection.4.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.4}\rmfamily Voln\IeC {\'y} n\IeC {\'a}\IeC {\v c}rt}{29}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.4}\rmfamily Voln\IeC {\'y} n\IeC {\'a}\IeC {\v c}rt}{30}{subsection.4.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.5}\rmfamily Obr\IeC {\'a}zek k~dopln\IeC {\v e}n\IeC {\'\i }}{29}{subsection.4.5.5}
+\contentsline {subsection}{\numberline {4.5.5}\rmfamily Obr\IeC {\'a}zek k~dopln\IeC {\v e}n\IeC {\'\i }}{30}{subsection.4.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.6}\rmfamily Matematick\IeC {\'e} aplikace}{29}{subsection.4.5.6}
+\contentsline {subsection}{\numberline {4.5.6}\rmfamily Matematick\IeC {\'e} aplikace}{30}{subsection.4.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.7}\rmfamily \IeC {\v C}\IeC {\'\i }seln\IeC {\'a} odpov\IeC {\v e}\IeC {\v d} s~definovatelnou odchylkou}{30}{subsection.4.5.7}
+\contentsline {subsection}{\numberline {4.5.7}\rmfamily \IeC {\v C}\IeC {\'\i }seln\IeC {\'a} odpov\IeC {\v e}\IeC {\v d} s~definovatelnou odchylkou}{31}{subsection.4.5.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.8}\rmfamily V\IeC {\'y}b\IeC {\v e}r v\IeC {\'\i }ce spr\IeC {\'a}vn\IeC {\'y}ch odpov\IeC {\v e}d\IeC {\'\i }}{30}{subsection.4.5.8}
+\contentsline {subsection}{\numberline {4.5.8}\rmfamily V\IeC {\'y}b\IeC {\v e}r v\IeC {\'\i }ce spr\IeC {\'a}vn\IeC {\'y}ch odpov\IeC {\v e}d\IeC {\'\i }}{32}{subsection.4.5.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.9}\rmfamily Dopl\IeC {\v n}ov\IeC {\'a}n\IeC {\'\i }}{30}{subsection.4.5.9}
+\contentsline {subsection}{\numberline {4.5.9}\rmfamily Dopl\IeC {\v n}ov\IeC {\'a}n\IeC {\'\i }}{32}{subsection.4.5.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.10}\rmfamily Esej}{31}{subsection.4.5.10}
+\contentsline {subsection}{\numberline {4.5.10}\rmfamily Esej}{32}{subsection.4.5.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}\slshape U\IeC {\v z}ivatelsk\IeC {\'e} role}{31}{section.4.6}
+\contentsline {section}{\numberline {4.6}\slshape U\IeC {\v z}ivatelsk\IeC {\'e} role}{33}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}\slshape Vytvo\IeC {\v r}en\IeC {\'\i } \IeC {\'u}kolu}{32}{section.4.7}
+\contentsline {section}{\numberline {4.7}\slshape Vytvo\IeC {\v r}en\IeC {\'\i } \IeC {\'u}kolu}{34}{section.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}\bfseries Anal\IeC {\'y}za}{34}{chapter.5}
+\contentsline {chapter}{\numberline {5}\bfseries Anal\IeC {\'y}za}{37}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}\slshape Struktura zdrojov\IeC {\'y}ch k\IeC {\'o}d\IeC {\r u} Moodlu}{34}{section.5.1}
+\contentsline {section}{\numberline {5.1}\slshape Struktura zdrojov\IeC {\'y}ch k\IeC {\'o}d\IeC {\r u} Moodlu}{37}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}\slshape Anal\IeC {\'y}za konektor\IeC {\r u} od Maple T.A.}{37}{section.5.2}
+\contentsline {section}{\numberline {5.2}\slshape Anal\IeC {\'y}za konektor\IeC {\r u} od Maple T.A.}{40}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}\rmfamily Klasick\IeC {\'y} konektor}{37}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.1}\rmfamily Klasick\IeC {\'y} konektor}{40}{subsection.5.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}\rmfamily LTI konektor}{39}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}\rmfamily LTI konektor}{42}{subsection.5.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}\bfseries Implementace}{41}{chapter.6}
+\contentsline {chapter}{\numberline {6}\bfseries Implementace}{44}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}\slshape Webov\IeC {\'e} slu\IeC {\v z}by Maple T.A.}{41}{section.6.1}
+\contentsline {section}{\numberline {6.1}\slshape Webov\IeC {\'e} slu\IeC {\v z}by Maple T.A.}{44}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.1}\rmfamily Kontrola p\IeC {\v r}ipojen\IeC {\'\i }}{41}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.1}\rmfamily Kontrola p\IeC {\v r}ipojen\IeC {\'\i }}{44}{subsection.6.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.2}\rmfamily Vytvo\IeC {\v r}en\IeC {\'\i } a ukon\IeC {\v c}en\IeC {\'\i } relace}{42}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.2}\rmfamily Vytvo\IeC {\v r}en\IeC {\'\i } a ukon\IeC {\v c}en\IeC {\'\i } relace}{45}{subsection.6.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.3}\rmfamily Z\IeC {\'\i }sk\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } a manipulace s~daty}{42}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.3}\rmfamily Z\IeC {\'\i }sk\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } a manipulace s~daty}{45}{subsection.6.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.4}\rmfamily Maple T.A. Launcher slu\IeC {\v z}by}{42}{subsection.6.1.4}
+\contentsline {subsection}{\numberline {6.1.4}\rmfamily Maple T.A. Launcher slu\IeC {\v z}by}{45}{subsection.6.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.5}\rmfamily Grade pushing}{44}{subsection.6.1.5}
+\contentsline {subsection}{\numberline {6.1.5}\rmfamily Grade pushing}{47}{subsection.6.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.6}\rmfamily Monitoring}{44}{subsection.6.1.6}
+\contentsline {subsection}{\numberline {6.1.6}\rmfamily Monitoring}{47}{subsection.6.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}\slshape N\IeC {\'a}vrh a porovn\IeC {\'a}n\IeC {\'\i } s~ostatn\IeC {\'\i }mi konektory}{44}{section.6.2}
+\contentsline {section}{\numberline {6.2}\slshape N\IeC {\'a}vrh a porovn\IeC {\'a}n\IeC {\'\i } s~ostatn\IeC {\'\i }mi konektory}{47}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}\slshape Datab\IeC {\'a}zov\IeC {\'y} model}{46}{section.6.3}
+\contentsline {section}{\numberline {6.3}\slshape Datab\IeC {\'a}zov\IeC {\'y} model}{49}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}\slshape Struktura modulu a jej\IeC {\'\i } realizace}{48}{section.6.4}
+\contentsline {section}{\numberline {6.4}\slshape Struktura modulu a jej\IeC {\'\i } realizace}{52}{section.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}\slshape Detaily implementace}{51}{section.6.5}
+\contentsline {section}{\numberline {6.5}\slshape Detaily implementace}{55}{section.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.5.1}\rmfamily Nastaven\IeC {\'\i } modulu po instalaci}{51}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.1}\rmfamily Nastaven\IeC {\'\i } modulu po instalaci}{55}{subsection.6.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.5.2}\rmfamily Vytvo\IeC {\v r}en\IeC {\'\i } nov\IeC {\'e} instance}{51}{subsection.6.5.2}
+\contentsline {subsection}{\numberline {6.5.2}\rmfamily Vytvo\IeC {\v r}en\IeC {\'\i } nov\IeC {\'e} instance}{55}{subsection.6.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.5.3}\rmfamily Detail modulu a spu\IeC {\v s}t\IeC {\v e}n\IeC {\'\i } \IeC {\'u}kolu}{51}{subsection.6.5.3}
+\contentsline {subsection}{\numberline {6.5.3}\rmfamily Detail modulu a spu\IeC {\v s}t\IeC {\v e}n\IeC {\'\i } \IeC {\'u}kolu}{57}{subsection.6.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.5.4}\rmfamily Nov\IeC {\'a} napl\IeC {\'a}novan\IeC {\'a} \IeC {\'u}loha}{52}{subsection.6.5.4}
+\contentsline {subsection}{\numberline {6.5.4}\rmfamily Nov\IeC {\'a} napl\IeC {\'a}novan\IeC {\'a} \IeC {\'u}loha}{57}{subsection.6.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.5.5}\rmfamily Lok\IeC {\'a}ln\IeC {\'\i } roz\IeC {\v s}\IeC {\'\i }\IeC {\v r}en\IeC {\'\i }}{54}{subsection.6.5.5}
+\contentsline {subsection}{\numberline {6.5.5}\rmfamily Lok\IeC {\'a}ln\IeC {\'\i } roz\IeC {\v s}\IeC {\'\i }\IeC {\v r}en\IeC {\'\i }}{58}{subsection.6.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}\bfseries Diskuze}{55}{chapter.7}
+\contentsline {chapter}{\numberline {7}\bfseries Diskuze}{60}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}\bfseries Z\IeC {\'a}v\IeC {\v e}r}{56}{chapter.8}
+\contentsline {chapter}{\numberline {8}\bfseries Z\IeC {\'a}v\IeC {\v e}r}{61}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliografie}{57}{chapter*.20}
+\contentsline {chapter}{Bibliografie}{62}{chapter*.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Rejst\v {r}\'{\i }k}{62}{section*.23}
+\contentsline {chapter}{Rejst\v {r}\'{\i }k}{65}{section*.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}\bfseries An appendix}{62}{chapter.A1}
+\contentsline {chapter}{\numberline {A}\bfseries Demoverze}{68}{chapter.A1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {B}\bfseries P\IeC {\v r}ilo\IeC {\v z}en\IeC {\'a} data}{69}{chapter.A2}

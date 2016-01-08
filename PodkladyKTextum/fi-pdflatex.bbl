@@ -109,6 +109,28 @@
       \verb http://elearning.slu.cz/file.php/7/napovedy_soubory/Moodle_OPF/ar01s01.html
       \endverb
     \endentry
+    \entry{cznic}{book}{}
+      \name{author}{1}{}{%
+        {{hash=45890f550764e9c48165801e55792df7}{kol.}{k\bibinitperiod}{Václav\bibnamedelima MANĚNA}{V\bibinitperiod\bibinitdelim M\bibinitperiod}{a}{a\bibinitperiod}{}{}}%
+      }
+      \list{location}{1}{%
+        {Praha}%
+      }
+      \list{publisher}{1}{%
+        {CZ.NIC, z. s. p. o.}%
+      }
+      \strng{namehash}{45890f550764e9c48165801e55792df7}
+      \strng{fullhash}{45890f550764e9c48165801e55792df7}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1. vyd}
+      \field{isbn}{9788090580275}
+      \field{pagetotal}{294}
+      \field{title}{Jak využít e-learning ve svůj prospěch?}
+      \field{year}{2015}
+    \endentry
     \entry{zounek}{book}{}
       \name{author}{1}{}{%
         {{hash=21b0257524be13d837262d11af94665f}{ZOUNEK}{Z\bibinitperiod}{Jiří}{J\bibinitperiod}{}{}{}{}}%
@@ -167,9 +189,6 @@
       \field{pagetotal}{144}
       \field{title}{Distanční vzdělávání a eLearning: učební text pro distanční studium}
       \field{year}{2008}
-      \verb{url}
-      \verb http://www.tykva.net/files/UJAK/MVT/Distancni_vzdelavani.pdf
-      \endverb
     \endentry
     \entry{prucha}{book}{}
       \name{author}{1}{}{%
@@ -234,10 +253,10 @@
     \endentry
     \entry{imslti}{online}{}
       \name{author}{1}{}{%
-        {{hash=5e07f34566ce2fcd92d0042c5c411887}{Consortium}{C\bibinitperiod}{IMS\bibnamedelimb Global\bibnamedelima Learning}{I\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+        {{hash=ad60f987ca509086b8803414b252517a}{inc.}{i\bibinitperiod}{IMS\bibnamedelimb Global\bibnamedelimb Learning\bibnamedelima Consortium}{I\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
       }
-      \strng{namehash}{5e07f34566ce2fcd92d0042c5c411887}
-      \strng{fullhash}{5e07f34566ce2fcd92d0042c5c411887}
+      \strng{namehash}{ad60f987ca509086b8803414b252517a}
+      \strng{fullhash}{ad60f987ca509086b8803414b252517a}
       \field{sortinit}{0}
       \field{sortinithash}{990108227b3316c02842d895999a0165}
       \field{labelnamesource}{author}
@@ -275,10 +294,10 @@
     \endentry
     \entry{imslti20}{online}{}
       \name{author}{1}{}{%
-        {{hash=5e07f34566ce2fcd92d0042c5c411887}{Consortium}{C\bibinitperiod}{IMS\bibnamedelimb Global\bibnamedelima Learning}{I\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+        {{hash=ad60f987ca509086b8803414b252517a}{inc.}{i\bibinitperiod}{IMS\bibnamedelimb Global\bibnamedelimb Learning\bibnamedelima Consortium}{I\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
       }
-      \strng{namehash}{5e07f34566ce2fcd92d0042c5c411887}
-      \strng{fullhash}{5e07f34566ce2fcd92d0042c5c411887}
+      \strng{namehash}{ad60f987ca509086b8803414b252517a}
+      \strng{fullhash}{ad60f987ca509086b8803414b252517a}
       \field{sortinit}{0}
       \field{sortinithash}{990108227b3316c02842d895999a0165}
       \field{labelnamesource}{author}
@@ -491,7 +510,7 @@
         {{hash=efc1a058f172a92b40dd41b1e637b828}{COOCH}{C\bibinitperiod}{Mary}{M\bibinitperiod}{}{}{}{}}%
       }
       \list{location}{1}{%
-        {Birmingham}%
+        {Birming\-ham}%
       }
       \list{publisher}{1}{%
         {Packt}%
@@ -647,7 +666,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{CETL-MSOR Conference 2010}
-      \field{title}{Does MapleTA produce Constructively Aligned Maths assessment?}
+      \field{title}{Does MapleTA produce Constructively Align\-ed Maths assessment?}
       \field{year}{2011}
       \field{pages}{29}
       \range{pages}{1}
@@ -670,7 +689,7 @@
       \field{type}{Tech. Rep.}
       \field{year}{2011}
     \endentry
-    \entry{mapletaquestion}{online}{}
+    \entry{maple-question}{online}{}
       \name{author}{1}{}{%
         {{hash=e58b6e5a1f6602f4d77a83c4e0bd0f10}{Maplesoft}{M\bibinitperiod}{}{}{}{}{}{}}%
       }
@@ -687,6 +706,23 @@
       \field{year}{2015}
       \verb{url}
       \verb http://www.maplesoft.com/products/mapleta/QuestionTypes.aspx
+      \endverb
+    \endentry
+    \entry{jquery}{online}{}
+      \name{author}{1}{}{%
+        {{hash=f590b4fda2c30be28dd3c8c3caf5c77b}{jQuery}{j\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{f590b4fda2c30be28dd3c8c3caf5c77b}
+      \strng{fullhash}{f590b4fda2c30be28dd3c8c3caf5c77b}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{urlday}{28}
+      \field{urlmonth}{09}
+      \field{urlyear}{2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://jquery.com/
       \endverb
     \endentry
   \endsortlist
