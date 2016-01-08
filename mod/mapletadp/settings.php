@@ -11,7 +11,7 @@ $settings->add(new admin_setting_configtext('mapletadp_server', get_string('serv
 $settings->add(new admin_setting_configtext('mapletadp_context', get_string('context', 'mapletadp'), get_string('contextdescription', 'mapletadp'),''));
 $settings->add(new admin_setting_configpasswordunmask('mapletadp_secret', get_string('secret', 'mapletadp'), get_string('secretdescription', 'mapletadp'),''));
 $settings->add(new admin_setting_configtext('mapletadp_timeout', get_string('timeout', 'mapletadp'), get_string('timeoutdescription', 'mapletadp'),'30'));
-$settings->add(new admin_setting_configselect('mapletadp_showonlyexternal', get_string('showonlyexternal', 'mapletadp'), get_string('output_show_info_desc', 'local_inspis'), '1', array(
+$settings->add(new admin_setting_configselect('mapletadp_showonlyexternal', get_string('showonlyexternal', 'mapletadp'), get_string('showonlyexternaldescription', 'mapletadp'), '1', array(
         '0' => get_string('no', 'mapletadp'),
         '1' => get_string('yes', 'mapletadp'))));
   

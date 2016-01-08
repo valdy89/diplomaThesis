@@ -55,7 +55,7 @@ $string['context'] = 'Kontext (část za prvním lomítkem v adrese)';
 $string['contextdescription'] = 'Při zadání adresy do prohlížeče zadáváta tzv. kontext, tedy část za prvním lomítkem.';
 $string['secret'] = 'Sdílené heslo';
 $string['secretdescription'] = 'Heslo je vlastní a tajné pro šifrování a dešifrování komunikace mezi Moodle <--> Maple T.A.';
-$string['timeout'] = 'životnost SessionID';
+$string['timeout'] = 'Životnost SessionID';
 $string['timeoutdescription'] = 'Tímto parametrem nastavíte dobu, po jakou bude udržováno SessionID od posledního použití (v minutáchů maximálně 200minut).';
 
 $string['availableassignments'] = 'Dostupné Maple T.A.';
@@ -88,9 +88,3 @@ $string['yes'] = 'Ano';
 $string['showonlyexternal'] = 'Pouze uživatelé z Moodlu';
 $string['showonlyexternaldescription'] = 'Nastavím volíte, zda budou v knize známek zobrazení pouze uživatelé z Moodlu(Ano) nebo Všichni dostupní(volba Ne).';
 
-
-
-
-$settings->add(new admin_setting_configselect('mapletadp_showonlyexternal', get_string('showonlyexternal', 'mapletadp'), get_string('showonlyexternaldescription', 'local_inspis'), '1', array(
-        '0' => get_string('no', 'mapletadp'),
-        '1' => get_string('yes', 'mapletadp'))));
