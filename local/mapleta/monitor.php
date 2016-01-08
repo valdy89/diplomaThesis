@@ -19,9 +19,11 @@ $mapletadp = new \mod_mapletadp\controller\Mapleta($DB, $CFG, $USER);
 
 $monitors = $mapletadp->getMonitors();
 if(count($monitors) && $monitors){
+    echo "<table  cellspacing='0' class='flexible generaltable generalbox'>";
     foreach($monitors as $key => $value){
-        echo "<div>".  get_string($key,'local_mapleta').": <b>".$value."</b></div>";
+        echo "<tr><td>".  get_string($key,'local_mapleta')."</td><td><b>".$value."</b></td></tr>";
     }
+    echo "</table>";
 }
 echo $OUTPUT->footer();
 exit();
